@@ -4,7 +4,7 @@
     height: 54px;
     left: 108px;
     top: 40px;
-    background: grey;
+    background: transparent;
     display: flex;
 }
 
@@ -12,9 +12,14 @@
     padding-top: 15px;
     padding-left: 10px;
 }
+.right_arrow{
+    padding-left: 7px;
+    
+}
+
 
 .links_container {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: 18px;
     font-weight: 500;
     line-height: 30px;
@@ -36,4 +41,20 @@
 .link a:hover {
     text-decoration: none;
     /*color: rgba(14, 34, 14, 0.8);*/
+}
+.btn_register
+{
+    width: 190px;
+    height: 48px;
+    left: 1109px;
+    top: 40px;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 164.02%;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    background-color: transparent;
 }

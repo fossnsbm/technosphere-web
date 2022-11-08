@@ -31,6 +31,7 @@ const HeaderMenus: React.FC<{}> = () => {
             <div className='Header'>   
                 <span><img src="src/assets/Vector.png" alt="Technosphere_logo" className='vector_logo'/></span>
                 <Links links={links} />
+                <button className='btn_register'>REGISTER NOW <img src="src/assets/RightArrow.png" alt="Technosphere_logo" className='right_arrow'/></button>
             </div>
 
         </>
