@@ -4,11 +4,36 @@
     height: 54px;
     left: 108px;
     top: 40px;
-    background: linear-gradient(to left, rgba(70, 67, 225, 0.89) 0%, rgba(70, 20, 135, 0.89) 35.94%, rgba(50, 39, 76, 0.89) 88.54%);
-
+    background: grey;
+    display: flex;
 }
 
 .vector_logo {
     padding-top: 15px;
     padding-left: 10px;
+}
+
+.links_container {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 300px;
+    padding-top: 12px;
+    margin-right: 20px;
+    display: flex;
+    width: 800px;
+    justify-content: space-evenly;
+}
+
+.link a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link a:hover {
+    text-decoration: none;
+    /*color: rgba(14, 34, 14, 0.8);*/
 }
