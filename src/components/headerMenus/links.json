@@ -1,0 +1,20 @@
+{
+    "links": [
+        {
+            "label": "ABOUT",
+            "href": "#"
+        },
+        {
+            "label": "AGENDA",
+            "href": "#"
+        },
+        {
+            "label": "SPEAKERS",
+            "href": "#"
+        },
+        {
+            "label": "SPONSORS",
+            "href": "#"
+        }
+    ]
+}
