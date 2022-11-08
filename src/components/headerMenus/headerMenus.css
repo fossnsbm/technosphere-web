@@ -46,18 +46,27 @@
 }
 .btn_register
 {
-    width: 190px;
+    width: 200px;
     height: 48px;
-    left: 1109px;
     top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #fff;
     font-family: 'Montserrat';
     font-style: normal;
     font-size: 16px;
     font-weight: 600;
-    line-height: 164.02%;
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     background-color: transparent;
-    margin-left: 30px;
+    margin-left: 30px; 
 }
+@media (max-width: 1460px) {
+    .vector_logo {
+        padding-left: 20px;
+    }
+    /* work in progress */
+}
+
+
+
