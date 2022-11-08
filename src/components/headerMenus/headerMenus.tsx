@@ -1,8 +1,13 @@
 import React from 'react'
+import Styles from './headerMenus.css';
 
 const HeaderMenus: React.FC<{}> = () => {
   return (
-    <div><h1>gg</h1></div>
+    <>
+    <div className='styles.Header'>
+     <h1>hello</h1>
+    </div>
+    </>
   )
 }
  export default HeaderMenus;
