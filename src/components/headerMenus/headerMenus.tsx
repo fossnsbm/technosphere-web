@@ -1,13 +1,20 @@
 import React from 'react'
-import Styles from './headerMenus.css';
+import './headerMenus.css'
 
 const HeaderMenus: React.FC<{}> = () => {
-  return (
-    <>
-    <div className='styles.Header'>
-     <h1>hello</h1>
-    </div>
-    </>
-  )
+    return (
+        <>
+            <div className='Header'>
+                <img src="src/assets/Vector.png" alt="Technosphere_logo" className='vector_logo'/>
+
+
+                <div>ABOUT</div>
+                <div>AGENDA</div>
+                <div>SPEAKERS</div>
+                <div>SPONSORS</div>
+
+            </div>
+        </>
+    )
 }
- export default HeaderMenus;
+export default HeaderMenus;
