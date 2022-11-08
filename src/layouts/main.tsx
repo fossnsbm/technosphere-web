@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const theme = createTheme({
     palette: {
-      mode: "dark",
+      mode: "light",
     },
   });
 
