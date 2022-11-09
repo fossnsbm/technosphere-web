@@ -1,6 +1,7 @@
 import "./TextField.css";
 interface AppState {
     title: string;
+    obscured: boolean;
     placeholder : string
   }
 const TextField = ({title,placeholder}: AppState) => {

@@ -5,6 +5,7 @@ import upload from "../assets/upload_icon.svg";
 import { useState ,useRef } from "react";
 import CheckBox from "../components/CheckBox";
 import TextField from "../components/TextField";
+import Dropdown from "../components/Dropdown";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
@@ -60,17 +61,20 @@ const Profile = () => {
             </p>
           </div>
           <div className="form_data-default">
-            <TextField title="Full Name" placeholder="Thaanu Perera"/>
-            <TextField title="E-mail" placeholder="username@student.nsbm.ac.lk"/>
-            <TextField title="Password" placeholder=""/>
+            <TextField title="Full Name" placeholder="Thaanu Perera" obscured={false}/>
+            <TextField title="E-mail" placeholder="username@student.nsbm.ac.lk" obscured={false}/>
+            <TextField title="Password" placeholder="" obscured = {true}/>
+
+
           </div>
           {inPerson && (
             <div className="form_data-secondary">
               <div className="row">
-                <TextField title="Batch" placeholder=""/>
-                <TextField title="Phone" placeholder=""/>
+              <Dropdown placeholder="Batch" items={['19.2' , '20.1' , '20.2' , '20.3' , '21.1' , '22.1' , '22.2']}/>
+                <TextField title="Phone" placeholder="" obscured={false}/>
               </div>
-              <TextField title="Food Preferences" placeholder=""/>
+              <Dropdown placeholder="Food Preferences" items={['Vegetarian' , 'Non-vegetarian']}/>
+              {/* <TextField title="Food Preferences" placeholder=""/> */}
 
             </div>
           )}

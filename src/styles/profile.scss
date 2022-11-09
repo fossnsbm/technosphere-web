@@ -6,7 +6,8 @@ $secondary-text-size: 0.9em;
 .profile {
   background-color: $bg-color;
   position: relative;
-  min-height: 100vh;
+  min-height: 130vh;
+  height: auto;
 
   .grid {
     img {
