@@ -59,7 +59,8 @@
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     background-color: transparent;
-    margin-left: 30px; 
+    margin-left: 15px; 
+    white-space: nowrap;
 }
 @media (max-width: 1460px) {
     .vector_logo {
