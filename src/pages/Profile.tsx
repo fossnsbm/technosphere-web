@@ -25,14 +25,17 @@ const Profile = () => {
     phone_students: null,
     food_preference: null,
   });
-  const handleChange = (event : any) => { 
+  const handleInPersonToggleChange = (event : any) => { 
     setInPerson(!inPerson)
+  }; 
+  const handleProfileToggleChange = (event : any) => { 
+    setIsProfileFeatureEnabled(!isProfileFeatureEnabled)
   }; 
   return (
     <section className="profile">
-      <div className="grid">
+      {/* <div className="grid">
         <img src={grid} alt="" />
-      </div>
+      </div> */}
       <div className="profile_content">
         <div className="center">
           <div className="profile_photo">
@@ -47,7 +50,7 @@ const Profile = () => {
                 <img src={upload} alt="" />
               </span> */}
               <div className="homepage_append_toggle">
-                <CheckBox onChange={handleChange}/>
+                <CheckBox onChange={handleProfileToggleChange}/>
                 <h5>Feature my profile in home page</h5>
               </div>
             </div>
@@ -55,7 +58,7 @@ const Profile = () => {
 
           <div className="attendance_toggle">
             <div className="toggle_para">
-            <CheckBox onChange={handleChange}/>
+            <CheckBox onChange={handleInPersonToggleChange}/>
               <h5>Will you be able to attend the in-person event?</h5>
             </div>
             <p>
