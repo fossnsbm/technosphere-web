@@ -1,13 +1,19 @@
 import "./TextField.css";
+
+export enum InputType {
+  Number,
+  Text,
+}
 interface AppState {
-    title: string;
-    obscured: boolean;
-    placeholder : string
-  }
-const TextField = ({title,placeholder}: AppState) => {
+  title: string;
+  obscured: boolean;
+  type: InputType;
+  placeholder: string;
+}
+const TextField = ({ title, placeholder }: AppState) => {
   return (
-    <div>
-        <p>{title}</p>
+    <div className="textf_bg">
+      <p>{title}</p>
       <input type="text" placeholder={placeholder} />
     </div>
   );

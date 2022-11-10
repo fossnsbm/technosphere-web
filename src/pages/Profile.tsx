@@ -1,11 +1,14 @@
 import "../styles/profile.scss";
 import grid from "../assets/grid.png";
+
+
 import pfp from "../assets/pfp.png";
+
 import upload from "../assets/upload_icon.svg";
 import { useState ,useRef } from "react";
 import CheckBox from "../components/CheckBox";
-import TextField from "../components/TextField";
-import Dropdown from "../components/Dropdown";
+import TextField, { InputType } from "../components/TextField";
+import Dropdown, { PositionType } from "../components/Dropdown";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
@@ -18,7 +21,8 @@ const Profile = () => {
     fullName: null,
     email: null,
     batch: null,
-    phone: null,
+    phone_guests: null,
+    phone_students: null,
     food_preference: null,
   });
   const handleChange = (event : any) => { 
@@ -36,13 +40,15 @@ const Profile = () => {
               <img src={pfp} alt="" />
             </div>
             <div className="photo_upload_container">
-              <span className="btn btn_upload">
+            <button className="btn">change profile photo</button>
+
+              {/* <span className="btn btn_upload">
                 <p>update photo</p>
                 <img src={upload} alt="" />
-              </span>
+              </span> */}
               <div className="homepage_append_toggle">
                 <CheckBox onChange={handleChange}/>
-                <span>Feature my profile in home page</span>
+                <h5>Feature my profile in home page</h5>
               </div>
             </div>
           </div>
@@ -61,19 +67,17 @@ const Profile = () => {
             </p>
           </div>
           <div className="form_data-default">
-            <TextField title="Full Name" placeholder="Thaanu Perera" obscured={false}/>
-            <TextField title="E-mail" placeholder="username@student.nsbm.ac.lk" obscured={false}/>
-            <TextField title="Password" placeholder="" obscured = {true}/>
-
-
+            <TextField title="Full Name" placeholder="Thaanu Perera" obscured={false} type={InputType.Text}/>
+            {!inPerson && <TextField title="Phone" placeholder="07X-XXX-XXXX" obscured={false} type={InputType.Number}/>}
+            <TextField title="E-mail" placeholder="username@student.nsbm.ac.lk" obscured={false} type={InputType.Text}/>
           </div>
           {inPerson && (
             <div className="form_data-secondary">
               <div className="row">
-              <Dropdown placeholder="Batch" items={['19.2' , '20.1' , '20.2' , '20.3' , '21.1' , '22.1' , '22.2']}/>
-                <TextField title="Phone" placeholder="" obscured={false}/>
+              <Dropdown placeholder="Batch" items={['19.2' , '20.1' , '20.2' , '20.3' , '21.1' , '22.1' , '22.2']} position={PositionType.Up}/>
+                <TextField title="Phone" placeholder="" obscured={false}  type={InputType.Text}/>
               </div>
-              <Dropdown placeholder="Food Preferences" items={['Vegetarian' , 'Non-vegetarian']}/>
+              <Dropdown placeholder="Food Preferences" items={['Vegetarian' , 'Non-vegetarian']} position={PositionType.Down}/>
               {/* <TextField title="Food Preferences" placeholder=""/> */}
 
             </div>
