@@ -1,8 +1,10 @@
 import "./TextField.css";
 
 export enum InputType {
-  Number,
-  Text,
+  Number = "number",
+  Text = "text",
+  Email  = "email",
+
 }
 interface AppState {
   title: string;
@@ -10,11 +12,11 @@ interface AppState {
   type: InputType;
   placeholder: string;
 }
-const TextField = ({ title, placeholder }: AppState) => {
+const TextField = ({ title, placeholder , type }: AppState) => {
   return (
     <div className="textf_bg">
       <p>{title}</p>
-      <input type="text" placeholder={placeholder} />
+      <input type={type} placeholder={placeholder} />
     </div>
   );
 };

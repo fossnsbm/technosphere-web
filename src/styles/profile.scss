@@ -40,7 +40,7 @@ $secondary-text-size: 0.9em;
   }
   .photo_upload_container {
     .homepage_append_toggle {
-      font-size: 0.90em;
+      font-size: 0.9em;
       display: flex;
       margin-top: 17px;
     }
@@ -82,7 +82,7 @@ $secondary-text-size: 0.9em;
   .attendance_toggle {
     margin-top: 25px;
     p {
-      font-size: .7em;
+      font-size: 0.7em;
       color: $secondary-text-color;
       margin-top: 8px;
     }
@@ -99,7 +99,6 @@ $secondary-text-size: 0.9em;
     .photo_display {
       margin: 0;
       height: 100%;
-
 
       margin-right: 25px;
       width: 120px;
@@ -144,10 +143,16 @@ $secondary-text-size: 0.9em;
   gap: 15px;
   width: 100%;
 }
-.form_data-secondary,
-.profile_photo {
-  margin: 0;
-}
-.form_data-secondary{
+
+.form_data-secondary {
   width: 100%;
+}
+
+@media only screen and (max-width: 955px) {
+  .center {
+    width: 100% !important;
+  }
+  .profile_content {
+    padding: 50px;
+  }
 }
