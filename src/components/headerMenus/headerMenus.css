@@ -6,7 +6,12 @@
     top: 40px;
     background: transparent;
     display: flex;
+    justify-content: sp;
     padding-right: 100px;
+}
+
+.landing{
+    width: 100%;
 }
 
 .vector_logo {
@@ -62,11 +67,51 @@
     margin-left: 15px; 
     white-space: nowrap;
 }
-@media (max-width: 1460px) {
-    .vector_logo {
-        padding-left: 20px;
+
+#mobile-menu{
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+
+    #mobile-menu{
+        display: flex;
+        border: none;
+        color: white;
+        background-color: black;
+        
+    } 
+
+    .btn_register{
+        display: none;
     }
-    /* work in progress */
+
+    .links_container{
+        display: none;
+        display: block;
+        margin: 36px;
+    }  
+
+
+
+    .Header{
+        width: 100%;
+    }
+
+    .mobile-nav-links span{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-links span img{
+        margin-right: 100%;
+    }
+
+    #showlinks{
+        display: block;
+    }
+
 }
 
 

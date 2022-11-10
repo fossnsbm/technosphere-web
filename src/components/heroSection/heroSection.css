@@ -17,6 +17,11 @@
     color: #8566FF;
 }
 
+.landing{
+    width: 100%;
+    height: 100vh;
+}
+
 .Hero_logo {
     padding-top: 15px;
 }
@@ -81,5 +86,17 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 164.02%;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .Vector_Hero{
+        width: 350px;
+        height: auto;
+    }
+
+    .hero_text{
+        font-size: 20px;
+    } 
 
 }

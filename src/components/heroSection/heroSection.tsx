@@ -9,7 +9,8 @@ const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 }
 const HeroSection: React.FC<{}> = () => {
     return (
-        <>  <HeaderMenus />
+        <div className='landing'>  
+            <HeaderMenus />
             <div className='Hero'>
 
                 <div className='Event_date'>
@@ -19,7 +20,7 @@ const HeroSection: React.FC<{}> = () => {
                     <img src="src/assets/Hero_Logo.png" alt="Hero_Logo" className='Vector_Hero' />
                 </div>
                 <div className='hero_text'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
                 </div>
                 <div>
                     <button className='register_btn_hero' onClick={handleClick}>REGISTER NOW <img src="src/assets/RightArrow.png" alt="arrow" className='right_arrow' /></button>
@@ -38,7 +39,7 @@ const HeroSection: React.FC<{}> = () => {
             </Marquee>
             </div>
 
-        </>
+        </div>
     )
 }
 export default HeroSection;
