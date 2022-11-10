@@ -1,8 +1,13 @@
+import { Button } from '@mui/material';
 import React from 'react'
 import './headerMenus.css'
 import * as data from './links.json';
 const linksString = JSON.stringify(data);
 const links = JSON.parse(linksString).links;
+
+const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    window.location.href = '/test';
+}
 
 type Link = {
     label: string;
@@ -31,7 +36,7 @@ const HeaderMenus: React.FC<{}> = () => {
             <div className='Header'>   
                 <span><img src="src/assets/Vector.png" alt="Technosphere_logo" className='vector_logo'/></span>
                 <Links links={links} />
-                <button className='btn_register'>REGISTER NOW <img src="src/assets/RightArrow.png" alt="Technosphere_logo" className='right_arrow'/></button>
+                <button className='btn_register' onClick={handleClick}>REGISTER NOW <img src="src/assets/RightArrow.png" alt="arrow" className='right_arrow'/></button>
             </div>
 
         </>
