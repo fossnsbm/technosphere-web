@@ -1,8 +1,45 @@
-.Header {
+.Nav_logo {
+    
+    width: 197px;
+    height: 26px;
+}
+.btn_reg
+{ 
+    width: 200px;
+    height: 48px;
+    top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    background-color: transparent;
+    margin-top: 15px; 
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .Header {
     position: absolute;
     width: 100%;
     height: 54px;
-    /*left: 108px;*/
+    /*left: 108px;
     top: 40px;
     background: transparent;
     display: flex;
@@ -42,7 +79,7 @@
 
 .link a:hover {
     text-decoration: none;
-    /*color: rgba(14, 34, 14, 0.8);*/
+    /*color: rgba(14, 34, 14, 0.8);
 }
 .btn_register
 {
@@ -62,12 +99,8 @@
     margin-left: 15px; 
     white-space: nowrap;
 }
-@media (max-width: 1460px) {
-    .vector_logo {
-        padding-left: 20px;
-    }
-    /* work in progress */
-}
 
 
 
+
+ */

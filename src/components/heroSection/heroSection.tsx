@@ -1,10 +1,9 @@
 import React from 'react'
-import HeaderMenus from '../headerMenus/headerMenus';
 import './heroSection.css'
 import Marquee from "react-fast-marquee";
 import { fontFamily } from '@mui/system';
 
-import ResponsiveAppBar from "../tmpHeader/tmpHeader";
+import HeaderMenus from "../headerMenus/headerMenus";
 
 const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     window.location.href = '/test';
@@ -12,7 +11,7 @@ const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 const HeroSection: React.FC<{}> = () => {
     return (
         <>
-            <ResponsiveAppBar />
+            <HeaderMenus />
             <div className='Hero'>
 
                 <div className='Event_date'>
