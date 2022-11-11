@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Montserrat';
+}
+
+.paper-1 {
+    background: linear-gradient(118.92deg, #0E0C33 0%, #1B0E40 100%);
+    border-radius: 15px;
+    /* font-family: 'Montserrat'; */
+    font-weight: bold;
+    padding-left: 30px;
+    padding-top: 36px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.left {
+    background-image: url(../../public/webinar.png);
+}
+
+.right {
+    background-image: url(../../public/inperson.png);
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.date {
+    font-size: 20px;
+    font-weight: bold;
+    /* font-family: 'Montserrat'; */
+}
+
+.card-heading {
+    font-size: 24px;
+    font-weight: bold;
+    /* font-family: 'Montserrat'; */
+}
+
+.card-content {
+    font-size: 16px;
+    font-weight: normal;
+    /* font-family: 'Montserrat'; */
+
+}
+
+.main-card-heading {
+    font-size: 24px;
+    font-weight: bold;
+    /* font-family: 'Montserrat'; */
+    width: 422px;
+    color: #7451FF;
+    text-transform: uppercase;
+}
+
+.main-card-content {
+    font-size: 18px;
+    font-weight: normal;
+    /* font-family: 'Montserrat'; */
+    color: #938FBE;
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 608px) {
+
+    .flex-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
