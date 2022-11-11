@@ -1,5 +1,5 @@
 import "./TextField.css";
-import eye from "../assets/eye.png";
+import eye from "../assets/eye.svg";
 import { useState } from "react";
 
 export enum InputType {
