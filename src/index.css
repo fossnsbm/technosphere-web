@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+<<<<<<< HEAD
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
+=======
+
+* {
+    font-family: 'Montserrat', sans-serif;
+>>>>>>> develop
 }
