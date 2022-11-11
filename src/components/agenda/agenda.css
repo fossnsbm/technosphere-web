@@ -1,0 +1,99 @@
+
+.card1 {
+    /* Rectangle 21 */    
+    position: absolute;
+    width: 945px;
+    height: 232px;
+    left: 108px;
+    top: 1722px;
+    border-radius: 15px;
+    }
+    
+    
+.card2 {
+    /* Rectangle 22 */
+    position: absolute;
+    width: 950px;
+    height: 230px;
+    left: 382px;
+    top: 1992px;    
+    border-radius: 15px;
+    
+    }
+    
+.card3 {
+    /* Rectangle 23 */
+    
+    position: absolute;
+    width: 950px;
+    height: 230px;
+    left: 108px;
+    top: 2260px;
+    border-radius: 15px;
+    
+    }
+    
+    
+.card4 {    
+    /* Rectangle 24 */
+    position: absolute;
+    width: 950px;
+    height: 230px;
+    left: 382px;
+    top: 2528px;
+    border-radius: 15px;
+    
+    }
+    
+.card5 {    
+    /* Rectangle 25 */
+    position: absolute;
+    width: 950px;
+    height: 916px;
+    left: 108px;
+    top: 2796px;
+    border-radius: 15px;
+    
+    }
+    
+    
+    
+.header{
+    
+    /* AGENDA */
+    position: absolute;
+    width: 219px;
+    height: 79px;
+    left: 108px;
+    top: 1594px;
+    
+    }
+    
+
+    
+.header2{
+    
+    /* Lorem ipsum dolor sit amet */
+
+    position: absolute;
+    width: 269px;
+    height: 26px;
+    left: 108px;
+    top: 1666px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 164.02%;
+    /* or 26px */
+
+    text-transform: uppercase;
+
+    /* Blue-1 */
+
+    color: #7451FF;
+    }
+    
+
+    

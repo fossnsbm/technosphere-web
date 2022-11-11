@@ -1,7 +1,7 @@
-import Footer from "../components/Footer"
+import Agenda from "../components/agenda/agenda";
 
 export const HomePage = () => {
   return (
-    <Footer />
+    <Agenda />
   );
 };

@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 export const RegisterPage = () => {
   return (
     <>
+     
       <Box sx={{ width: "100%", maxWidth: 500 }}>
         <Typography variant="h1" gutterBottom>
           h1. Heading
@@ -52,6 +53,7 @@ export const RegisterPage = () => {
           overline text
         </Typography>
       </Box>
+      
     </>
   );
 };
