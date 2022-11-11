@@ -4,12 +4,15 @@ import './heroSection.css'
 import Marquee from "react-fast-marquee";
 import { fontFamily } from '@mui/system';
 
+import ResponsiveAppBar from "../tmpHeader/tmpHeader";
+
 const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     window.location.href = '/test';
 }
 const HeroSection: React.FC<{}> = () => {
     return (
-        <>  <HeaderMenus />
+        <>
+            <ResponsiveAppBar />
             <div className='Hero'>
 
                 <div className='Event_date'>
