@@ -60,3 +60,26 @@
     line-height: 164.02%;
     font-family: 'Montserrat';
 }
+
+.marquee_section {
+    padding-top: 756px;
+    padding-bottom: 100px;
+}
+
+.mq {
+    font-size: 18px;
+    display: flex;
+
+}
+
+.mq_txt {
+    padding-left: 60px;
+    text-transform: uppercase;
+    color: #8566FF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 164.02%;
+
+}
