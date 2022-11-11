@@ -1,8 +1,9 @@
 import { Grid, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Technosphere from "../assets/Technosphere.png"
-import FOSSLogo from "../assets/FOSSLogo.png"
-import WIFLogo from "../assets/WIFLogo.png"
+import Technosphere from "../assets/Technosphere.svg"
+import FOSSLogo from "../assets/FOSSLogo.svg"
+import WIFLogo from "../assets/WIFLogo.svg"
+
 import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
 import { FaHeart } from "react-icons/fa";
 import "./Footer.scss";
