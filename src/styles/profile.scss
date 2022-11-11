@@ -8,25 +8,12 @@ $secondary-text-size: 0.9em;
   position: relative;
   min-height: 100vh;
 
-
-  // .grid {
-  //   img {
-  //     top: 50%; /* position the top  edge of the element at the middle of the parent */
-  //     position: absolute;
-  //     left: 50%; /* position the left edge of the element at the middle of the parent */
-  //     transform: translate(-50%, -50%);
-  //     width: 100%;
-  //     height: 70%;
-  //     object-fit: cover;
-  //   }
-  // }
   .profile_content {
-    background-image: url('/grid.png');
-    background-position: center center;
+    background-image: url("/grid.png");
     background-repeat: no-repeat;
-    // position: absolute;
-    left: 0px;
-    top: 0px;
+
+    background-size: 100% 85%;
+
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -47,7 +34,6 @@ $secondary-text-size: 0.9em;
       display: flex;
       margin-top: 17px;
     }
-    font-size: $secondary-text-size;
     .btn_upload {
       cursor: pointer;
       width: 160px;
@@ -156,11 +142,10 @@ $secondary-text-size: 0.9em;
     width: 100% !important;
     height: auto !important;
   }
-  .profile_content{
+  .profile_content {
     padding: 50px;
   }
-  .profile{
+  .profile {
     height: auto;
   }
-
 }
