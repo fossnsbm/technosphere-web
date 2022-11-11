@@ -74,7 +74,7 @@ const Profile = () => {
             <div className="form_data-secondary">
               <div className="row">
               <Dropdown placeholder="Batch" items={['19.2' , '20.1' , '20.2' , '20.3' , '21.1' , '22.1' , '22.2']} position={PositionType.Up}/>
-                <TextField title="Phone" placeholder="" obscured={false}  type={InputType.Text}/>
+                <TextField title="Phone" placeholder="" obscured={true}  type={InputType.Text}/>
               </div>
               <Dropdown placeholder="Food Preferences" items={['Vegetarian' , 'Non-vegetarian']} position={PositionType.Down}/>
               {/* <TextField title="Food Preferences" placeholder=""/> */}

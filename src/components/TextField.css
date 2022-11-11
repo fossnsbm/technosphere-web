@@ -1,14 +1,13 @@
-.textf_bg{
-    width: 100%;
-    margin-top: 15px;
-    
+.textf_bg {
+  width: 100%;
+  margin-top: 15px;
 }
 
-p{
-    font-size: .7em;
-    margin-bottom: 4px;
+.textf_bg p {
+  font-size: 0.7em;
+  margin-bottom: 4px;
 }
-input {
+.textf_bg input {
   color: white;
   padding: 0px 10px;
   font-size: 0.7em;
@@ -27,8 +26,27 @@ input {
   border-radius: 7px;
   border: 1px solid #8566ff32;
 }
-input:focus{
+.textf_bg input:focus {
   outline: none;
   border-width: 2px;
-  border-color:#896df932 ;
+  border-color: #896df932;
+}
+.textf_bg span{
+  position: relative;
+}
+.eye {
+  position: absolute;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  right: 1%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -50%);
+
+
+
+
+}
+
+.eye img{
+  width: 15px;
+  object-fit: cover;
 }

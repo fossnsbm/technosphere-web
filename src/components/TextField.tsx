@@ -1,10 +1,11 @@
 import "./TextField.css";
+import eye from "../assets/eye.png";
+import { useState } from "react";
 
 export enum InputType {
   Number = "number",
   Text = "text",
-  Email  = "email",
-
+  Email = "email",
 }
 interface AppState {
   title: string;
@@ -12,11 +13,22 @@ interface AppState {
   type: InputType;
   placeholder: string;
 }
-const TextField = ({ title, placeholder , type }: AppState) => {
+const TextField = ({ title, placeholder, type, obscured }: AppState) => {
+  const [visible, setVisible] = useState(false);
   return (
     <div className="textf_bg">
       <p>{title}</p>
-      <input type={type} placeholder={placeholder} />
+      <span>
+        <input
+          type={obscured ? (visible ? "text" : "password") : type}
+          placeholder={placeholder}
+        />
+        {obscured && (
+          <div className="eye" onClick={() => setVisible(!visible)}>
+            <img src={eye} alt="" />
+          </div>
+        )}
+      </span>
     </div>
   );
 };
