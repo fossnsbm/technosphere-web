@@ -2,6 +2,11 @@
     
     width: 197px;
     height: 26px;
+    text-align: left;
+}
+.div_img
+{
+    text-align: left;
 }
 .btn_reg
 { 
@@ -32,75 +37,3 @@
 
 
 
-
-
-
-/* .Header {
-    position: absolute;
-    width: 100%;
-    height: 54px;
-    /*left: 108px;
-    top: 40px;
-    background: transparent;
-    display: flex;
-    padding-right: 100px;
-}
-
-.vector_logo {
-    padding-top: 15px;
-    padding-left: 108px;
-}
-.right_arrow{
-    padding-left: 7px;
-
-}
-
-
-.links_container {
-    font-family: 'Montserrat';
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
-    padding-left: 300px;
-    padding-top: 12px;
-    margin-right: 20px;
-    display: flex;
-    width: 65%;
-    justify-content: right;
-}
-
-.link a {
-    padding-left: 40px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.link a:hover {
-    text-decoration: none;
-    /*color: rgba(14, 34, 14, 0.8);
-}
-.btn_register
-{
-    width: 200px;
-    height: 48px;
-    top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #fff;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid #FFFFFF;
-    border-radius: 6px;
-    background-color: transparent;
-    margin-left: 15px; 
-    white-space: nowrap;
-}
-
-
-
-
- */

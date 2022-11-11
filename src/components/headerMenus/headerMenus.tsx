@@ -18,7 +18,7 @@ import { fontFamily, padding, textAlign } from '@mui/system';
 const pages = [
     {text: 'ABOUT', href: '#'},
     {text: 'AGENDA', href: '#'},
-    {text: 'SPEAKERS', href: '#'},
+    {text: 'SPEAKERS', href: 'https://www.hacktonight.fossnsbm.org'},
     {text: 'SPONSORS', href: '#'}
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -49,7 +49,7 @@ function HeaderMenus() {
     return (
         <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters  sx={{paddingLeft: 11, paddingTop: 5}}>
+                <Toolbar disableGutters  sx={{paddingLeft: "5%", paddingTop:"2%" }}>
                     <img src="src/assets/vector.png" alt="Hero_Logo" className='Nav_logo'/>
                     {/* <Typography
                         variant="h6"
@@ -100,7 +100,15 @@ function HeaderMenus() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.text} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page.text}</Typography>
+                                    <Typography textAlign="center">
+                                        <Button
+                                         key={page.text}
+                                         href={page.href}
+                                        >
+                                           
+                                            {page.text}
+                                        </Button>                  
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -122,7 +130,6 @@ function HeaderMenus() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
                     </Typography>
                     <Box sx={{paddingLeft:50,flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
@@ -185,49 +192,3 @@ export default HeaderMenus;
 
 
 
-/* import { Button } from '@mui/material';
-import React from 'react'
-import './headerMenus.css'
-import * as data from './links.json';
-const linksString = JSON.stringify(data);
-const links = JSON.parse(linksString).links;
-
-const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    window.location.href = '/test';
-}
-
-type Link = {
-    label: string;
-    href: string;
-};
-
-const Links: React.FC<{ links: Link[] }> = ({ links }) => {
-    return (
-        <div className={'links_container'}>
-            {links.map((link: Link) => {
-                return (
-                    <div key={link.href} className={'link'}>
-                        <a href={link.href}>
-                            {link.label}
-                        </a>
-                    </div>
-                )
-            })}
-        </div>
-    )
-};
-
-const HeaderMenus: React.FC<{}> = () => {
-    return (
-        <>
-            <div className='Header'>   
-                <span><img src="src/assets/Vector.png" alt="Technosphere_logo" className='vector_logo'/></span>
-                <Links links={links} />
-                <button className='btn_register' onClick={handleClick}>REGISTER NOW <img src="src/assets/RightArrow.png" alt="arrow" className='right_arrow'/></button>
-            </div>
-
-        </>
-    )
-}
-export default HeaderMenus;
- */
