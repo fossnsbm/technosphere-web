@@ -12,10 +12,6 @@ import Dropdown, { PositionType } from "../components/Dropdown";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
-  const [foodPreferences, setFoodPreferences] = useState(["", "", "", "", ""]);
-  const [batchNumbers, setBatchNumbers] = useState(["", "", "", "", ""]);
-
-
   const [isProfileFeatureEnabled, setIsProfileFeatureEnabled] = useState(false);
   const [formData, setFormData] = useState({
     fullName: null,
