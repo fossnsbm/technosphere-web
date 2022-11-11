@@ -1,7 +1,5 @@
-import { CurrencyBitcoinTwoTone } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import React from 'react'
-import {useRef} from "react";
 import './headerMenus.css'
 import * as data from './links.json';
 const linksString = JSON.stringify(data);
@@ -21,7 +19,7 @@ const Links: React.FC<{ links: Link[] }> = ({ links }) => {
         <div className={'links_container'}>
             {links.map((link: Link) => {
                 return (
-                    <div  key={link.href} className={'link'}>
+                    <div key={link.href} className={'link'}>
                         <a href={link.href}>
                             {link.label}
                         </a>
@@ -33,41 +31,15 @@ const Links: React.FC<{ links: Link[] }> = ({ links }) => {
 };
 
 const HeaderMenus: React.FC<{}> = () => {
-
-// const navRef = useRef();
-
-// const ShowMenu = () =>{
-//     navRef.current.classList.toggle("showlinks");
-//   };
-
     return (
-      <>
-        <div className="Header">
-          <div className='mobile-nav-links'>
-            <span>
-              <img
-                src="src/assets/Vector.png"
-                alt="Technosphere_logo"
-                className="vector_logo"
-              />
-              {/* onClick={ShowMenu} */}
-              <img id="mobile-menu" src="src/assets/RightArrow.png" alt="menu" />
-              {/* <button id="mobile-menu">=</button> */}
-            </span>
-            {/* ref={navRef} */}
-            <Links links={links} />
-          </div>
-          <button className="btn_register" onClick={handleClick}>
-            REGISTER NOW{" "}
-            <img
-              src="src/assets/RightArrow.png"
-              alt="arrow"
-              className="right_arrow"
-            />
-          </button>
-          
-        </div>
-      </>
-    );
+        <>
+            <div className='Header'>   
+                <span><img src="src/assets/Vector.png" alt="Technosphere_logo" className='vector_logo'/></span>
+                <Links links={links} />
+                <button className='btn_register' onClick={handleClick}>REGISTER NOW <img src="src/assets/RightArrow.png" alt="arrow" className='right_arrow'/></button>
+            </div>
+
+        </>
+    )
 }
 export default HeaderMenus;
