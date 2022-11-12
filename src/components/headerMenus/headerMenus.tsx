@@ -14,6 +14,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { fontFamily, padding, textAlign } from '@mui/system';
+import vector from "../../assets/Vector.png";
+import arrow from "../../assets/RightArrow.png";
 
 const pages = [
     { text: 'ABOUT', href: '#' },
@@ -50,7 +52,7 @@ function HeaderMenus() {
         <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ paddingLeft: "5%", paddingTop: "2%" }}>
-                    <img src="src/assets/vector.png" alt="Hero_Logo" className='Nav_logo' />
+                    <img src={vector} alt="Hero_Logo" className='Nav_logo' />
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -127,7 +129,7 @@ function HeaderMenus() {
                                 {page.text}
                             </Button>
                         ))}
-                        <button className='btn_reg' onClick={handleClick}>REGISTER NOW <img style={{ paddingLeft: 2, paddingTop: 2 }} src="src/assets/RightArrow.png" alt="arrow" className='right_arrow' /></button>
+                        <button className='btn_reg' onClick={handleClick}>REGISTER NOW <img style={{ paddingLeft: 2, paddingTop: 2 }} src={arrow} alt="arrow" className='right_arrow' /></button>
                     </Box>
                 </Toolbar>
             </Container>
