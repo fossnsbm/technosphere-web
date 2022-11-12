@@ -14,8 +14,7 @@ import { fontFamily } from '@mui/system';
 
 export default function Agenda() {
   return (
-    <Container sx={{mb :"100", mt : "10"}} maxWidth="lg">
-
+    <Container sx={{mb :"0", mt : "0"}} maxWidth="lg">
       <Typography className={"header"} style={{fontWeight:"600",fontStyle:"normal", fontSize:"48px", lineHeight:"164.02%",textTransform:"uppercase",color:"#FFFFFF"}}>   
             AGENDA
       </Typography>
