@@ -1,3 +1,4 @@
+import Agenda from "../components/agenda/agenda";
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Footer from "../components/Footer"
@@ -6,6 +7,7 @@ export const HomePage = () => {
   return (
     <>
       <IntroSection />
+      
     </>
   );
 };
