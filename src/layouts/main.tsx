@@ -23,8 +23,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <HeroSection />
-        <Agenda />  
+        <HeroSection />  
         <div>{children}</div>
         <Footer/>
       </ThemeProvider>
