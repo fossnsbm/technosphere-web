@@ -16,10 +16,10 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { fontFamily, padding, textAlign } from '@mui/system';
 
 const pages = [
-    {text: 'ABOUT', href: '#'},
-    {text: 'AGENDA', href: '#'},
-    {text: 'SPEAKERS', href: 'https://www.hacktonight.fossnsbm.org'},
-    {text: 'SPONSORS', href: '#'}
+    { text: 'ABOUT', href: '#' },
+    { text: 'AGENDA', href: '#' },
+    { text: 'SPEAKERS', href: '#' },
+    { text: 'SPONSORS', href: '#' }
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -47,28 +47,10 @@ function HeaderMenus() {
     }
 
     return (
-        <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+        <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters  sx={{paddingLeft: "5%", paddingTop:"2%" }}>
-                    <img src="src/assets/vector.png" alt="Hero_Logo" className='Nav_logo'/>
-                    {/* <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Montserrat',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        
-                    </Typography> */}
-
+                <Toolbar disableGutters sx={{ paddingLeft: "5%", paddingTop: "2%" }}>
+                    <img src="src/assets/vector.png" alt="Hero_Logo" className='Nav_logo' />
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -77,6 +59,10 @@ function HeaderMenus() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            sx={{
+                                paddingLeft: 12,
+                                paddingTop: 5
+                            }}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -101,19 +87,18 @@ function HeaderMenus() {
                             {pages.map((page) => (
                                 <MenuItem key={page.text} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Button
-                                         key={page.text}
-                                         href={page.href}
+                                        <Button color="inherit"
+                                            key={page.text}
+                                            href={page.href}
                                         >
-                                           
+
                                             {page.text}
-                                        </Button>                  
+                                        </Button>
                                     </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                     <Typography
                         variant="h5"
                         noWrap
@@ -131,48 +116,18 @@ function HeaderMenus() {
                         }}
                     >
                     </Typography>
-                    <Box sx={{paddingLeft:50,flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ paddingLeft: 50, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page.text}
                                 href={page.href}
                                 onClick={handleCloseNavMenu}
-                                sx={{ fontSize:18, my: 2, color: 'white', display: 'block', paddingLeft:3, paddingRight:3 }}
+                                sx={{ fontSize: 18, my: 2, color: 'white', display: 'block', paddingLeft: 3, paddingRight: 3 }}
                             >
                                 {page.text}
                             </Button>
                         ))}
-                        <button className='btn_reg' onClick={handleClick}>REGISTER NOW <img style={{paddingLeft:2, paddingTop:2}} src="src/assets/RightArrow.png" alt="arrow" className='right_arrow' /></button>
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0 }}>
-                        {/* <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu> */}
+                        <button className='btn_reg' onClick={handleClick}>REGISTER NOW <img style={{ paddingLeft: 2, paddingTop: 2 }} src="src/assets/RightArrow.png" alt="arrow" className='right_arrow' /></button>
                     </Box>
                 </Toolbar>
             </Container>

@@ -1,15 +1,15 @@
 .Nav_logo {
-    
+
     width: 197px;
     height: 26px;
     text-align: left;
 }
-.div_img
-{
+
+.div_img {
     text-align: left;
 }
-.btn_reg
-{ 
+
+.btn_reg {
     width: 200px;
     height: 48px;
     top: 40px;
@@ -23,17 +23,13 @@
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     background-color: transparent;
-    margin-top: 15px; 
+    margin-top: 15px;
     white-space: nowrap;
 }
 
+@media only screen and (max-width: 650px) {
+    .Nav_logo {
+        margin-top: 10%;
+    }
 
-
-
-
-
-
-
-
-
-
+}
