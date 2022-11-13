@@ -1,7 +1,5 @@
 .sponsors {
   position: relative;
-  padding-left: 108px;
-  padding-right: 108px;
   padding-bottom: 120px;
   z-index: 1000;
   background-color: #060527;
@@ -124,8 +122,6 @@
 
 @media only screen and (max-width: 955px) {
   .sponsors {
-    padding-left: 50px;
-    padding-right: 50px;
     padding-bottom: 120px;
   }
 
