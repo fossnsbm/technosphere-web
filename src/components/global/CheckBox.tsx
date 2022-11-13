@@ -3,7 +3,7 @@ import './checkmark.css'
 interface AppState {
   onChange: any;
 }
-const CheckBox = ({onChange}: AppState) => {
+const CheckBox = ({ onChange }: AppState) => {
   return (
     <>
       <label className="container">

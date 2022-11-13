@@ -1,0 +1,61 @@
+* {
+    font-family: 'Montserrat' !important;
+}
+
+.speakerCard {
+    background-image:
+        linear-gradient(180deg, rgba(6, 5, 61, 0) 65.78%, rgba(6, 5, 61, 0.48) 84.29%, rgba(6, 5, 61, 0.87) 100%),
+        url('../../assets/speaker-1.png');
+    background-size: cover;
+    padding: 20px;
+}
+
+.speakers_heading {
+    text-transform: uppercase;
+    font-weight: 600 !important;
+}
+
+.speakers_tagline {
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    color: #7451FF;
+}
+
+.webinar_heading {
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    margin-top: 24px !important;
+    margin-bottom: 16px !important;
+}
+
+.inperson_heading {
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    margin-top: 44px !important;
+    margin-bottom: 16px !important;
+}
+
+.speaker_name{
+    font-size: 1.2em !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+}
+
+.speaker_job{
+    font-size: 0.8em !important;
+}
+
+.speakers {
+    padding-bottom: 120px;
+}
+
+.speakers_section{
+    background-color: #060527;
+}
+
+@media (max-width: 608px) {
+    .speakerCard {
+        height: 80%;
+        width: 80%;
+    }
+}

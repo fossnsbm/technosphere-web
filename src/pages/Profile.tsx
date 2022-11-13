@@ -1,6 +1,4 @@
 import "../styles/profile.scss";
-import grid from "../assets/grid.png";
-
 
 import pfp from "../assets/pfp.png";
 
@@ -13,6 +11,7 @@ import Dropdown, { PositionType } from "../components/global//Dropdown";
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
   const [isProfileFeatureEnabled, setIsProfileFeatureEnabled] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: null,
     email: null,
@@ -21,12 +20,15 @@ const Profile = () => {
     phone_students: null,
     food_preference: null,
   });
-  const handleInPersonToggleChange = (event : any) => { 
-    setInPerson(!inPerson)
-  }; 
-  const handleProfileToggleChange = (event : any) => { 
-    setIsProfileFeatureEnabled(!isProfileFeatureEnabled)
-  }; 
+
+  const handleInPersonToggleChange = (_event: React.FormEvent) => {
+    setInPerson(!inPerson);
+  };
+
+  const handleProfileToggleChange = (_event: React.FormEvent) => {
+    setIsProfileFeatureEnabled(!isProfileFeatureEnabled);
+  };
+
   return (
     <section className="profile">
       {/* <div className="grid">
@@ -39,14 +41,14 @@ const Profile = () => {
               <img src={pfp} alt="" />
             </div>
             <div className="photo_upload_container">
-            <button className="btn">change profile photo</button>
+              <button className="btn">change profile photo</button>
 
               {/* <span className="btn btn_upload">
                 <p>update photo</p>
                 <img src={upload} alt="" />
               </span> */}
               <div className="homepage_append_toggle">
-                <CheckBox onChange={handleProfileToggleChange}/>
+                <CheckBox onChange={handleProfileToggleChange} />
                 <h5>Feature my profile in home page</h5>
               </div>
             </div>
@@ -54,7 +56,7 @@ const Profile = () => {
 
           <div className="attendance_toggle">
             <div className="toggle_para">
-            <CheckBox onChange={handleInPersonToggleChange}/>
+              <CheckBox onChange={handleInPersonToggleChange} />
               <h5>Will you be able to attend the in-person event?</h5>
             </div>
             <p>
@@ -66,19 +68,56 @@ const Profile = () => {
             </p>
           </div>
           <div className="form_data-default">
-            <TextField title="Full Name" placeholder="Thaanu Perera" obscured={false} type={InputType.Text}/>
-            {!inPerson && <TextField title="Phone" placeholder="07X-XXX-XXXX" obscured={false} type={InputType.Number}/>}
-            <TextField title="E-mail" placeholder="username@student.nsbm.ac.lk" obscured={false} type={InputType.Text}/>
+            <TextField
+              title="Full Name"
+              placeholder="Thaanu Perera"
+              obscured={false}
+              type={InputType.Text}
+            />
+            {!inPerson && (
+              <TextField
+                title="Phone"
+                placeholder="07X-XXX-XXXX"
+                obscured={false}
+                type={InputType.Number}
+              />
+            )}
+            <TextField
+              title="E-mail"
+              placeholder="username@student.nsbm.ac.lk"
+              obscured={false}
+              type={InputType.Text}
+            />
           </div>
           {inPerson && (
             <div className="form_data-secondary">
               <div className="row">
-              <Dropdown placeholder="Batch" items={['19.2' , '20.1' , '20.2' , '20.3' , '21.1' , '22.1' , '22.2']} position={PositionType.Up}/>
-                <TextField title="Phone" placeholder="" obscured={false}  type={InputType.Number}/>
+                <Dropdown
+                  placeholder="Batch"
+                  items={[
+                    "19.2",
+                    "20.1",
+                    "20.2",
+                    "20.3",
+                    "21.1",
+                    "22.1",
+                    "22.2",
+                  ]}
+                  position={PositionType.Up}
+                />
+                <TextField
+                  title="Phone"
+                  placeholder=""
+                  obscured={false}
+                  type={InputType.Number}
+                />
               </div>
-              <Dropdown placeholder="Food Preferences" items={['Vegetarian' , 'Non-vegetarian']} position={PositionType.Down}/>
+              <Dropdown
+                placeholder="Food Preferences"
+                items={["Vegetarian", "Non-vegetarian"]}
+                position={PositionType.Down}
+              />
               {/* <TextField title="Food Preferences" placeholder=""/> */}
-
             </div>
           )}
           <div className="btn_container">
