@@ -8,11 +8,10 @@ import HeroSection from "../components/heroSection/heroSection";
 export const HomePage = () => {
   return (
     <>
-      <Sponsors />
-      <Footer />
       <HeroSection />
       <IntroSection />
       <SpeakersSection />
+      <Sponsors />
     </>
   );
 };

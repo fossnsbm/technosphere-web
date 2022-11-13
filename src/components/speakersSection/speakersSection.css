@@ -10,6 +10,11 @@
     padding: 20px;
 }
 
+.speakers {
+    padding-left: 108px;
+    padding-right: 108px;
+}
+
 .speakers_heading {
     text-transform: uppercase;
     font-weight: 600 !important;
@@ -35,13 +40,13 @@
     margin-bottom: 16px !important;
 }
 
-.speaker_name{
+.speaker_name {
     font-size: 1.2em !important;
     font-weight: 600 !important;
     line-height: 120% !important;
 }
 
-.speaker_job{
+.speaker_job {
     font-size: 0.8em !important;
 }
 
@@ -49,7 +54,7 @@
     padding-bottom: 120px;
 }
 
-.speakers_section{
+.speakers_section {
     background-color: #060527;
 }
 
@@ -57,5 +62,12 @@
     .speakerCard {
         height: 80%;
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 955px) {
+    .speakers {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }

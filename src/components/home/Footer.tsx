@@ -1,8 +1,8 @@
 import { Grid, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import Technosphere from "../assets/logo.svg";
-import FOSSLogo from "../assets/FOSSLogo.png";
-import WIFLogo from "../assets/WIFLogo.png";
+import Technosphere from "../../assets/logo.svg";
+import FOSSLogo from "../../assets/FOSSLogo.png";
+import WIFLogo from "../../assets/WIFLogo.png";
 import { FaHeart } from "react-icons/fa";
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import "./Footer.scss";
@@ -31,8 +31,7 @@ function Footer() {
               className="mobileSize3 footer_logo"
             />
             <p className="intro">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              TECHNOSPHERE 2022 is a technical convention organized by the FOSS Community of NSBM Green University in collaboration with Women in FOSS NSBM.
             </p>
             <div className="footerBottomMargin mobileMargin">
               <Button
