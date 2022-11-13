@@ -5,7 +5,6 @@ import { Typography, Container, Box, Grid, Button } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 
 import hero_logo from "../../assets/logo.svg";
-import arrow from "../../assets/RightArrow.png";
 
 const handleClick = (event: React.MouseEvent<HTMLElement>) => {
   window.location.href = "/test";

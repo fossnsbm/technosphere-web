@@ -4,10 +4,21 @@
   font-family: "Montserrat";
 }
 
+.intro_section{
+  background-color: #060527;
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+
 .flex-grid {
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.intro_logo{
+  height:50px;
 }
 
 .paper-1 {
@@ -78,5 +89,9 @@
     width: 288px !important;
     height: 700px !important;
     overflow: hidden !important;
+  }
+
+  .intro_logo{
+    width: 80%;
   }
 }
