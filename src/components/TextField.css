@@ -31,7 +31,7 @@
   border-width: 2px;
   border-color: #896df932;
 }
-.textf_bg span{
+.textf_bg span {
   position: relative;
 }
 .eye {
@@ -41,13 +41,9 @@
   right: 1%; /* position the left edge of the element at the middle of the parent */
 
   transform: translate(-50%, -50%);
-
-
-
-
 }
 
-.eye img{
+.eye img {
   width: 15px;
   object-fit: cover;
 }

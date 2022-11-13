@@ -1,8 +1,104 @@
 .Hero {
+  position: absolute;
+  width: 80%;
+  height: 39px;
+  left: 108px;
+  top: 211px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 164.02%;
+  /* or 39px */
+
+  text-transform: uppercase;
+
+  /* Blue-2 */
+
+  color: #8566ff;
+}
+
+.Hero_logo {
+  padding-top: 15px;
+}
+
+.hero_text {
+  width: 600px;
+  height: 90px;
+  left: 108px;
+  top: 436px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 164.02%;
+  color: #938fbe;
+  text-transform: none;
+  padding-top: 50px;
+}
+
+.register_btn_hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 32px;
+  gap: 8px;
+  color: #fff;
+  position: absolute;
+  width: 223px;
+  height: 54px;
+  /* left: 108px; */
+  top: 350px;
+
+  /* Blue-2 */
+
+  background: #8566ff;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 14px;
+  line-height: 164.02%;
+  font-family: "Montserrat";
+}
+
+.marquee_section {
+  padding-top: 756px;
+  padding-bottom: 100px;
+}
+
+.mq {
+  font-size: 18px;
+  display: flex;
+}
+
+.mq_txt {
+  padding-left: 60px;
+  text-transform: uppercase;
+  color: #8566ff;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 164.02%;
+}
+
+@media only screen and (max-width: 650px) {
+  .Hero_logo {
+    padding-top: 15px;
+  }
+
+  .Hero_logo img {
+    width: 340px;
+  }
+
+  .Event_date {
+    font-size: 18px;
+  }
+
+  .Hero {
     position: absolute;
     width: 80%;
     height: 39px;
-    left: 108px;
+    left: 30px;
     top: 211px;
     font-style: normal;
     font-weight: 500;
@@ -14,15 +110,11 @@
 
     /* Blue-2 */
 
-    color: #8566FF;
-}
+    color: #8566ff;
+  }
 
-.Hero_logo {
-    padding-top: 15px;
-}
-
-.hero_text {
-    width: 600px;
+  .hero_text {
+    width: 340px;
     height: 90px;
     left: 108px;
     top: 436px;
@@ -30,115 +122,14 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 164.02%;
-    color: #938FBE;
+    color: #938fbe;
     text-transform: none;
-    padding-top: 50px;
+    padding-top: 40px;
+    text-align: justify;
+  }
 
-}
-
-.register_btn_hero {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 32px;
-    gap: 8px;
-    color: #fff;
-    position: absolute;
-    width: 223px;
-    height: 54px;
-    /* left: 108px; */
-    top: 350px;
-
-    /* Blue-2 */
-
-    background: #8566FF;
-    border-radius: 6px;
-    font-style: normal;
-    font-weight: 550;
-    font-size: 14px;
-    line-height: 164.02%;
-    font-family: 'Montserrat';
-}
-
-.marquee_section {
-    padding-top: 756px;
+  .marquee_section {
+    padding-top: 700px;
     padding-bottom: 100px;
-}
-
-.mq {
-    font-size: 18px;
-    display: flex;
-
-}
-
-.mq_txt {
-    padding-left: 60px;
-    text-transform: uppercase;
-    color: #8566FF;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 164.02%;
-
-}
-
-@media only screen and (max-width: 650px) {
-
-    .Hero_logo {
-        padding-top: 15px;
-    }
-
-    .Hero_logo img {
-
-        width: 340px;
-    }
-
-    .Event_date {
-        font-size: 18px;
-    }
-
-    .Hero {
-        position: absolute;
-        width: 80%;
-        height: 39px;
-        left: 30px;
-        top: 211px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 164.02%;
-        /* or 39px */
-
-        text-transform: uppercase;
-
-        /* Blue-2 */
-
-        color: #8566FF;
-    }
-
-    .hero_text {
-        width: 340px;
-        height: 90px;
-        left: 108px;
-        top: 436px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 164.02%;
-        color: #938FBE;
-        text-transform: none;
-        padding-top: 40px;
-        text-align: justify;
-
-    }
-
-    .marquee_section {
-        padding-top: 700px;
-        padding-bottom: 100px;
-    }
-
-
-
+  }
 }
