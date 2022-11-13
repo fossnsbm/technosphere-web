@@ -7,14 +7,15 @@
       rgba(81, 61, 160, 0) -2.77%,
       #513da0 97.39%
     );
-  height: 40px;
+  height: 45px;
   width: 100%;
   margin: 0;
 
   border-radius: 7px;
   border: 1px solid #8566ff32;
-  padding: 0px 10px;
-  font-size: 0.9em;
+  padding: 0px 15px;
+  font-size: 1em;
+  color: #938FBE;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,13 +33,13 @@
 }
 
 p {
-  font-size: 0.7em;
+  font-size: 1em;
   margin-bottom: 4px;
 }
 .dropdown_items {
   z-index: 100;
   padding: 10px 20px;
-  font-size: 0.7em;
+  font-size: 1em;
   margin-top: 10px;
   border-radius: 7px;
   background: linear-gradient(96.38deg, #8566ff -12.62%, #513da0 84.08%);

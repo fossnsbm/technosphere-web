@@ -1,57 +1,116 @@
-import { Box, Typography } from "@mui/material";
+import "../styles/register.scss";
 
-export const RegisterPage = () => {
+import pfp from "../assets/pfp.png";
+
+import upload from "../assets/upload_icon.svg";
+import { useState ,useRef } from "react";
+import CheckBox from "../components/global/CheckBox";
+import TextField, { InputType } from "../components/global/TextField";
+import Dropdown, { PositionType } from "../components/global//Dropdown";
+import HeaderMenus from "../components/headerMenus/headerMenus";
+
+const Register = () => {
+  const [inPerson, setInPerson] = useState(false);
+  const [isRegisterFeatureEnabled, setIsRegisterFeatureEnabled] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: null,
+    email: null,
+    batch: null,
+    phone_guests: null,
+    phone_students: null,
+    food_preference: null,
+  });
+
+  const handleInPersonToggleChange = (_event: React.FormEvent) => {
+    setInPerson(!inPerson);
+  };
+
+  const handleRegisterToggleChange = (_event: React.FormEvent) => {
+    setIsRegisterFeatureEnabled(!isRegisterFeatureEnabled);
+  };
+
   return (
-    <>
-      <Box sx={{ width: "100%", maxWidth: 500 }}>
-        <Typography variant="h1" gutterBottom>
-          h1. Heading
-        </Typography>
-        <Typography variant="h2" gutterBottom>
-          h2. Heading
-        </Typography>
-        <Typography variant="h3" gutterBottom>
-          h3. Heading
-        </Typography>
-        <Typography variant="h4" gutterBottom>
-          h4. Heading
-        </Typography>
-        <Typography variant="h5" gutterBottom>
-          h5. Heading
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          h6. Heading
-        </Typography>
-        <Typography variant="subtitle1" gutterBottom>
-          subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
-        </Typography>
-        <Typography variant="subtitle2" gutterBottom>
-          subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
-        </Typography>
-        <Typography variant="button" display="block" gutterBottom>
-          button text
-        </Typography>
-        <Typography variant="caption" display="block" gutterBottom>
-          caption text
-        </Typography>
-        <Typography variant="overline" display="block" gutterBottom>
-          overline text
-        </Typography>
-      </Box>
-    </>
+    <section className="register">
+      <HeaderMenus/>
+      {/* <div className="grid">
+        <img src={grid} alt="" />
+      </div> */}
+      <div className="register_content">
+        <div className="center">
+          <div className="attendance_toggle">
+            <div className="toggle_para">
+              <CheckBox onChange={handleInPersonToggleChange} />
+              <h5>Will you be able to attend the in-person event?</h5>
+            </div>
+            <p>
+              The in-person event will be held on 02.12.2022 at NSBM Green
+              University premises. This event is only for the NSBM Green
+              University students and if you're a student from another
+              university and willing to participate in the in-person event,
+              please contact us - 071 311 2927
+            </p>
+          </div>
+          <div className="form_data-default">
+            <TextField
+              title="Full Name"
+              placeholder="Thaanu Perera"
+              obscured={false}
+              type={InputType.Text}
+            />
+            {!inPerson && (
+              <TextField
+                title="Phone"
+                placeholder="07X-XXX-XXXX"
+                obscured={false}
+                type={InputType.Number}
+              />
+            )}
+            <TextField
+              title="E-mail"
+              placeholder="username@student.nsbm.ac.lk"
+              obscured={false}
+              type={InputType.Text}
+            />
+          </div>
+          {inPerson && (
+            <div className="form_data-secondary">
+              <div className="row">
+                <Dropdown
+                  placeholder="Batch"
+                  items={[
+                    "19.2",
+                    "20.1",
+                    "20.2",
+                    "20.3",
+                    "21.1",
+                    "22.1",
+                    "22.2",
+                  ]}
+                  position={PositionType.Up}
+                />
+                <TextField
+                  title="Phone"
+                  placeholder=""
+                  obscured={false}
+                  type={InputType.Number}
+                />
+              </div>
+              <Dropdown
+                placeholder="Food Preferences"
+                items={["Vegetarian", "Non-vegetarian"]}
+                position={PositionType.Down}
+              />
+              {/* <TextField title="Food Preferences" placeholder=""/> */}
+            </div>
+          )}
+          <div className="btn_container">
+            <button className="btn">Register</button>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
+
+export default Register;

@@ -1,7 +1,7 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 23px;
+  padding-left: 30px;
   cursor: pointer;
 
   -webkit-user-select: none;
@@ -29,8 +29,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15px;
-  width: 15px;
+  height: 18px;
+  width: 18px;
   background-color: transparent;
   border: 1px solid #8566ff;
 }
@@ -59,10 +59,10 @@
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 5px;
-  top: 4px;
-  width: 3px;
-  height: 5px;
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 8px;
   border: solid white;
   border-width: 0 1px 1px 0;
   -webkit-transform: rotate(45deg);
