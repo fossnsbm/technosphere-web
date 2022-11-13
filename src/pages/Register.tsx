@@ -54,23 +54,29 @@ const Register = () => {
           <div className="form_data-default">
             <TextField
               title="Full Name"
-              placeholder="Thaanu Perera"
+              placeholder=""
+              obscured={false}
+              type={InputType.Text}
+            />
+            <TextField
+              title="E-mail"
+              placeholder="username@student.nsbm.ac.lk"
               obscured={false}
               type={InputType.Text}
             />
             {!inPerson && (
               <TextField
                 title="Phone"
-                placeholder="07X-XXX-XXXX"
+                placeholder=""
                 obscured={false}
                 type={InputType.Number}
               />
             )}
             <TextField
-              title="E-mail"
-              placeholder="username@student.nsbm.ac.lk"
-              obscured={false}
-              type={InputType.Text}
+                title="Password"
+                placeholder=""
+                obscured={true}
+                type={InputType.Text}
             />
           </div>
           {inPerson && (

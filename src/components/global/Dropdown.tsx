@@ -18,7 +18,7 @@ const Dropdown = ({ placeholder, items }: props) => {
     <div className="dropdown_bg" onClick={() => setActive(!active)}>
       <p>{placeholder}</p>
       <div className="dropdown">
-        <p>{selectedItem ? selectedItem : `Select ${placeholder}`}</p>{" "}
+        <p>{selectedItem ? selectedItem : ``}</p>{" "}
         <img
           src={down}
           alt=""
