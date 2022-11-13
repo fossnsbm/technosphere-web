@@ -19,7 +19,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <HeaderMenus />
+        {/* <HeaderMenus /> */}
         <div>{children}</div>
         <Footer />
       </ThemeProvider>

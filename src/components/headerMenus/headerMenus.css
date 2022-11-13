@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 899px) {
   .nav_toolbar {
-    padding-top: 0 !important;
+    margin-top: 2%;
   }
 
   .Nav_logo {

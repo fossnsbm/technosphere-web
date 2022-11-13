@@ -3,11 +3,12 @@ import "./heroSection.css";
 import Marquee from "react-fast-marquee";
 import { Typography, Container, Box, Grid, Button } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
+import HeaderMenus from "../headerMenus/headerMenus";
 
 import hero_logo from "../../assets/logo.svg";
 
 const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-  window.location.href = "/test";
+    window.location.href = "/test";
 };
 const HeroSection: React.FC<{}> = () => {
     return (
@@ -15,6 +16,7 @@ const HeroSection: React.FC<{}> = () => {
             <Box className='Background'>
                 <Box className='Background_sphere'></Box>
             </Box>
+            <HeaderMenus />
             <Container>
                 <Grid className='Hero'>
                     <Grid>

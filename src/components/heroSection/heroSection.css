@@ -1,6 +1,6 @@
 .Hero {
-    height: 100vh;
-    padding-top: 18%;
+    height: calc(100vh - 100px);
+    padding-top: 14%;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
