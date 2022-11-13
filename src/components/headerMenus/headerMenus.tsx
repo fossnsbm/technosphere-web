@@ -14,8 +14,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { fontFamily, padding, textAlign } from "@mui/system";
-import vector from "../../assets/Vector.png";
-import arrow from "../../assets/RightArrow.png";
+import logo from "../../assets/logo.svg";
+import ArrowForward from '@mui/icons-material/ArrowForward';
 
 const pages = [
   { text: "ABOUT", href: "#" },
@@ -55,12 +55,15 @@ function HeaderMenus() {
   return (
     <AppBar
       position="static"
+      component="nav"
       style={{ background: "transparent", boxShadow: "none" }}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ paddingLeft: "5%", paddingTop: "2%" }}>
-          <img src={vector} alt="Hero_Logo" className="Nav_logo" />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+      <Container>
+        <Toolbar disableGutters sx={{ paddingTop: "2%" }} className="nav_toolbar">
+          <Box component="div" className="nav_logo_div">
+            <Box component="img" src={logo} alt="Hero_Logo" className="Nav_logo" />
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: "end" }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -68,10 +71,6 @@ function HeaderMenus() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{
-                paddingLeft: 12,
-                paddingTop: 5,
-              }}
             >
               <MenuIcon />
             </IconButton>
@@ -104,26 +103,8 @@ function HeaderMenus() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          ></Typography>
           <Box
             sx={{
-              paddingLeft: 50,
-              flexGrow: 1,
               display: { xs: "none", md: "flex" },
             }}
           >
@@ -133,26 +114,29 @@ function HeaderMenus() {
                 href={page.href}
                 onClick={handleCloseNavMenu}
                 sx={{
-                  fontSize: 18,
+                  fontSize: 16,
                   my: 2,
                   color: "white",
                   display: "block",
-                  paddingLeft: 3,
-                  paddingRight: 3,
+                  marginLeft: 2,
+                  marginRight: 2,
                 }}
               >
                 {page.text}
               </Button>
             ))}
-            <button className="btn_reg" onClick={handleClick}>
-              REGISTER NOW{" "}
-              <img
-                style={{ paddingLeft: 2, paddingTop: 2 }}
-                src={arrow}
-                alt="arrow"
-                className="right_arrow"
-              />
-            </button>
+            <Button className="btn_reg" variant="outlined" onClick={handleClick} endIcon={<ArrowForward />}
+              sx={{
+                fontSize: 16,
+                my: 2,
+                color: "white",
+                paddingTop: 0,
+                marginLeft: 2,
+                marginRight: 2,
+              }}
+            >
+              REGISTER NOW
+            </Button>
           </Box>
         </Toolbar>
       </Container>

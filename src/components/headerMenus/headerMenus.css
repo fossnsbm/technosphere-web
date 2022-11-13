@@ -1,33 +1,39 @@
 .Nav_logo {
-  width: 197px;
   height: 26px;
-  text-align: left;
+}
+
+.nav_logo_div {
+  flex-grow: 1;
 }
 
 .div_img {
   text-align: left;
 }
 
+.MuiMenu-paper{
+  background-color: #060527 !important;
+}
+
 .btn_reg {
-  width: 200px;
-  height: 48px;
-  top: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #fff;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 600;
-  border: 2px solid #ffffff;
-  border-radius: 6px;
-  background-color: transparent;
-  margin-top: 15px;
-  white-space: nowrap;
+  height: 44px !important;
+  color: #ffff !important;
+  font-size: 16 !important;
+  border: 2px solid #ffffff !important;
+  padding: 20px 10px !important;
 }
 
 @media only screen and (max-width: 650px) {
   .Nav_logo {
     margin-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .nav_toolbar {
+    padding-top: 0 !important;
+  }
+
+  .Nav_logo {
+    margin-top: 4%;
   }
 }
