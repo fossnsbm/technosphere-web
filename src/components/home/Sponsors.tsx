@@ -8,34 +8,36 @@ import ball from '../../assets/ball.svg'
 const Sponsors = () => {
   return (
     <section className="sponsors">
-      <div className="heading">
-        <Typography variant="h3" className="sponsors_heading">Sponsors</Typography>
-        <Typography className="sponsors_tagline">Meet our sponsors</Typography>
-      </div>
-      <div className="sponsor_cards">
-        <div className="card_top-section">
-          <SponsorCard text="Platinum Sponsor" logo={ifonix} />
-          <SponsorCard text="Gold Sponsor" logo={ifonix} />
-          <SponsorCard text="Silver Sponsor" logo={codezilla} />
+      <Container>
+        <div className="heading">
+          <Typography variant="h3" className="sponsors_heading">Sponsors</Typography>
+          <Typography className="sponsors_tagline">Meet our sponsors</Typography>
         </div>
-        <div className="card_bottom-section">
-          <div className="co_sponsor sponsor_bottom">
-            <p>Co sponsor</p>
-            <div className="logo"></div>
+        <div className="sponsor_cards">
+          <div className="card_top-section">
+            <SponsorCard text="Platinum Sponsor" logo={ifonix} />
+            <SponsorCard text="Gold Sponsor" logo={ifonix} />
+            <SponsorCard text="Silver Sponsor" logo={codezilla} />
           </div>
-          <div className="other_sponsors">
-            <div className=" sponsor_bottom b-none">
-              <p>Learning Partner</p>
+          <div className="card_bottom-section">
+            <div className="co_sponsor sponsor_bottom">
+              <p>Co sponsor</p>
               <div className="logo"></div>
             </div>
-            <div className=" sponsor_bottom b-none">
-              <p>Digital Media Partner</p>
-              <div className="logo"></div>
+            <div className="other_sponsors">
+              <div className=" sponsor_bottom b-none">
+                <p>Learning Partner</p>
+                <div className="logo"></div>
+              </div>
+              <div className=" sponsor_bottom b-none">
+                <p>Digital Media Partner</p>
+                <div className="logo"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <img src={ball} alt="" className="ball" />
+        <img src={ball} alt="" className="ball" />
+      </Container>
     </section>
   );
 };
