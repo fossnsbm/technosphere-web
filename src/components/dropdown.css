@@ -1,5 +1,5 @@
 .dropdown {
-    cursor: pointer;
+  cursor: pointer;
   background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
     linear-gradient(
       89.81deg,
@@ -18,12 +18,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
-.dropdown img{
-    object-fit: cover;
-    height:20px;
-    transition:  all 0.5s ease;
+.dropdown img {
+  object-fit: cover;
+  height: 20px;
+  transition: all 0.5s ease;
 }
 
 .dropdown_bg {

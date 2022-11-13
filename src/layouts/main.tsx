@@ -2,9 +2,7 @@ import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import HeaderMenus from "../components/headerMenus/headerMenus";
-import HeroSection from "../components/heroSection/heroSection";
 import Footer from "../components/Footer";
-import Agenda from "../components/agenda/agenda";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const theme = createTheme({
@@ -13,9 +11,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     },
 
     typography: {
-      fontFamily: [
-        "Montserrat",
-      ].join(","),
+      fontFamily: ["Montserrat"].join(","),
     },
   });
 
@@ -23,9 +19,9 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <HeroSection />  
+        <HeaderMenus />
         <div>{children}</div>
-        <Footer/>
+        <Footer />
       </ThemeProvider>
     </>
   );

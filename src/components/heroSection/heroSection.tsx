@@ -1,5 +1,5 @@
-import React from 'react'
-import './heroSection.css'
+import React from "react";
+import "./heroSection.css";
 import Marquee from "react-fast-marquee";
 import { Typography, Container, Box, Grid, Button } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
@@ -8,8 +8,8 @@ import hero_logo from "../../assets/logo.svg";
 import arrow from "../../assets/RightArrow.png";
 
 const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    window.location.href = '/test';
-}
+  window.location.href = "/test";
+};
 const HeroSection: React.FC<{}> = () => {
     return (
         <>

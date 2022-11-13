@@ -1,35 +1,33 @@
 .Nav_logo {
-
-    width: 197px;
-    height: 26px;
-    text-align: left;
+  width: 197px;
+  height: 26px;
+  text-align: left;
 }
 
 .div_img {
-    text-align: left;
+  text-align: left;
 }
 
 .btn_reg {
-    width: 200px;
-    height: 48px;
-    top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #fff;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid #FFFFFF;
-    border-radius: 6px;
-    background-color: transparent;
-    margin-top: 15px;
-    white-space: nowrap;
+  width: 200px;
+  height: 48px;
+  top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  background-color: transparent;
+  margin-top: 15px;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 650px) {
-    .Nav_logo {
-        margin-top: 10%;
-    }
-
+  .Nav_logo {
+    margin-top: 10%;
+  }
 }

@@ -1,11 +1,11 @@
-import './checkmark.css'
-import '../assets/done.svg'
-import { ChangeEventHandler } from 'react';
+import "./checkmark.css";
+import "../assets/done.svg";
+import { ChangeEventHandler } from "react";
 
 interface AppState {
   onChange: any;
 }
-const CheckBox = ({onChange}: AppState) => {
+const CheckBox = ({ onChange }: AppState) => {
   return (
     <>
       <label className="container">

@@ -43,9 +43,8 @@
 }
 
 .mq {
-    font-size: 18px;
-    display: flex;
-
+  font-size: 18px;
+  display: flex;
 }
 
 .mq_txt {
@@ -86,6 +85,9 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .Hero_logo {
+    padding-top: 15px;
+  }
 
     .Hero_logo {
         padding-top: 15px;
@@ -111,9 +113,9 @@
 
         text-transform: uppercase;
 
-
-        color: #8566FF;
-    }
+  .Event_date {
+    font-size: 18px;
+  }
 
     .hero_text {
         width: 90%;

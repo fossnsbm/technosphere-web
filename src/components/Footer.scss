@@ -1,138 +1,138 @@
 .footerPadding {
-    padding-right: 108px;
-    padding-left: 108px;
+  padding-right: 108px;
+  padding-left: 108px;
 }
 
 .footer {
-    background-color: #060527;
-    padding-top: 85px;
-    background-image: url("../assets/grid.png");
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: 160% 80%;
-    background-position-y:50px;
+  background-color: #060527;
+  padding-top: 85px;
+  background-image: url("../assets/grid.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160% 80%;
+  background-position-y: 50px;
 }
 
 .link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.13em;
-    font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 1.13em;
+  font-weight: 600;
 }
 
 .footerBottomMargin {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .LinkList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro {
-    color: #938FBE;
-    font-size: 1em;
-    margin-bottom: 28px;
+  color: #938fbe;
+  font-size: 1em;
+  margin-bottom: 28px;
 }
 
 .FooterRight {
-    text-align: right;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 .Logos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .LogoImg {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .SocialLogo {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .copyright {
-    background: linear-gradient(118.92deg, #0E0C33 100%, #1B0E40 100%);    
+  background: linear-gradient(118.92deg, #0e0c33 100%, #1b0e40 100%);
 }
 
 .copyrightText {
-    opacity: 0.5;
-    font-size: 0.8em;
+  opacity: 0.5;
+  font-size: 0.8em;
 }
 
 .heart {
-    height: 13px !important;
-    animation: pound .35s infinite alternate !important;
-    -webkit-animation: pound .35s infinite alternate !important;
+  height: 13px !important;
+  animation: pound 0.35s infinite alternate !important;
+  -webkit-animation: pound 0.35s infinite alternate !important;
 }
 
 @-webkit-keyframes pound {
-    to {
-        transform: scale(1.1);
-    }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes pound {
-    to {
-        transform: scale(1.1);
-    }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 @media only screen and (max-width: 900px) {
-    .link {
-        margin-bottom: 30px;
-    }
+  .link {
+    margin-bottom: 30px;
+  }
 
-    .CenterAlign {
-        text-align: center;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    .leftAlign{
-        text-align: left;
-    }
+  .CenterAlign {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .leftAlign {
+    text-align: left;
+  }
 
-    .SocialLogo {
-        margin-top: 10px;
-        margin-left: 2px;
-    }
+  .SocialLogo {
+    margin-top: 10px;
+    margin-left: 2px;
+  }
 
-    .footerPadding {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
+  .footerPadding {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 
-    .mobileSize3 {
-        width: 270px;
-        height: auto;
-    }
+  .mobileSize3 {
+    width: 270px;
+    height: auto;
+  }
 
-    .copyright {
-        margin-top: 5px;
-    }
+  .copyright {
+    margin-top: 5px;
+  }
 
-    .intro {
-        margin-top: 0px;
-    }
+  .intro {
+    margin-top: 0px;
+  }
 
-    .mobileMargin {
-        margin-bottom: 50px;
-    }
-    
-    .footer{
-        background-size: 250% 85%;
-        background-position-y:50px;
-    }
+  .mobileMargin {
+    margin-bottom: 50px;
+  }
 
-    //active bellow commented codes if need to change the font size on desktop view(maxWidth>60)
-    /*.link {
+  .footer {
+    background-size: 250% 85%;
+    background-position-y: 50px;
+  }
+
+  //active bellow commented codes if need to change the font size on desktop view(maxWidth>60)
+  /*.link {
         font-size: 1.13em;
     }
 
@@ -145,15 +145,14 @@
     }*/
 }
 
-
 @media only screen and (max-width: 600px) {
-    .mobileSize1 {
-        width: 35px;
-        height: auto;
-    }
+  .mobileSize1 {
+    width: 35px;
+    height: auto;
+  }
 
-    .mobileSize2 {
-        width: 70px;
-        height: auto;
-    }
+  .mobileSize2 {
+    width: 70px;
+    height: auto;
+  }
 }
