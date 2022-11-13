@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./dropdown.css";
-import down from "../assets/dowm.svg";
+import down from "../../assets/dowm.svg";
 
 export enum PositionType {
   Up,

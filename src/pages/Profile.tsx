@@ -2,10 +2,11 @@ import "../styles/profile.scss";
 
 import pfp from "../assets/pfp.png";
 
-import { useState } from "react";
-import CheckBox from "../components/CheckBox";
-import TextField, { InputType } from "../components/TextField";
-import Dropdown, { PositionType } from "../components/Dropdown";
+import upload from "../assets/upload_icon.svg";
+import { useState ,useRef } from "react";
+import CheckBox from "../components/global/CheckBox";
+import TextField, { InputType } from "../components/global/TextField";
+import Dropdown, { PositionType } from "../components/global//Dropdown";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);

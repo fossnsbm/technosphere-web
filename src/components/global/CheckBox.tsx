@@ -1,6 +1,4 @@
-import "./checkmark.css";
-import "../assets/done.svg";
-import { ChangeEventHandler } from "react";
+import './checkmark.css'
 
 interface AppState {
   onChange: any;

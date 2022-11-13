@@ -19,9 +19,7 @@ export const IntroSection = () => {
   return (
     <>
       <div className="intro_section">
-        <Container>
           <Box component="img" className='intro_logo' src={hero_logo} />
-        </Container>
         <div className="flex-grid">
           <div>
             <Box
