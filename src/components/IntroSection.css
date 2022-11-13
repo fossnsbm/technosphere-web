@@ -1,90 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap");
 
 * {
-    font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .flex-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .paper-1 {
-    background: linear-gradient(118.92deg, #0E0C33 0%, #1B0E40 100%) !important;
-    border-radius: 15px !important;
-    /* font-family: 'Montserrat'; */
-    font-weight: bold;
-    padding-left: 30px;
-    padding-top: 36px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+  background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%) !important;
+  border-radius: 15px !important;
+  /* font-family: 'Montserrat'; */
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 36px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .left {
-    background-image: url('../assets/webinar.png') !important;
+  background-image: url("../assets/webinar.png") !important;
 }
 
 .right {
-    background-image: url('../assets/inperson.png') !important;
+  background-image: url("../assets/inperson.png") !important;
 }
 
-
-
 .date {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .card-heading {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .card-content {
-    font-size: 16px;
-    font-weight: normal;
-    
-
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .main-card-heading {
-    font-size: 24px;
-    font-weight: bold;
-    width: 422px;
-    color: #7451FF;
-    text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  width: 422px;
+  color: #7451ff;
+  text-transform: uppercase;
 }
 
 .main-card-content {
-    font-size: 18px;
-    font-weight: normal;
-    color: #938FBE;
+  font-size: 18px;
+  font-weight: normal;
+  color: #938fbe;
 }
-
 
 /* Responsiveness */
 
 @media (max-width: 608px) {
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    .flex-grid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-
-
-    .main-card {
-        width: 288px !important;
-        height: 700px !important;
-        overflow: hidden !important;
-    }
+  .main-card {
+    width: 288px !important;
+    height: 700px !important;
+    overflow: hidden !important;
+  }
 }

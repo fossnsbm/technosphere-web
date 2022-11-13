@@ -1,6 +1,6 @@
 import MainLayout from "./layouts/main";
 import { HomePage } from "./pages/Home";
-import { RegisterPage }  from "./pages/Register";
+import { RegisterPage } from "./pages/Register";
 import { createBrowserRouter } from "react-router-dom";
 import Profile from "./pages/Profile";
 
@@ -31,5 +31,4 @@ export const router = createBrowserRouter([
       </MainLayout>
     ),
   },
-
 ]);
