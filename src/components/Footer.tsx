@@ -1,10 +1,10 @@
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import Technosphere from "../assets/Technosphere.png";
+import Technosphere from "../assets/logo.svg";
 import FOSSLogo from "../assets/FOSSLogo.png";
 import WIFLogo from "../assets/WIFLogo.png";
-import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
 import { FaHeart } from "react-icons/fa";
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import "./Footer.scss";
 import {
   Facebook,
@@ -17,7 +17,7 @@ import {
 function Footer() {
   return (
     <div className="footer">
-      <div className="footerPadding">
+      <div className="footerPadding footerContent">
         <Grid
           container
           direction="row"
@@ -28,7 +28,7 @@ function Footer() {
             <img
               src={Technosphere}
               alt="Technosphere Logo"
-              className="mobileSize3"
+              className="mobileSize3 footer_logo"
             />
             <p className="intro">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -39,8 +39,13 @@ function Footer() {
                 variant="outlined"
                 href="#outlined-buttons"
                 color="inherit"
+                endIcon={<ArrowForward />}
+                sx={{
+                  padding: '8px 18px',
+                  fontWeight: 600
+                }}
               >
-                REGISTER NOW <ArrowRightAltRoundedIcon />
+                REGISTER NOW
               </Button>
             </div>
           </Grid>
@@ -86,7 +91,7 @@ function Footer() {
             className="FooterRight"
           >
             <div className="leftAlign">
-              Organized by
+              <Typography className="organize_text">Organized by</Typography>
               <div className="Logos">
                 <img
                   src={FOSSLogo}
@@ -102,7 +107,7 @@ function Footer() {
             </div>
 
             <div>
-              Follow us on
+              <Typography className="follow_text">Follow us on</Typography>
               <div className="footerBottomMargin">
                 <a href="https://www.facebook.com/foss.nsbm/" target={"_blank"}>
                   <Facebook style={{ color: "white" }} className="SocialLogo" />
@@ -148,7 +153,7 @@ function Footer() {
           </p>
 
           <p className="copyrightText CenterAlign">
-            &lt;/&gt; WITH <FaHeart color={"red"} className="heart" /> BY THE
+            &lt;/&gt; WITH <FaHeart className="heart" /> BY THE
             FOSS COMMUNITY OF NSBM
           </p>
         </Grid>

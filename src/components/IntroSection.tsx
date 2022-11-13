@@ -60,6 +60,10 @@ export const IntroSection = () => {
                   href="https://www.google.lk"
                   color="inherit"
                   endIcon={<ArrowForward />}
+                  sx={{
+                    padding: '8px 18px',
+                    fontWeight: 600
+                  }}
                 >
                   REGISTER NOW
                 </Button>

@@ -3,14 +3,22 @@
   padding-left: 108px;
 }
 
+.footerContent{
+  padding-bottom: 40px;
+}
+
 .footer {
   background-color: #060527;
-  padding-top: 85px;
+  padding-top: 20px;
   background-image: url("../assets/grid.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 160% 80%;
-  background-position-y: 50px;
+}
+
+.footer_logo{
+  height:38px;
+  margin-bottom: 12px;
 }
 
 .link {
@@ -55,11 +63,14 @@
 }
 
 .SocialLogo {
-  margin-left: 8px;
+  margin-left: 20px;
 }
 
 .copyright {
   background: linear-gradient(118.92deg, #0e0c33 100%, #1b0e40 100%);
+  padding-top: 12px;
+  padding-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .copyrightText {
@@ -71,6 +82,17 @@
   height: 13px !important;
   animation: pound 0.35s infinite alternate !important;
   -webkit-animation: pound 0.35s infinite alternate !important;
+}
+
+.organize_text{
+  text-transform: uppercase;
+  padding-bottom: 14px;
+}
+
+.follow_text{
+  text-transform: uppercase;
+  padding-bottom: 14px;
+  padding-top: 40px;
 }
 
 @-webkit-keyframes pound {
@@ -101,7 +123,7 @@
 
   .SocialLogo {
     margin-top: 10px;
-    margin-left: 2px;
+    margin-left: 8px;
   }
 
   .footerPadding {
@@ -129,6 +151,15 @@
   .footer {
     background-size: 250% 85%;
     background-position-y: 50px;
+  }
+  
+  .follow_text{
+    padding-top: 0px;
+  }
+
+  .footer_logo{
+    height: auto;
+    width: 80%;
   }
 
   //active bellow commented codes if need to change the font size on desktop view(maxWidth>60)
