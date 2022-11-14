@@ -1,0 +1,82 @@
+.agenda_card {
+  padding: 30px;
+  margin-bottom: 38px;
+  border-radius: 15px !important;
+  background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%) !important;
+
+  .date {
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1em;
+  }
+
+  .month {
+    font-size: 1.1em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    border: 0.5px solid #8566ff;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .horz_divider {
+    border: 0.5px solid #8566ff;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .time {
+    color: #a19db0;
+    font-size: 1.2em;
+    padding-top: 4px;
+  }
+
+  .content {
+    color: #938fbe;
+    font-size: 1em;
+    padding-top: 4px;
+    padding-bottom: 0px;
+  }
+
+  .speaker {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .job {
+    color: #a19db0;
+  }
+
+  .company {
+    color: #a19db0;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 599px) {
+  .agenda_card {
+    .month {
+      padding-bottom: 0px;
+    }
+
+    .content {
+      padding-bottom: 24px;
+    }
+  }
+}

@@ -8,14 +8,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { fontFamily, padding, textAlign } from "@mui/system";
 import logo from "../../assets/logo.svg";
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 
 const pages = [
   { text: "ABOUT", href: "#" },
@@ -48,10 +45,6 @@ function HeaderMenus() {
     setAnchorElUser(null);
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    window.location.href = "/test";
-  };
-
   return (
     <AppBar
       position="static"
@@ -59,11 +52,26 @@ function HeaderMenus() {
       style={{ background: "transparent", boxShadow: "none" }}
     >
       <Container>
-        <Toolbar disableGutters sx={{ paddingTop: "2%" }} className="nav_toolbar">
+        <Toolbar
+          disableGutters
+          sx={{ paddingTop: "2%" }}
+          className="nav_toolbar"
+        >
           <Box component="div" className="nav_logo_div">
-            <Box component="img" src={logo} alt="Hero_Logo" className="Nav_logo" />
+            <Box
+              component="img"
+              src={logo}
+              alt="Hero_Logo"
+              className="Nav_logo"
+            />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: "end" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "end",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -125,7 +133,12 @@ function HeaderMenus() {
                 {page.text}
               </Button>
             ))}
-            <Button className="btn_reg" variant="outlined" onClick={handleClick} endIcon={<ArrowForward />}
+            <Button
+              className="btn_reg"
+              variant="outlined"
+              component={Link}
+              to="/register"
+              endIcon={<ArrowForward />}
               sx={{
                 fontSize: 16,
                 my: 2,

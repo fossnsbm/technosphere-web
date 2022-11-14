@@ -6,19 +6,26 @@ export enum PositionType {
   Up,
   Down,
 }
-interface props {
+interface props<T> {
   placeholder: string;
   position: PositionType;
   items: string[];
+  selectedItem: T;
+  setSelectedItem: (item: T) => void;
 }
-const Dropdown = ({ placeholder, items }: props) => {
+const Dropdown = <T extends String>({
+  placeholder,
+  items,
+  selectedItem,
+  setSelectedItem,
+}: props<T>) => {
   const [active, setActive] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+
   return (
     <div className="dropdown_bg" onClick={() => setActive(!active)}>
       <p>{placeholder}</p>
       <div className="dropdown">
-        <p>{selectedItem ? selectedItem : ``}</p>{" "}
+        <p>{selectedItem ? selectedItem : ""}</p>
         <img
           src={down}
           alt=""
@@ -28,7 +35,7 @@ const Dropdown = ({ placeholder, items }: props) => {
       {active && (
         <div className="dropdown_items">
           <ul>
-            {items.map((x) => (
+            {items.map((x: any) => (
               <li onClick={() => setSelectedItem(x)}>{x}</li>
             ))}
           </ul>

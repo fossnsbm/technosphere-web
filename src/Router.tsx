@@ -1,6 +1,6 @@
 import MainLayout from "./layouts/main";
 import { HomePage } from "./pages/Home";
-import  Register from "./pages/Register";
+import Register from "./pages/Register";
 import { createBrowserRouter } from "react-router-dom";
 import Profile from "./pages/Profile";
 
