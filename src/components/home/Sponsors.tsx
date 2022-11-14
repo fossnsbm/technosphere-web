@@ -1,17 +1,21 @@
 import "./sponsor.scss";
-import ifonix from '../../assets/ifonix.svg'
-import codezilla from '../../assets/codezilla.png'
-import { Typography, Container, Box, Grid, Button } from '@mui/material';
+import ifonix from "../../assets/ifonix.svg";
+import codezilla from "../../assets/codezilla.png";
+import { Typography, Container, Box, Grid, Button } from "@mui/material";
 
-import ball from '../../assets/ball.svg'
+import ball from "../../assets/ball.svg";
 
 const Sponsors = () => {
   return (
     <section className="sponsors">
       <Container>
         <div className="heading">
-          <Typography variant="h3" className="sponsors_heading">Sponsors</Typography>
-          <Typography className="sponsors_tagline">Meet our sponsors</Typography>
+          <Typography variant="h3" className="sponsors_heading">
+            Sponsors
+          </Typography>
+          <Typography className="sponsors_tagline">
+            Meet our sponsors
+          </Typography>
         </div>
         <div className="sponsor_cards">
           <div className="card_top-section">
@@ -45,14 +49,16 @@ const Sponsors = () => {
 export default Sponsors;
 
 interface CardProps {
-  text: string,
-  logo: string
+  text: string;
+  logo: string;
 }
 const SponsorCard = ({ logo, text }: CardProps) => {
   return (
     <div className="sponsor_card_container">
       <p>{text}</p>
-      <div className="sponsor_card"><img src={logo} alt="" /></div>
+      <div className="sponsor_card">
+        <img src={logo} alt="" />
+      </div>
     </div>
   );
 };
