@@ -7,11 +7,10 @@ import HeaderMenus from "../components/headerMenus/headerMenus";
 import { Formik } from "formik";
 
 const Register = () => {
-
-  
   const [inPerson, setInPerson] = useState(false);
   const [batch, setBatch] = useState<string>("20.1");
   const [foodPreference, setFoodPreference] = useState<string>("Vegetarian");
+  var numericRegex = new RegExp("(?=.*[0-9])");
 
   return (
     <section className="register">
@@ -33,12 +32,19 @@ const Register = () => {
           </div>
 
           <Formik
-            initialValues={{ email: "", password: "", fullName: "", phone: "" }}
+            initialValues={{
+              email: "",
+              password: "",
+              fullName: "",
+              phone: "",
+              guest_phone: "",
+            }}
             validate={(values: {
               email: string;
               password: string;
               fullName: string;
               phone: string;
+              guest_phone: string;
               batch?: string;
               food?: string;
               isComing?: boolean;
@@ -46,11 +52,30 @@ const Register = () => {
               const errors: any = {};
 
               if (!values.email) {
-                errors.email = "Required";
-              } else if (
+                errors.email = "This filed is Required";
+              } else if ( !inPerson &&
                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
               ) {
                 errors.email = "Invalid email address";
+              }
+              if (!values.fullName) {
+                errors.fullName = "This filed is required";
+              }
+              if (!inPerson && !values.phone) {
+                errors.phone = "This filed is required";
+              }
+              if (inPerson && !values.guest_phone) {
+                errors.guest_phone = "This filed is required";
+              }
+              if (!values.password) {
+                errors.password = "This filed is required";
+              }
+              else if (values.password.length < 4) {
+                errors.password = "Password is too short"
+              }
+              else if (!numericRegex.test(values.password)) {
+                errors.password = "Password must contain a number"
+                
               }
 
               return errors;
@@ -59,6 +84,7 @@ const Register = () => {
               values.batch = batch;
               values.food = foodPreference;
               values.isComing = inPerson;
+              values.email = !inPerson ? values.email : `${values.email}@student.nsbm.ac.lk`
 
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -84,6 +110,7 @@ const Register = () => {
                   name="fullName"
                   value={values.fullName}
                   onChange={handleChange}
+                  errorText={errors.fullName}
                   error={touched.fullName && Boolean(errors.fullName)}
                   helperText={touched.fullName && errors.fullName}
                   placeholder={"Full Name"}
@@ -92,16 +119,18 @@ const Register = () => {
                 <TextField
                   title="Email"
                   name="email"
+                  errorText={errors.email}
                   onChange={handleChange}
-                  type = {inPerson ? InputType.Email : InputType.GuestEmail}
+                  type={inPerson ? InputType.Email : InputType.GuestEmail}
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
-                  placeholder={inPerson ? "username" : "your email"}
+                  placeholder={inPerson ? "NSBM username" : "your email address"}
                   value={values.email}
                 />
 
                 {!inPerson && (
                   <TextField
+                    errorText={errors.phone}
                     title="Phone"
                     placeholder=""
                     name="phone"
@@ -115,6 +144,7 @@ const Register = () => {
                 )}
 
                 <TextField
+                  errorText={errors.password}
                   title="Password"
                   onChange={handleChange}
                   name="password"
@@ -144,15 +174,18 @@ const Register = () => {
                         position={PositionType.Up}
                       />
                       <TextField
+                        errorText={errors.guest_phone}
                         title="Phone"
-                        name="phone"
+                        name="guest_phone"
                         placeholder=""
                         obscured={false}
                         type={InputType.Number}
                         onChange={handleChange}
-                        error={touched.phone && Boolean(errors.phone)}
-                        helperText={touched.phone && errors.phone}
-                        value={values.phone}
+                        error={
+                          touched.guest_phone && Boolean(errors.guest_phone)
+                        }
+                        helperText={touched.guest_phone && errors.guest_phone}
+                        value={values.guest_phone}
                       />
                     </div>
                     <Dropdown

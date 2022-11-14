@@ -5,8 +5,8 @@ import { ChangeEvent, useState } from "react";
 export enum InputType {
   Number = "number",
   Text = "text",
-  GuestEmail = "",
-  Email = "email",
+  GuestEmail = "email",
+  Email = "text",
 }
 
 interface AppState {
@@ -14,6 +14,7 @@ interface AppState {
   obscured?: boolean;
   type?: InputType;
   placeholder: string;
+  errorText: string | undefined;
   value?: string;
   error?: boolean | undefined;
   name?: string;
@@ -31,6 +32,7 @@ const TextField = ({
   type,
   obscured,
   error,
+  errorText,
   value,
   name,
   onChange,
@@ -40,7 +42,7 @@ const TextField = ({
     <div className="textf_bg">
       <div className="label-row">
         <p>{title}</p>
-        {error && <h6>This field is required</h6>}
+        {error && <h6>{errorText}</h6>}
       </div>
       <span>
         {type === InputType.Email && (
