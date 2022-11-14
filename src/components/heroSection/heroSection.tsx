@@ -29,7 +29,7 @@ const HeroSection: React.FC<{}> = () => {
                     </Grid>
                     <Grid>
                         <Typography className='hero_text'>
-                            TECHNOSPHERE 2022 is a technical convention organized by the FOSS Community of NSBM Green University in collaboration with Women in FOSS NSBM.<br />This would pioneer a new generation of technophiles!
+                            TECHNOSPHERE 2022 is a technical convention organized by the FOSS Community of NSBM Green University in collaboration with Women in FOSS NSBM.<br /><br/>This would pioneer a new generation of technophiles!
                         </Typography>
                     </Grid>
                     <Box>
