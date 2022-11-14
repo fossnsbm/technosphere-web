@@ -41,7 +41,7 @@ const Profile = () => {
               <img src={pfp} alt="" />
             </div>
             <div className="photo_upload_container">
-              <button className="btn">change profile photo</button>
+              <button className="btn">change photo</button>
 
               {/* <span className="btn btn_upload">
                 <p>update photo</p>
@@ -62,7 +62,7 @@ const Profile = () => {
             <p>
               The in-person event will be held on 02.12.2022 at NSBM Green
               University premises. This event is only for the NSBM Green
-              University students and if you’re a student from another
+              University students and if you're a student from another
               university and willing to participate in the in-person event,
               please contact us - 077 329 8319
             </p>
