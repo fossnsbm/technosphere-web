@@ -93,9 +93,10 @@ const Register = () => {
                   title="Email"
                   name="email"
                   onChange={handleChange}
+                  type = {inPerson ? InputType.Email : InputType.GuestEmail}
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
-                  placeholder="username@student.nsbm.ac.lk"
+                  placeholder={inPerson ? "username" : "your email"}
                   value={values.email}
                 />
 

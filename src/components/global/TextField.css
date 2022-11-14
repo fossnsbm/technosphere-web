@@ -7,6 +7,19 @@
   font-size: 1em;
   margin-bottom: 4px;
 }
+ .label-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+
+}
+
+.label-row h6{
+  
+  color: rgb(247, 99, 99);
+  font-weight: 400;
+}
 .textf_bg input {
   color: white;
   padding: 0px 15px;

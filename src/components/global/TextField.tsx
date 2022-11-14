@@ -7,7 +7,6 @@ export enum InputType {
   Text = "text",
   GuestEmail = "",
   Email = "email",
-
 }
 
 interface AppState {
@@ -31,6 +30,7 @@ const TextField = ({
   placeholder,
   type,
   obscured,
+  error,
   value,
   name,
   onChange,
@@ -38,7 +38,10 @@ const TextField = ({
   const [visible, setVisible] = useState(false);
   return (
     <div className="textf_bg">
-      <p>{title}</p>
+      <div className="label-row">
+        <p>{title}</p>
+        {error && <h6>This field is required</h6>}
+      </div>
       <span>
         {type === InputType.Email && (
           <div className="postfix">@student.nsbm.ac.lk</div>
