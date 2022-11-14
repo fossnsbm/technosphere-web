@@ -10,10 +10,10 @@
 .footer {
   background-color: #060527;
   padding-top: 20px;
-  background-image: url("../assets/grid.png");
+  background-image: url("/grid.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 160% 80%;
+  background-size: 160% 250%;
 }
 
 .footer_logo{
@@ -149,8 +149,7 @@
   }
 
   .footer {
-    background-size: 250% 85%;
-    background-position-y: 50px;
+    background-size: 450% 300%;
   }
   
   .follow_text{
