@@ -13,11 +13,11 @@ interface AppState {
   obscured?: boolean;
   type?: InputType;
   placeholder: string;
-  value: string;
-  error: boolean | undefined;
+  value?: string;
+  error?: boolean | undefined;
   name?: string;
-  helperText: string | false | undefined;
-  onChange: {
+  helperText?: string | false | undefined;
+  onChange?: {
     (e: ChangeEvent<any>): void;
     <T = string | ChangeEvent<any>>(field: T): T extends ChangeEvent<any>
       ? void

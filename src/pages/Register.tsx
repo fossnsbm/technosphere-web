@@ -61,9 +61,9 @@ const Register = () => {
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
                 // @TODO
-                // send a post req to /auth/register 
-                // with this payload and thats it 
-                
+                // send a post req to /auth/register
+                // with this payload and thats it
+
                 setSubmitting(false);
               }, 400);
             }}
