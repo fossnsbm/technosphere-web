@@ -31,7 +31,7 @@ function Footer() {
               className="mobileSize3 footer_logo"
             />
             <p className="intro">
-              TECHNOSPHERE 2022 is a technical convention organized by the FOSS Community of NSBM Green University in collaboration with Women in FOSS NSBM.
+              Want to learn about future-ready technologies that are sure to make an impact on your life? Then register below!
             </p>
             <div className="footerBottomMargin mobileMargin">
               <Button

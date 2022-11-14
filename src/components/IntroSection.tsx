@@ -46,12 +46,9 @@ export const IntroSection = () => {
                 <Typography variant="body2" color="#938FBE">
                   <span className="main-card-content">
                     {" "}
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam.
+                    Are you a follower of technology? Then get ready this November and December for an experience of a lifetime, and a week full of excitement!
                     <br /> <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor.{" "}
+                    Register below to become a pioneer of the next generation of technology{" "}
                   </span>
                 </Typography>
                 {/* change the url here */}
@@ -91,8 +88,7 @@ export const IntroSection = () => {
                   <span className="date">NOV 28 - DEC 1</span> <br />
                   <span className="card-content">
                     {" "}
-                    Lorem ipsum dolor sit amet, consectetur scing elit, sed do
-                    eiusmod tempor incidunt ut bore.{" "}
+                    The Technosphere webinar series will include one webinar each day, on a different topic.{" "}
                   </span>
                 </Typography>
               </Paper>
@@ -120,8 +116,7 @@ export const IntroSection = () => {
                   <span className="date">DEC 2</span> <br />
                   <span className="card-content">
                     {" "}
-                    Lorem ipsum dolor sit amet, consectetur scing elit, sed do
-                    eiusmod tempor incidunt ut bore.{" "}
+                    The main event will include seminars and panel discussions conducted by industry experts.{" "}
                   </span>
                 </Typography>
               </Paper>
