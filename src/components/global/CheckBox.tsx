@@ -1,4 +1,4 @@
-import './checkmark.css'
+import "./checkmark.css";
 
 interface AppState {
   onChange: any;

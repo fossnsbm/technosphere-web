@@ -12,7 +12,7 @@ import {
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import "./IntroSection.css";
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import ArrowForward from "@mui/icons-material/ArrowForward";
 import hero_logo from "../assets/logo.svg";
 
 export const IntroSection = () => {
@@ -20,7 +20,7 @@ export const IntroSection = () => {
     <>
       <div className="intro_section">
         <Container>
-          <Box component="img" className='intro_logo' src={hero_logo} />
+          <Box component="img" className="intro_logo" src={hero_logo} />
         </Container>
         <div className="flex-grid">
           <div>
@@ -46,9 +46,12 @@ export const IntroSection = () => {
                 <Typography variant="body2" color="#938FBE">
                   <span className="main-card-content">
                     {" "}
-                    Are you a follower of technology? Then get ready this November and December for an experience of a lifetime, and a week full of excitement!
+                    Are you a follower of technology? Then get ready this
+                    November and December for an experience of a lifetime, and a
+                    week full of excitement!
                     <br /> <br />
-                    Register below to become a pioneer of the next generation of technology{" "}
+                    Register below to become a pioneer of the next generation of
+                    technology{" "}
                   </span>
                 </Typography>
                 {/* change the url here */}
@@ -58,8 +61,8 @@ export const IntroSection = () => {
                   color="inherit"
                   endIcon={<ArrowForward />}
                   sx={{
-                    padding: '8px 18px',
-                    fontWeight: 600
+                    padding: "8px 18px",
+                    fontWeight: 600,
                   }}
                 >
                   REGISTER NOW
@@ -88,7 +91,8 @@ export const IntroSection = () => {
                   <span className="date">NOV 28 - DEC 1</span> <br />
                   <span className="card-content">
                     {" "}
-                    The Technosphere webinar series will include one webinar each day, on a different topic.{" "}
+                    The Technosphere webinar series will include one webinar
+                    each day, on a different topic.{" "}
                   </span>
                 </Typography>
               </Paper>
@@ -116,7 +120,8 @@ export const IntroSection = () => {
                   <span className="date">DEC 2</span> <br />
                   <span className="card-content">
                     {" "}
-                    The main event will include seminars and panel discussions conducted by industry experts.{" "}
+                    The main event will include seminars and panel discussions
+                    conducted by industry experts.{" "}
                   </span>
                 </Typography>
               </Paper>

@@ -12,6 +12,7 @@ import HeaderMenus from "../components/headerMenus/headerMenus";
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
   const [isProfileFeatureEnabled, setIsProfileFeatureEnabled] = useState(false);
+  const [batch, setBatch] = useState<string>("20.1");
 
   const [formData, setFormData] = useState({
     fullName: null,
@@ -105,6 +106,8 @@ const Profile = () => {
                     "22.1",
                     "22.2",
                   ]}
+                  selectedItem={batch}
+                  setSelectedItem={setBatch}
                   position={PositionType.Up}
                 />
                 <TextField
@@ -115,6 +118,8 @@ const Profile = () => {
                 />
               </div>
               <Dropdown
+                selectedItem={batch}
+                setSelectedItem={setBatch}
                 placeholder="Food Preferences"
                 items={["Vegetarian", "Non-vegetarian"]}
                 position={PositionType.Down}

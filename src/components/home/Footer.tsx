@@ -4,7 +4,7 @@ import Technosphere from "../../assets/logo.svg";
 import FOSSLogo from "../../assets/FOSSLogo.svg";
 import WIFLogo from "../../assets/WIFLogo.svg";
 import { FaHeart } from "react-icons/fa";
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import ArrowForward from "@mui/icons-material/ArrowForward";
 import "./Footer.scss";
 import {
   Facebook,
@@ -31,7 +31,8 @@ function Footer() {
               className="mobileSize3 footer_logo"
             />
             <p className="intro">
-              Want to learn about future-ready technologies that are sure to make an impact on your life? Then register below!
+              Want to learn about future-ready technologies that are sure to
+              make an impact on your life? Then register below!
             </p>
             <div className="footerBottomMargin mobileMargin">
               <Button
@@ -40,8 +41,8 @@ function Footer() {
                 color="inherit"
                 endIcon={<ArrowForward />}
                 sx={{
-                  padding: '8px 18px',
-                  fontWeight: 600
+                  padding: "8px 18px",
+                  fontWeight: 600,
                 }}
               >
                 REGISTER NOW
@@ -152,8 +153,8 @@ function Footer() {
           </p>
 
           <p className="copyrightText CenterAlign">
-            &lt;/&gt; WITH <FaHeart className="heart" /> BY THE
-            FOSS COMMUNITY OF NSBM
+            &lt;/&gt; WITH <FaHeart className="heart" /> BY THE FOSS COMMUNITY
+            OF NSBM
           </p>
         </Grid>
       </div>
