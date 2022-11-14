@@ -1,9 +1,7 @@
 import "../styles/profile.scss";
 
-import pfp from "../assets/pfp.png";
-
-import upload from "../assets/upload_icon.svg";
-import { useState, useRef } from "react";
+import pfp from "../assets/user_profile.png";
+import { useState, useRef, useEffect } from "react";
 import CheckBox from "../components/global/CheckBox";
 import TextField, { InputType } from "../components/global/TextField";
 import Dropdown, { PositionType } from "../components/global//Dropdown";
@@ -15,7 +13,8 @@ const Profile = () => {
 
   const [formData, setFormData] = useState({
     fullName: null,
-    email: null,
+    email_student: null,
+    email_guest: null,
     batch: null,
     phone_guests: null,
     phone_students: null,
@@ -30,6 +29,29 @@ const Profile = () => {
     setIsProfileFeatureEnabled(!isProfileFeatureEnabled);
   };
 
+  const [selectedFile, setSelectedFile] = useState();
+  const [preview, setPreview] = useState();
+
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+
+    const objectUrl: any = URL.createObjectURL(selectedFile);
+    setPreview(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedFile]);
+
+  const onSelectFile = (e: any) => {
+    if (!e.target.files || e.target.files.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+
+    setSelectedFile(e.target.files[0]);
+  };
   return (
     <section className="profile">
       <HeaderMenus />
@@ -40,10 +62,20 @@ const Profile = () => {
         <div className="center">
           <div className="profile_photo">
             <div className="photo_display">
-              <img src={pfp} alt="" />
+              <img src={preview ?? pfp} alt="" />
             </div>
             <div className="photo_upload_container">
-              <button className="btn">change photo</button>
+              <input
+                type="file"
+                id="files"
+                className="hidden"
+                onChange={onSelectFile}
+              />
+              <label htmlFor="files" className="btn">
+                upload image
+              </label>
+              {/* <input type="file" name="" id="" className="btn" accept="image/png, image/jpeg/" /> */}
+              {/* // <button className="btn" type="upload">change photo</button> */}
 
               {/* <span className="btn btn_upload">
                 <p>update photo</p>
@@ -84,12 +116,21 @@ const Profile = () => {
                 type={InputType.Number}
               />
             )}
-            <TextField
-              title="E-mail"
-              placeholder="username@student.nsbm.ac.lk"
-              obscured={false}
-              type={InputType.Text}
-            />
+            {inPerson ? (
+              <TextField
+                title="E-mail"
+                placeholder="username"
+                obscured={false}
+                type={InputType.Email}
+              />
+            ) : (
+              <TextField
+                title="E-mail"
+                placeholder="Your email address"
+                obscured={false}
+                type={InputType.GuestEmail}
+              />
+            )}
           </div>
           {inPerson && (
             <div className="form_data-secondary">

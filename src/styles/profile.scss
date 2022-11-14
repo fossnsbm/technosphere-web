@@ -2,7 +2,9 @@ $bg-color: #060527;
 $secondary-color: #8566ff;
 $secondary-text-color: #938fbe;
 $secondary-text-size: 0.9em;
-
+.hidden{
+  display: none;
+}
 .profile {
   background-color: $bg-color;
   position: relative;
