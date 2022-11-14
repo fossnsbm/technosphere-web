@@ -3,6 +3,7 @@ import Sponsors from "../components/home/Sponsors";
 import { IntroSection } from "../components/IntroSection";
 import SpeakersSection from "../components/speakersSection/speakersSection";
 import HeroSection from "../components/heroSection/heroSection";
+import AgendaSection from "../components/agenda/agenda";
 
 
 export const HomePage = () => {
@@ -10,6 +11,7 @@ export const HomePage = () => {
     <>
       <HeroSection />
       <IntroSection />
+      <AgendaSection/>
       <SpeakersSection />
       <Sponsors />
     </>
