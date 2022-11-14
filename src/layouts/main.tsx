@@ -23,6 +23,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div>{children}</div>
         <Footer />
       </ThemeProvider>
+
     </>
   );
 };
