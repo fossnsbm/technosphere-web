@@ -10,6 +10,8 @@ import Dropdown, { PositionType } from "../components/global//Dropdown";
 import HeaderMenus from "../components/headerMenus/headerMenus";
 
 const Register = () => {
+
+  
   const [inPerson, setInPerson] = useState(false);
   const [isRegisterFeatureEnabled, setIsRegisterFeatureEnabled] = useState(false);
 
@@ -60,9 +62,9 @@ const Register = () => {
             />
             <TextField
               title="E-mail"
-              placeholder="username@student.nsbm.ac.lk"
+              placeholder="username"
               obscured={false}
-              type={InputType.Text}
+              type={InputType.Email}
             />
             {!inPerson && (
               <TextField
