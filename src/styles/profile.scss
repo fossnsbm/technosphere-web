@@ -164,9 +164,14 @@ $secondary-text-size: 0.9em;
     width: 100% !important;
     height: auto !important;
   }
+  .form_data-secondary{
+    .row{
+      flex-direction: column;
+    }
+  }
 
   .profile_content {
-    padding: 50px;
+    padding: 30px;
   }
 
   .profile {
