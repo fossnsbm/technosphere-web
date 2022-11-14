@@ -6,11 +6,76 @@ import Dropdown, { PositionType } from "../components/global//Dropdown";
 import HeaderMenus from "../components/headerMenus/headerMenus";
 import { Formik } from "formik";
 
+import { useMutation } from "@tanstack/react-query";
+import { AppConfig } from "../config";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import axios, { AxiosError } from "axios";
+import { IUserRegistration } from "../interface/user";
+
 const Register = () => {
   const [inPerson, setInPerson] = useState(false);
   const [batch, setBatch] = useState<string>("20.1");
   const [foodPreference, setFoodPreference] = useState<string>("Vegetarian");
-  var numericRegex = new RegExp("(?=.*[0-9])");
+
+  const navigate = useNavigate();
+  let numericRegex = new RegExp("(?=.*[0-9])");
+
+  const createRegistration = useMutation(
+    (newRegistration: IUserRegistration) =>
+      axios.post(`${AppConfig.BACKEND_API}/auth/sign-up`, newRegistration),
+    {
+      onSuccess: (response) => {
+        toast.success("Registration Success !",
+        {
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+        }
+        );
+        if (response.data?._id) navigate(`/login`);
+      },
+
+      onError: (error: AxiosError) => {
+        const errorMessages: any = error?.response?.data;
+
+        if (!errorMessages) {
+          toast.error(error.message, {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+          return;
+        }
+
+        if (!Array.isArray(errorMessages.message)) {
+          toast.error(errorMessages.message, {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+          return;
+        }
+
+        for (const message of errorMessages?.message) {
+          toast.error(message, {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+        }
+      },
+      onMutate: () => {},
+    }
+  );
 
   return (
     <section className="register">
@@ -37,23 +102,14 @@ const Register = () => {
               password: "",
               fullName: "",
               phone: "",
-              guest_phone: "",
             }}
-            validate={(values: {
-              email: string;
-              password: string;
-              fullName: string;
-              phone: string;
-              guest_phone: string;
-              batch?: string;
-              food?: string;
-              isComing?: boolean;
-            }) => {
+            validate={(values: IUserRegistration) => {
               const errors: any = {};
 
               if (!values.email) {
                 errors.email = "This filed is Required";
-              } else if ( !inPerson &&
+              } else if (
+                !inPerson &&
                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
               ) {
                 errors.email = "Invalid email address";
@@ -64,18 +120,12 @@ const Register = () => {
               if (!inPerson && !values.phone) {
                 errors.phone = "This filed is required";
               }
-              if (inPerson && !values.guest_phone) {
-                errors.guest_phone = "This filed is required";
-              }
               if (!values.password) {
                 errors.password = "This filed is required";
-              }
-              else if (values.password.length < 4) {
-                errors.password = "Password is too short"
-              }
-              else if (!numericRegex.test(values.password)) {
-                errors.password = "Password must contain a number"
-                
+              } else if (values.password.length < 4) {
+                errors.password = "Password is too short";
+              } else if (!numericRegex.test(values.password)) {
+                errors.password = "Password must contain a number";
               }
 
               return errors;
@@ -84,14 +134,12 @@ const Register = () => {
               values.batch = batch;
               values.food = foodPreference;
               values.isComing = inPerson;
-              values.email = !inPerson ? values.email : `${values.email}@student.nsbm.ac.lk`
+              values.email = !inPerson
+                ? values.email
+                : `${values.email}@students.nsbm.ac.lk`;
 
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                // @TODO
-                // send a post req to /auth/register
-                // with this payload and thats it
-
+                createRegistration.mutate(values);
                 setSubmitting(false);
               }, 400);
             }}
@@ -121,10 +169,11 @@ const Register = () => {
                   name="email"
                   errorText={errors.email}
                   onChange={handleChange}
-                  type={inPerson ? InputType.Email : InputType.GuestEmail}
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
-                  placeholder={inPerson ? "NSBM username" : "your email address"}
+                  placeholder={
+                    inPerson ? "NSBM username" : "your email address"
+                  }
                   value={values.email}
                 />
 
@@ -174,18 +223,16 @@ const Register = () => {
                         position={PositionType.Up}
                       />
                       <TextField
-                        errorText={errors.guest_phone}
+                        errorText={errors.phone}
                         title="Phone"
-                        name="guest_phone"
+                        name="phone"
                         placeholder=""
                         obscured={false}
                         type={InputType.Number}
                         onChange={handleChange}
-                        error={
-                          touched.guest_phone && Boolean(errors.guest_phone)
-                        }
-                        helperText={touched.guest_phone && errors.guest_phone}
-                        value={values.guest_phone}
+                        error={touched.phone && Boolean(errors.phone)}
+                        helperText={touched.phone && errors.phone}
+                        value={values.phone}
                       />
                     </div>
                     <Dropdown

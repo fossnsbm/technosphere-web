@@ -3,27 +3,18 @@ import { router } from "./Router";
 import { RouterProvider } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className="App">
+      <Toaster />
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </div>
   );
 }
