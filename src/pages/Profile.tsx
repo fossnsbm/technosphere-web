@@ -3,10 +3,11 @@ import "../styles/profile.scss";
 import pfp from "../assets/pfp.png";
 
 import upload from "../assets/upload_icon.svg";
-import { useState ,useRef } from "react";
+import { useState, useRef } from "react";
 import CheckBox from "../components/global/CheckBox";
 import TextField, { InputType } from "../components/global/TextField";
 import Dropdown, { PositionType } from "../components/global//Dropdown";
+import HeaderMenus from "../components/headerMenus/headerMenus";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
@@ -31,6 +32,7 @@ const Profile = () => {
 
   return (
     <section className="profile">
+      <HeaderMenus />
       {/* <div className="grid">
         <img src={grid} alt="" />
       </div> */}
