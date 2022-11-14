@@ -1,0 +1,110 @@
+.agenda_section {
+  background-color: #060527;
+  padding-bottom: 90px;
+}
+
+.agenda_heading {
+  text-transform: uppercase;
+  font-weight: 600 !important;
+}
+
+.agenda_tagline {
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  color: #7451FF;
+  margin-bottom: 30px !important;
+}
+
+.inperson_agenda_card {
+  padding: 30px;
+  margin-bottom: 38px;
+  border-radius: 15px !important;
+  background: linear-gradient(118.92deg, #0E0C33 0%, #1B0E40 100%) !important;
+
+  .date {
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1em;
+  }
+
+  .month {
+    font-size: 1.1em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    border: 0.5px solid #8566FF;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .horz_divider {
+    border: 0.5px solid #8566FF;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .heading {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 600;
+    padding-top: 15px;
+  }
+
+  .time {
+    color: #A19DB0;
+    font-size: 1.2em;
+  }
+
+  .content {
+    color: #938FBE;
+    font-size: 1em;
+    padding-top: 4px;
+    margin-bottom: 20px;
+  }
+
+  .speaker {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    margin-top: 15px;
+    margin-bottom: 4px;
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .job {
+    color: #A19DB0;
+  }
+
+  .company {
+    color: #A19DB0;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .inperson_agenda_card {
+    .month {
+      padding-bottom: 0px;
+    }
+
+    .content {
+      margin-bottom: 24px;
+    }
+
+    .speaker {
+      margin-top: 0px;
+    }
+  }
+}
