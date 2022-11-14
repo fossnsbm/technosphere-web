@@ -1,0 +1,175 @@
+$bg-color: #060527;
+$secondary-color: #8566ff;
+$secondary-text-color: #938fbe;
+$secondary-text-size: 0.9em;
+
+.profile {
+  background-color: $bg-color;
+  position: relative;
+  min-height: 100vh;
+
+  .profile_content {
+    background-image: url("/grid.png");
+    background-repeat: no-repeat;
+
+    background-size: 100% 85%;
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center {
+    margin: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .photo_upload_container {
+    .homepage_append_toggle {
+      font-size: 1.2em;
+      line-height: 1em;
+      display: flex;
+      margin-top: 17px;
+    }
+
+    .btn {
+      font-size: 0.8em;
+    }
+
+    .btn_upload {
+      cursor: pointer;
+      width: 160px;
+      padding: 10px 0px;
+      font-weight: 600;
+      font-size: 1.4em;
+
+      p {
+        margin-right: 7px;
+        margin-bottom: 0px;
+      }
+
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      letter-spacing: 1px;
+      background-color: $secondary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        color: white;
+        width: 9px;
+        height: 9px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .form_data-default {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .attendance_toggle {
+    margin-top: 25px;
+
+    p {
+      font-size: 0.9em;
+      color: $secondary-text-color;
+      margin-top: 8px;
+    }
+
+    h5 {
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    .toggle_para {
+      display: flex;
+    }
+  }
+
+  .profile_photo {
+    display: flex;
+    align-items: center;
+
+    .photo_display {
+      margin: 0;
+      height: 100%;
+
+      margin-right: 25px;
+      width: 120px;
+      height: 120px;
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  background-color: $secondary-color;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+  border: none;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.btn_container {
+  margin-top: 30px !important;
+  font-size: 1.4em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
+.form_data-secondary {
+  width: 100%;
+}
+
+@media only screen and (max-width: 955px) {
+  .center {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .profile_content {
+    padding: 50px;
+  }
+
+  .profile {
+    height: auto;
+  }
+}

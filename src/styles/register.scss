@@ -1,0 +1,108 @@
+$bg-color: #060527;
+$secondary-color: #8566ff;
+$secondary-text-color: #938fbe;
+$secondary-text-size: 0.9em;
+
+.register {
+  background-color: $bg-color;
+  position: relative;
+  min-height: 100vh;
+
+  .register_content {
+    background-image: url("/grid.png");
+    background-repeat: no-repeat;
+
+    background-size: 100% 85%;
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  .center {
+    margin: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form_data-default {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .attendance_toggle {
+    margin-top: 25px;
+    p {
+      font-size: 0.9em;
+      color: $secondary-text-color;
+      margin-top: 8px;
+    }
+
+    h5{
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    .toggle_para {
+      display: flex;
+    }
+  }
+}
+.btn {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  background-color: $secondary-color;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+  border: none;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.btn_container {
+  margin-top: 30px !important;
+  font-size: 1.4em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .btn{
+    padding: 12px 40px !important;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
+.form_data-secondary {
+  width: 100%;
+}
+
+@media only screen and (max-width: 955px) {
+  .center {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .register_content {
+    padding: 50px;
+  }
+  .register {
+    height: auto;
+  }
+}

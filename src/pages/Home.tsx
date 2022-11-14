@@ -1,7 +1,17 @@
-import Footer from "../components/Footer"
+import Footer from "../components/home/Footer"
+import Sponsors from "../components/home/Sponsors";
+import { IntroSection } from "../components/IntroSection";
+import SpeakersSection from "../components/speakersSection/speakersSection";
+import HeroSection from "../components/heroSection/heroSection";
+
 
 export const HomePage = () => {
   return (
-    <Footer />//remove this line when adding other home components
+    <>
+      <HeroSection />
+      <IntroSection />
+      <SpeakersSection />
+      <Sponsors />
+    </>
   );
 };
