@@ -37,6 +37,10 @@ const Sponsors = () => {
                 <p>Digital Media Partner</p>
                 <div className="logo"></div>
               </div>
+              <div className=" sponsor_bottom b-none">
+                <p>Official Outfit Partner</p>
+                <div className="logo"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +61,7 @@ const SponsorCard = ({ logo, text }: CardProps) => {
     <div className="sponsor_card_container">
       <p>{text}</p>
       <div className="sponsor_card">
-        <img src={logo} alt="" />
+        <div className="logo"></div>
       </div>
     </div>
   );
