@@ -26,15 +26,13 @@ const Register = () => {
       axios.post(`${AppConfig.BACKEND_API}/auth/sign-up`, newRegistration),
     {
       onSuccess: (response) => {
-        toast.success("Registration Success !",
-        {
+        toast.success("Registration Success !", {
           style: {
-            borderRadius: '10px',
-            background: '#333',
-            color: '#fff',
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
           },
-        }
-        );
+        });
         if (response.data?._id) navigate(`/login`);
       },
 
