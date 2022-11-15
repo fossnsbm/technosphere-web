@@ -6,7 +6,7 @@ import speaker from "../../assets/speakers/speaker_placeholder.png";
 
 export default function Agenda() {
   return (
-    <div className="agenda_section">
+    <div className="agenda_section" id="agenda">
       <Container>
         <Typography variant="h3" className="agenda_heading">
           Agenda

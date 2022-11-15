@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { Grid, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Technosphere from "../../assets/logo.svg";
 import FOSSLogo from "../../assets/FOSSLogo.svg";
 import WIFLogo from "../../assets/WIFLogo.svg";
@@ -15,6 +16,20 @@ import {
 } from "@mui/icons-material";
 
 function Footer() {
+  const location = useLocation()
+
+
+  useEffect(() => {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1))
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    }
+  }, [location,])
+
   return (
     <div className="footer">
       <div className="footerPadding footerContent">
@@ -59,16 +74,16 @@ function Footer() {
             direction="column"
             className="LinkList footerBottomMargin"
           >
-            <Link to="/" className="link">
+            <Link to="/#about" className="link">
               ABOUT
             </Link>
-            <Link to="/" className="link">
+            <Link to="/#agenda" className="link">
               AGENDA
             </Link>
-            <Link to="/" className="link">
+            <Link to="/#speakers" className="link">
               SPEAKERS
             </Link>
-            <Link to="/" className="link">
+            <Link to="/#sponsors" className="link">
               SPONSORS
             </Link>
           </Grid>

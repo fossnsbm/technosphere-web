@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import "./headerMenus.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,15 +13,15 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import ArrowForward from "@mui/icons-material/ArrowForward";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCurrentUser } from "../../hooks/user/useCurrentUser";
 import { Avatar } from "@mui/material";
 
 const pages = [
-  { text: "ABOUT", href: "#" },
-  { text: "AGENDA", href: "#" },
-  { text: "SPEAKERS", href: "#" },
-  { text: "SPONSORS", href: "#" },
+  { text: "ABOUT", href: "/#about" },
+  { text: "AGENDA", href: "/#agenda" },
+  { text: "SPEAKERS", href: "/#speakers" },
+  { text: "SPONSORS", href: "/#sponsors" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -58,6 +59,21 @@ function HeaderMenus() {
 
   const user = useCurrentUser();
 
+  const location = useLocation()
+
+
+  useEffect(() => {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1))
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    }
+  }, [location,])
+
+
   return (
     <AppBar
       position="static"
@@ -70,7 +86,7 @@ function HeaderMenus() {
           sx={{ paddingTop: "2%" }}
           className="nav_toolbar"
         >
-          <Box component="div" className="nav_logo_div">
+          <Box component={Link} className="nav_logo_div" to="/">
             <Box
               component="img"
               src={logo}
@@ -116,7 +132,7 @@ function HeaderMenus() {
               {pages.map((page) => (
                 <MenuItem key={page.text} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Button color="inherit" key={page.text} href={page.href}>
+                    <Button component={Link} color="inherit" key={page.text} to={page.href}>
                       {page.text}
                     </Button>
                   </Typography>
