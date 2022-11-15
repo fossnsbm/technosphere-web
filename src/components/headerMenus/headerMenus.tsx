@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react";
 import "./headerMenus.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,7 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import ArrowForward from "@mui/icons-material/ArrowForward";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../hooks/user/useCurrentUser";
 import { Avatar } from "@mui/material";
 
@@ -58,21 +57,6 @@ function HeaderMenus() {
   };
 
   const user = useCurrentUser();
-
-  const location = useLocation()
-
-
-  useEffect(() => {
-    if (location.hash) {
-      let elem = document.getElementById(location.hash.slice(1))
-      if (elem) {
-        elem.scrollIntoView({ behavior: "smooth" })
-      }
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-    }
-  }, [location,])
-
 
   return (
     <AppBar
