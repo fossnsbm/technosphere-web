@@ -14,7 +14,7 @@ interface AppState {
   obscured?: boolean;
   type?: InputType;
   placeholder: string;
-  errorText: string | undefined;
+  errorText?: string | undefined;
   value?: string;
   error?: boolean | undefined;
   name?: string;

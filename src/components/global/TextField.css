@@ -7,16 +7,13 @@
   font-size: 1em;
   margin-bottom: 4px;
 }
- .label-row{
+.label-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  
-
 }
 
-.label-row h6{
-  
+.label-row h6 {
   color: rgb(247, 99, 99);
   font-weight: 400;
 }
@@ -48,9 +45,9 @@
   height: 100%;
   position: relative;
 }
-.postfix{
+.postfix {
   position: absolute;
-  font-size: .85em;
+  font-size: 0.85em;
   top: 50%; /* position the top  edge of the element at the middle of the parent */
   right: -8%; /* position the left edge of the element at the middle of the parent */
   transform: translate(-50%, -50%);

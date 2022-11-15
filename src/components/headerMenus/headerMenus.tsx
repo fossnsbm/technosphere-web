@@ -13,6 +13,8 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
+import { useCurrentUser } from "../../hooks/user/useCurrentUser";
+import { Avatar } from "@mui/material";
 
 const pages = [
   { text: "ABOUT", href: "#" },
@@ -44,6 +46,17 @@ function HeaderMenus() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const user = useCurrentUser();
 
   return (
     <AppBar
@@ -133,23 +146,62 @@ function HeaderMenus() {
                 {page.text}
               </Button>
             ))}
-            <Button
-              className="btn_reg"
-              variant="outlined"
-              component={Link}
-              to="/register"
-              endIcon={<ArrowForward />}
-              sx={{
-                fontSize: 16,
-                my: 2,
-                color: "white",
-                paddingTop: 0,
-                marginLeft: 2,
-                marginRight: 2,
-              }}
-            >
-              REGISTER NOW
-            </Button>
+
+            {user.isSuccess ? (
+              <>
+                <Avatar
+                  alt={user.data?.fullName}
+                  src={user.data?.profileImgUrl}
+                  component={Button}
+                  id="basic-button"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                  sx={{
+                    my: 1,
+                    border: "1px solid white",
+                    height: "100%",
+                  }}
+                />
+
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                >
+                  <MenuItem component={Link} to="/profile">
+                    Profile
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <>
+                <Button
+                  className="btn_reg"
+                  variant="outlined"
+                  component={Link}
+                  to="/register"
+                  endIcon={<ArrowForward />}
+                  sx={{
+                    fontSize: 16,
+                    my: 2,
+                    color: "white",
+                    paddingTop: 0,
+                    marginLeft: 2,
+                    marginRight: 2,
+                  }}
+                >
+                  REGISTER NOW
+                </Button>
+              </>
+            )}
           </Box>
         </Toolbar>
       </Container>
