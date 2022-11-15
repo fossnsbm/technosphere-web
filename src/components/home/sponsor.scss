@@ -36,6 +36,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .logo {
+    background-color: rgba(255, 255, 255, 0.23);
+    border-radius: 10px;
+    width: 200px;
+    height: 80px;
+  }
 }
 
 .sponsor_card_container {
@@ -59,11 +66,9 @@
   width: 100%;
   height: 230px;
   background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
-    linear-gradient(
-      270deg,
+    linear-gradient(270deg,
       rgba(133, 102, 255, 0.75) 0%,
-      rgba(0, 0, 0, 0) 97.58%
-    );
+      rgba(0, 0, 0, 0) 97.58%);
 
   img {
     height: 50%;
@@ -76,11 +81,9 @@
 .card_bottom-section {
   margin-top: 25px;
   background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
-    linear-gradient(
-      270deg,
+    linear-gradient(270deg,
       rgba(133, 102, 255, 0.75) 0%,
-      rgba(0, 0, 0, 0) 97.58%
-    );
+      rgba(0, 0, 0, 0) 97.58%);
   border: 1px solid rgba(133, 102, 255, 0.108);
   border-radius: 10px;
   width: auto;
@@ -114,7 +117,8 @@
   }
 
   .logo {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.23);
+    border-radius: 10px;
     width: 200px;
     height: 80px;
   }
@@ -142,6 +146,7 @@
   .card_top-section {
     flex-direction: column;
     gap: 40px;
+
   }
 }
 

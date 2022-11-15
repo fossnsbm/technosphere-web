@@ -1,5 +1,5 @@
 import "./AgendaCard.scss";
-import { Container, Grid, Card, Divider, Typography, Box } from "@mui/material";
+import { Grid, Card, Divider, Typography, Box } from "@mui/material";
 
 export enum AlignType {
   Left,

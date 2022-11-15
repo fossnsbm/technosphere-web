@@ -2,7 +2,7 @@ import * as React from "react";
 import "./agenda.scss";
 import { Container, Grid, Card, Divider, Typography, Box } from "@mui/material";
 import AgendaCard, { AlignType } from "../global/AgendaCard";
-import speaker from "../../assets/speaker-1.png";
+import speaker from "../../assets/speakers/speaker_placeholder.png";
 
 export default function Agenda() {
   return (
@@ -19,9 +19,9 @@ export default function Agenda() {
           time="7.00PM - 8.00PM | WEBINAR"
           description="Cloud computing is the delivery of different services through the Internet, and it can be considered a treasure trove of the tech world."
           photo={speaker}
-          speaker="Thaanu Perera"
-          jobTitle="UI/UX Design"
-          company="Surge Global"
+          speaker="Forthcoming"
+          jobTitle=""
+          company=""
           alignType={AlignType.Left}
         />
 
@@ -32,9 +32,9 @@ export default function Agenda() {
           time="7.00PM - 8.00PM | WEBINAR"
           description="Blockchain and Cryptocurrency are turning the world upside down as they technicise monetary transactions."
           photo={speaker}
-          speaker="Thaanu Perera"
-          jobTitle="UI/UX Design"
-          company="Surge Global"
+          speaker="Forthcoming"
+          jobTitle=""
+          company=""
           alignType={AlignType.Right}
         />
 
@@ -45,9 +45,9 @@ export default function Agenda() {
           time="7.00PM - 8.00PM | WEBINAR"
           description="Edge computing and deployment bring applications closer to where the data is created, and the actual actions are happening."
           photo={speaker}
-          speaker="Thaanu Perera"
-          jobTitle="UI/UX Design"
-          company="Surge Global"
+          speaker="Forthcoming"
+          jobTitle=""
+          company=""
           alignType={AlignType.Left}
         />
 
@@ -58,9 +58,9 @@ export default function Agenda() {
           time="7.00PM - 8.00PM | WEBINAR"
           description="Big data is a term that describes large, hard-to-manage, structured and unstructured data, but it's not merely about the amount of data."
           photo={speaker}
-          speaker="Thaanu Perera"
-          jobTitle="UI/UX Design"
-          company="Surge Global"
+          speaker="Forthcoming"
+          jobTitle=""
+          company=""
           alignType={AlignType.Right}
         />
 
@@ -144,10 +144,10 @@ export default function Agenda() {
                   <Grid item xs={12} sm="auto" md="auto" lg="auto">
                     <Box component="img" className="speaker" src={speaker} />
                     <Typography variant="h5" className="name">
-                      Thaanu Perera
+                      Forthcoming
                     </Typography>
-                    <Typography className="job">UI/UX Design</Typography>
-                    <Typography className="company">Surge Global</Typography>
+                    <Typography className="job"></Typography>
+                    <Typography className="company"></Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -188,10 +188,10 @@ export default function Agenda() {
                   <Grid item xs={12} sm="auto" md="auto" lg="auto">
                     <Box component="img" className="speaker" src={speaker} />
                     <Typography variant="h5" className="name">
-                      Thaanu Perera
+                      Forthcoming
                     </Typography>
-                    <Typography className="job">UI/UX Design</Typography>
-                    <Typography className="company">Surge Global</Typography>
+                    <Typography className="job"></Typography>
+                    <Typography className="company"></Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -232,10 +232,10 @@ export default function Agenda() {
                   <Grid item xs={12} sm="auto" md="auto" lg="auto">
                     <Box component="img" className="speaker" src={speaker} />
                     <Typography variant="h5" className="name">
-                      Thaanu Perera
+                      Forthcoming
                     </Typography>
-                    <Typography className="job">UI/UX Design</Typography>
-                    <Typography className="company">Surge Global</Typography>
+                    <Typography className="job"></Typography>
+                    <Typography className="company"></Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -276,10 +276,10 @@ export default function Agenda() {
                   <Grid item xs={12} sm="auto" md="auto" lg="auto">
                     <Box component="img" className="speaker" src={speaker} />
                     <Typography variant="h5" className="name">
-                      Thaanu Perera
+                      Forthcoming
                     </Typography>
-                    <Typography className="job">UI/UX Design</Typography>
-                    <Typography className="company">Surge Global</Typography>
+                    <Typography className="job"></Typography>
+                    <Typography className="company"></Typography>
                   </Grid>
                 </Grid>
               </Grid>
