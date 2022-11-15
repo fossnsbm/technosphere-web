@@ -12,7 +12,7 @@ $secondary-text-size: 0.9em;
     background-image: url("/grid.png");
     background-repeat: no-repeat;
 
-    background-size: 100% 85%;
+    background-size: 100% 65%;
 
     width: 100%;
     min-height: 100vh;
@@ -41,7 +41,7 @@ $secondary-text-size: 0.9em;
     p {
       font-size: 0.9em;
       color: $secondary-text-color;
-      margin-top: 8px;
+      margin-top: 0px;
     }
 
     h5 {

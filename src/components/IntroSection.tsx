@@ -57,7 +57,7 @@ export const IntroSection = () => {
                 {/* change the url here */}
                 <Button
                   variant="outlined"
-                  href="https://www.google.lk"
+                  href="/register"
                   color="inherit"
                   endIcon={<ArrowForward />}
                   sx={{

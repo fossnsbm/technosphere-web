@@ -38,7 +38,7 @@ function Footer() {
             <div className="footerBottomMargin mobileMargin">
               <Button
                 variant="outlined"
-                href="#outlined-buttons"
+                href="/register"
                 color="inherit"
                 endIcon={<ArrowForward />}
                 sx={{

@@ -170,7 +170,7 @@ const Register = () => {
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
                   placeholder={
-                    inPerson ? "NSBM username" : "your email address"
+                    inPerson ? "NSBM Username" : "Email Address"
                   }
                   value={values.email}
                 />
@@ -179,7 +179,7 @@ const Register = () => {
                   <TextField
                     errorText={errors.phone}
                     title="Phone"
-                    placeholder=""
+                    placeholder="07X XXX XXXX"
                     name="phone"
                     obscured={false}
                     type={InputType.Number}
@@ -224,7 +224,7 @@ const Register = () => {
                         errorText={errors.phone}
                         title="Phone"
                         name="phone"
-                        placeholder=""
+                        placeholder="07X XXX XXXX"
                         obscured={false}
                         type={InputType.Number}
                         onChange={handleChange}

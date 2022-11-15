@@ -25,7 +25,7 @@ const Dropdown = <T extends String>({
     <div className="dropdown_bg" onClick={() => setActive(!active)}>
       <p>{placeholder}</p>
       <div className="dropdown">
-        <p>{selectedItem ? selectedItem : ""}</p>
+        <p className="selected_item">{selectedItem ? selectedItem : ""}</p>
         <img
           src={down}
           alt=""
