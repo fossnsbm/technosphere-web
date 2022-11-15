@@ -19,6 +19,7 @@ interface AppState {
   error?: boolean | undefined;
   name?: string;
   helperText?: string | false | undefined;
+  isUniEmail?: boolean;
   onChange?: {
     (e: ChangeEvent<any>): void;
     <T = string | ChangeEvent<any>>(field: T): T extends ChangeEvent<any>
@@ -34,10 +35,13 @@ const TextField = ({
   error,
   errorText,
   value,
-  name,
+  name, 
+  isUniEmail,
   onChange,
 }: AppState) => {
   const [visible, setVisible] = useState(false);
+
+  console.log(title + " " + type)
   return (
     <div className="textf_bg">
       <div className="label-row">
@@ -45,8 +49,8 @@ const TextField = ({
         {error && <h6>{errorText}</h6>}
       </div>
       <span>
-        {type === InputType.Email && (
-          <div className="postfix">@student.nsbm.ac.lk</div>
+        {isUniEmail && (
+          <div className="postfix">@students.nsbm.ac.lk</div>
         )}
         <input
           type={obscured ? (visible ? "text" : "password") : type}

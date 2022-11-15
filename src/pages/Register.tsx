@@ -134,7 +134,7 @@ const Register = () => {
               values.isComing = inPerson;
               values.email = !inPerson
                 ? values.email
-                : `${values.email}@students.nsbm.ac.lk`;
+                : (!values.email.includes('@students.nsbm.ac.lk'))?`${values.email}@students.nsbm.ac.lk`:`${values.email}`;
 
               setTimeout(() => {
                 createRegistration.mutate(values);
@@ -173,6 +173,7 @@ const Register = () => {
                     inPerson ? "NSBM Username" : "Email Address"
                   }
                   value={values.email}
+                  isUniEmail= {inPerson}
                 />
 
                 {!inPerson && (
