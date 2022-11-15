@@ -65,3 +65,15 @@
   width: 15px;
   object-fit: cover;
 }
+
+@media (max-width: 680px) {
+  .postfix {
+    right: -12%; 
+  }
+}
+
+@media (max-width: 430px) {
+  .postfix {
+    right: -20%; 
+  }
+}
