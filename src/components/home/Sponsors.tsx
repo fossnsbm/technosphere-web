@@ -7,7 +7,7 @@ import ball from "../../assets/ball.svg";
 
 const Sponsors = () => {
   return (
-    <section className="sponsors">
+    <section className="sponsors" id="sponsors">
       <Container>
         <div className="heading">
           <Typography variant="h3" className="sponsors_heading">

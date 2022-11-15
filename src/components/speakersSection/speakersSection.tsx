@@ -10,7 +10,7 @@ import SpeakerCard from "../global/SpeakerCard"
 
 function SpeakersSection() {
   return (
-    <div className="speakers_section">
+    <div className="speakers_section" id="speakers">
       <Container className="speakers">
         <Typography variant="h3" className="speakers_heading">
           Speakers

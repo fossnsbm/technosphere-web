@@ -18,7 +18,7 @@ import hero_logo from "../assets/logo.svg";
 export const IntroSection = () => {
   return (
     <>
-      <div className="intro_section">
+      <div className="intro_section" id="about">
         <Container>
           <Box component="img" className="intro_logo" src={hero_logo} />
         </Container>
