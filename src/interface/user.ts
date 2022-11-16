@@ -6,4 +6,5 @@ export interface IUserRegistration {
   batch?: string;
   food?: string;
   isComing?: boolean;
+  profileImgUrl?: string;
 }

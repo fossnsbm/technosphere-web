@@ -100,6 +100,8 @@ const Register = () => {
               password: "",
               fullName: "",
               phone: "",
+              profileImgUrl:
+                "https://d3qy2z3f9c8bfd.cloudfront.net/default-pfp.png",
             }}
             validate={(values: IUserRegistration) => {
               const errors: any = {};
