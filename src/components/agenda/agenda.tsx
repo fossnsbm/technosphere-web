@@ -11,7 +11,7 @@ export default function Agenda() {
         <Typography variant="h3" className="agenda_heading">
           Agenda
         </Typography>
-        <Typography className="agenda_tagline">Lorem ipsum dolor</Typography>
+        <Typography className="agenda_tagline">Mark your calendars</Typography>
         <AgendaCard
           date="28"
           month="Nov"
