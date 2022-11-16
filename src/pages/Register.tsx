@@ -5,11 +5,12 @@ import TextField, { InputType } from "../components/global/TextField";
 import Dropdown, { PositionType } from "../components/global//Dropdown";
 import HeaderMenus from "../components/headerMenus/headerMenus";
 import { Formik } from "formik";
+import { Link as MuiLink } from "@mui/material";
 
 import { useMutation } from "@tanstack/react-query";
 import { AppConfig } from "../config";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 import { IUserRegistration } from "../interface/user";
 
@@ -71,7 +72,7 @@ const Register = () => {
           });
         }
       },
-      onMutate: () => {},
+      onMutate: () => { },
     }
   );
 
@@ -136,7 +137,7 @@ const Register = () => {
               values.isComing = inPerson;
               values.email = !inPerson
                 ? values.email
-                : (!values.email.includes('@students.nsbm.ac.lk'))?`${values.email}@students.nsbm.ac.lk`:`${values.email}`;
+                : (!values.email.includes('@students.nsbm.ac.lk')) ? `${values.email}@students.nsbm.ac.lk` : `${values.email}`;
 
               setTimeout(() => {
                 createRegistration.mutate(values);
@@ -175,7 +176,7 @@ const Register = () => {
                     inPerson ? "NSBM Username" : "Email Address"
                   }
                   value={values.email}
-                  isUniEmail= {inPerson}
+                  isUniEmail={inPerson}
                 />
 
                 {!inPerson && (
@@ -254,6 +255,9 @@ const Register = () => {
               </form>
             )}
           </Formik>
+          <MuiLink component={Link} to="/login" variant="body2" className="login_link">
+            {"Already have an account? Log In"}
+          </MuiLink>
         </div>
       </div>
     </section>
