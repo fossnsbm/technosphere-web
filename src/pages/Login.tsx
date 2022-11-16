@@ -70,7 +70,8 @@ export const LoginPage = () => {
         }
 
         if (!Array.isArray(errorMessages.message)) {
-          toast.error(errorMessages.message, {
+          console.log(errorMessages.message);
+          toast.error((errorMessages.message === "User is not confirmed.") ?"Please verify your account through the email you received.":errorMessages.message, {
             style: {
               borderRadius: "10px",
               background: "#333",
