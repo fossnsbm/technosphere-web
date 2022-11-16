@@ -105,7 +105,7 @@ const Profile = () => {
           <div className="form_data-default">
             <TextField
               title="Full Name"
-              placeholder="Thaanu Perera"
+              placeholder="Full Name"
               obscured={false}
               type={InputType.Text}
             />

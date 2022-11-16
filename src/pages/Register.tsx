@@ -19,7 +19,7 @@ const Register = () => {
   const [foodPreference, setFoodPreference] = useState<string>("Vegetarian");
 
   const navigate = useNavigate();
-  let numericRegex = new RegExp("(?=.*[0-9])");
+  let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
 
   const createRegistration = useMutation(
     (newRegistration: IUserRegistration) =>
@@ -122,10 +122,10 @@ const Register = () => {
               }
               if (!values.password) {
                 errors.password = "This filed is required";
-              } else if (values.password.length < 4) {
+              } else if (values.password.length < 8) {
                 errors.password = "Password is too short";
-              } else if (!numericRegex.test(values.password)) {
-                errors.password = "Password must contain a number";
+              } else if (!strongRegex.test(values.password)) {
+                errors.password = "Password must one uppercase, lowercase and a number";
               }
 
               return errors;
