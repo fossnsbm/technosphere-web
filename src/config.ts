@@ -1,3 +1,4 @@
 export const AppConfig = {
-  BACKEND_API: "http://localhost:4000",
+  BACKEND_API:
+    "https://technosphere-api-dev-lb-tf-1053831315.ap-southeast-1.elb.amazonaws.com",
 };
