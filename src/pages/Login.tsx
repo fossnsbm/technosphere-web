@@ -1,26 +1,31 @@
-import { Container } from "@mui/material";
-import HeaderMenus from "../components/headerMenus/headerMenus";
-import Avatar from "@mui/material/Avatar";
-import { ButtonProps } from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
+import {
+  Container,
+  TextField,
+  Avatar,
+  FormControlLabel,
+  Checkbox,
+  Grid,
+  Box,
+  Typography,
+  ButtonProps,
+  Link as MuiLink,
+} from "@mui/material";
 import { LoadingButton } from "@mui/lab";
+import { toast } from "react-hot-toast";
 import { styled } from "@mui/material/styles";
-import { Link as MuiLink } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
-import { AppConfig } from "../config";
-import { toast } from "react-hot-toast";
-import { useLocalStorage } from "usehooks-ts";
 
-const ColorLoginButton = styled(LoadingButton)<ButtonProps>(({ theme }) => ({
+import { AppConfig } from "../config";
+import HeaderMenus from "../components/headerMenus/headerMenus";
+import { useUserStore } from "../store/createUserSlice";
+import { useTokenStore } from "../store/createAuthStore";
+
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+
+const ColorLoginButton = styled(LoadingButton)<ButtonProps>(() => ({
   color: "white",
   backgroundColor: "#8566FF",
   "&:hover": {
@@ -31,8 +36,9 @@ const ColorLoginButton = styled(LoadingButton)<ButtonProps>(({ theme }) => ({
 export const LoginPage = () => {
   const [userName, setUserName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [idToken, setIdToken] = useLocalStorage("id_token", true);
-  const [authPayload, setAuthPayload] = useLocalStorage("payload", true);
+
+  const { setUser } = useUserStore();
+  const { setAccessToken } = useTokenStore();
 
   const navigate = useNavigate();
 
@@ -48,9 +54,10 @@ export const LoginPage = () => {
             color: "#fff",
           },
         });
+
         if (response.data?.idToken?.jwtToken) {
-          setIdToken(response.data?.idToken?.jwtToken);
-          setAuthPayload(response.data?.idToken?.payload);
+          setUser(response.data?.idToken.payload);
+          setAccessToken(response.data?.idToken?.jwtToken);
           navigate(`/`);
         }
       },
@@ -71,13 +78,18 @@ export const LoginPage = () => {
 
         if (!Array.isArray(errorMessages.message)) {
           console.log(errorMessages.message);
-          toast.error((errorMessages.message === "User is not confirmed.") ?"Please verify your account through the email you received.":errorMessages.message, {
-            style: {
-              borderRadius: "10px",
-              background: "#333",
-              color: "#fff",
-            },
-          });
+          toast.error(
+            errorMessages.message === "User is not confirmed."
+              ? "Please verify your account through the email you received."
+              : errorMessages.message,
+            {
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            }
+          );
           return;
         }
 
