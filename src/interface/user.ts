@@ -8,3 +8,14 @@ export interface IUserRegistration {
   isComing?: boolean;
   profileImgUrl?: string;
 }
+
+export interface IUser {
+  id: string;
+  email: string;
+  fullName: string;
+  batch: string;
+  phone: string;
+  food: string;
+  profileImgUrl: string;
+  isComing: boolean;
+}

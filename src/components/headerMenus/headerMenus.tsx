@@ -13,8 +13,9 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
-import { useCurrentUser } from "../../hooks/user/useCurrentUser";
 import { Avatar } from "@mui/material";
+import { useUserStore } from "../../store/createUserSlice";
+import { useTokenStore } from "../../store/createAuthStore";
 
 const pages = [
   { text: "ABOUT", href: "/#about" },
@@ -22,9 +23,16 @@ const pages = [
   { text: "SPEAKERS", href: "/#speakers" },
   { text: "SPONSORS", href: "/#sponsors" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function HeaderMenus() {
+  const { user, clear } = useUserStore();
+  const tokenStore = useTokenStore();
+
+  const handleLogout = () => {
+    tokenStore.clear();
+    clear();
+  };
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -55,8 +63,6 @@ function HeaderMenus() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const user = useCurrentUser();
 
   return (
     <AppBar
@@ -116,7 +122,12 @@ function HeaderMenus() {
               {pages.map((page) => (
                 <MenuItem key={page.text} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Button component={Link} color="inherit" key={page.text} to={page.href}>
+                    <Button
+                      component={Link}
+                      color="inherit"
+                      key={page.text}
+                      to={page.href}
+                    >
                       {page.text}
                     </Button>
                   </Typography>
@@ -147,11 +158,11 @@ function HeaderMenus() {
               </Button>
             ))}
 
-            {user.isSuccess ? (
+            {user ? (
               <>
                 <Avatar
-                  alt={user.data?.fullName}
-                  src={user.data?.profileImgUrl}
+                  alt={user?.fullName}
+                  src={user?.profileImgUrl}
                   component={Button}
                   id="basic-button"
                   aria-controls={open ? "basic-menu" : undefined}
@@ -178,7 +189,7 @@ function HeaderMenus() {
                     Profile
                   </MenuItem>
                   <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
                 </Menu>
               </>
             ) : (

@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { router } from "./Router";
 import { RouterProvider } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@mui/material/styles";
