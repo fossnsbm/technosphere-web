@@ -1,7 +1,6 @@
 import "./sponsor.scss";
-import ifonix from "../../assets/ifonix.svg";
-import codezilla from "../../assets/codezilla.png";
-import { Typography, Container, Box, Grid, Button } from "@mui/material";
+import learningPartner from "../../assets/sponsors/learning_partner.png";
+import { Typography, Container } from "@mui/material";
 
 import ball from "../../assets/ball.svg";
 
@@ -19,9 +18,9 @@ const Sponsors = () => {
         </div>
         <div className="sponsor_cards">
           <div className="card_top-section">
-            <SponsorCard text="Platinum Sponsor" logo={ifonix} />
-            <SponsorCard text="Gold Sponsor" logo={ifonix} />
-            <SponsorCard text="Silver Sponsor" logo={codezilla} />
+            <SponsorCard text="Platinum Sponsor" logo={learningPartner} />
+            <SponsorCard text="Gold Sponsor" logo={learningPartner} />
+            <SponsorCard text="Silver Sponsor" logo={learningPartner} />
           </div>
           <div className="card_bottom-section">
             <div className="co_sponsor sponsor_bottom">
@@ -31,7 +30,9 @@ const Sponsors = () => {
             <div className="other_sponsors">
               <div className=" sponsor_bottom b-none">
                 <p>Learning Partner</p>
-                <div className="logo"></div>
+                <div className="logo_github">
+                  <img src={learningPartner} alt="GitHub Community - Sri Lanka " />
+                </div>
               </div>
               <div className=" sponsor_bottom b-none">
                 <p>Digital Media Partner</p>
