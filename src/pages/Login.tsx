@@ -1,3 +1,4 @@
+import "../styles/login.scss"
 import {
   Container,
   TextField,
@@ -103,7 +104,7 @@ export const LoginPage = () => {
           });
         }
       },
-      onMutate: () => {},
+      onMutate: () => { },
     }
   );
 
@@ -124,68 +125,86 @@ export const LoginPage = () => {
             <Container>
               <Box
                 sx={{
-                  marginTop: 8,
+                  marginTop: 2,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                 }}
               >
-                <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                  <LockOutlinedIcon />
+                <Avatar sx={{ m: 1, bgcolor: "#8566FF" }}>
+                  <LockOutlinedIcon/>
                 </Avatar>
                 <Typography
                   component="h1"
                   variant="h5"
-                  style={{ marginBottom: 30 }}
+                  style={{ marginBottom: 30}}
                 >
-                  Sign in
+                  SIGN IN
                 </Typography>
                 <Box>
+                  <Typography>
+                    Email Address
+                  </Typography>
                   <TextField
-                    margin="normal"
+                    variant="standard"
                     required
                     fullWidth
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                     id="email"
-                    label="Email Address"
+                    placeholder="Email Address"
                     name="email"
                     autoComplete="email"
                     autoFocus
+
+                    InputProps={{
+                      disableUnderline: true,
+                    }}
+                    className="login_textfield"
                   />
+                  <Typography>
+                    Password
+                  </Typography>
                   <TextField
-                    margin="normal"
+                    variant="standard"
                     required
                     fullWidth
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     name="password"
-                    label="Password"
+                    placeholder="Password"
                     type="password"
                     id="password"
                     autoComplete="current-password"
+
+                    InputProps={{
+                      disableUnderline: true,
+                    }}
+                    className="login_textfield"
                   />
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
                     label="Remember me"
-                  />
+                  /><br />
                   <ColorLoginButton
                     type="submit"
                     fullWidth
                     variant="contained"
                     onClick={() => userLogin()}
                     sx={{ mt: 3, mb: 2 }}
+
+                  // className="login_button"
                   >
                     Sign In
                   </ColorLoginButton>
                   <Grid container>
                     <Grid item xs>
-                      <MuiLink component={Link} to="/rest" variant="body2">
+                      {/* <MuiLink component={Link} to="/rest" variant="body2">
                         Forgot password?
-                      </MuiLink>
+                      </MuiLink> */}
                     </Grid>
                     <Grid item>
-                      <MuiLink component={Link} to="/register" variant="body2">
+                      <MuiLink component={Link} to="/register" variant="body2" className="login_link">
                         {"Don't have an account? Sign Up"}
                       </MuiLink>
                     </Grid>
