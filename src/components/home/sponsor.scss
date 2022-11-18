@@ -86,7 +86,8 @@
       rgba(0, 0, 0, 0) 97.58%);
   border: 1px solid rgba(133, 102, 255, 0.108);
   border-radius: 10px;
-  width: auto;
+  width: 100%;
+  overflow-x: auto;
   height: 180px;
   font-weight: 500;
   padding: 20px;
