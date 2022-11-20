@@ -1,5 +1,6 @@
 import "./sponsor.scss";
 import learningPartner from "../../assets/sponsors/learning_partner.png";
+import outfitPartner from "../../assets/sponsors/outifit_partner.png";
 import { Typography, Container } from "@mui/material";
 
 import ball from "../../assets/ball.svg";
@@ -40,7 +41,9 @@ const Sponsors = () => {
               </div>
               <div className=" sponsor_bottom b-none">
                 <p>Official Outfit Partner</p>
-                <div className="logo"></div>
+                <div className="logo_cms">
+                  <img src={outfitPartner} alt="Content Management and Solutions (Pvt) Ltd" />
+                </div>
               </div>
             </div>
           </div>
