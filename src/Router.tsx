@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import { createBrowserRouter } from "react-router-dom";
 import Profile from "./pages/Profile";
 import { LoginPage } from "./pages/Login";
+import Sessions from "./pages/Sessions";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,15 @@ export const router = createBrowserRouter([
     element: (
       <MainLayout>
         <Register />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/sessions",
+    element: (
+      <MainLayout>
+        <Sessions />
       </MainLayout>
     ),
   },
