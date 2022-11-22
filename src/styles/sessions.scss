@@ -3,13 +3,10 @@ $secondary-color: #8566ff;
 $secondary-text-color: #938fbe;
 $secondary-text-size: 0.9em;
 
-// * {
-//   outline: 1px solid red;
-// }
 .sessions {
   background-color: $bg-color;
-  min-height: 100vh;
 }
+
 .main_session_wrapper {
   display: flex;
   flex: 1;
@@ -18,21 +15,25 @@ $secondary-text-size: 0.9em;
   padding: 0 1.5rem;
   margin: 0 auto;
 }
+
 .session_wrapper_left {
   flex: 8;
   margin-right: 18px;
 }
+
 .live_session {
   position: relative;
   flex: 1;
   width: 100%;
-  height: 68vh;
+  height: 64vh;
   border-radius: 15px;
   margin-bottom: 32px;
 }
+
 .session_wrapper_right {
   flex: 2;
 }
+
 .event_card {
   box-sizing: border-box;
   width: 288px;
@@ -54,9 +55,6 @@ $secondary-text-size: 0.9em;
   border-radius: 15px;
 }
 
-.live_card {
-  border: 2px solid #8566ff;
-}
 .session_title {
   font-family: "Montserrat";
   font-style: normal;
@@ -66,6 +64,7 @@ $secondary-text-size: 0.9em;
   text-transform: uppercase;
   color: #ffffff;
 }
+
 .schedule {
   font-family: "Montserrat";
   font-style: normal;
@@ -75,19 +74,19 @@ $secondary-text-size: 0.9em;
   text-transform: uppercase;
   color: #9d9d9d;
 }
+
 .speaker_section {
   display: flex;
   margin-top: 8px;
 }
+
 .speaker_img {
   width: 37px;
   height: 37px;
   margin-right: 10px;
-  background: url("https://iedpinternships.files.wordpress.com/2019/08/joseph-gonzalez-ifgrcqhznqg-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: 5px;
 }
+
 .speakers_name {
   font-family: "Montserrat";
   font-style: normal;
@@ -107,20 +106,47 @@ $secondary-text-size: 0.9em;
   text-transform: capitalize;
   color: rgba(255, 255, 255, 0.6);
 }
+
+.live_card {
+  border: 2px solid #8566ff;
+}
+
+.live_status {
+  position: relative;
+  float: right;
+  font-family: Montserrat;
+  font-size: 10px !important;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 0 5px;
+  letter-spacing: 0em;
+
+  background: #f30909;
+  border-radius: 5px;
+}
+
+.comments_area {
+  position: relative;
+  width: 887px;
+  height: 106px;
+}
+
 @media only screen and (max-width: 900px) {
   .live_session {
-    display: block;
-    margin: 0 auto;
-    width: 80vw;
+    width: 82vw;
+    left: 8px;
     margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .live_session {
+    height: 350px;
   }
 }
 @media only screen and (max-width: 425px) {
   .live_session {
-    display: block;
-    margin: 0 auto;
-    width: auto;
-    height: auto;
+    width: 80vw;
+    height: 200px;
     margin-bottom: 1rem;
   }
   .event_card {
