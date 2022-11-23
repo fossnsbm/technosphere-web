@@ -1,6 +1,8 @@
 import "./sponsor.scss";
 import learningPartner from "../../assets/sponsors/learning_partner.png";
 import outfitPartner from "../../assets/sponsors/outifit_partner.png";
+import eventPartner from "../../assets/sponsors/event_partner.png";
+import titlePartner from "../../assets/sponsors/title_partner.png";
 import { Typography, Container } from "@mui/material";
 
 import ball from "../../assets/ball.svg";
@@ -19,27 +21,17 @@ const Sponsors = () => {
         </div>
         <div className="sponsor_cards">
           <div className="card_top-section">
-            <SponsorCard text="Platinum Sponsor" logo={learningPartner} />
-            <SponsorCard text="Gold Sponsor" logo={learningPartner} />
-            <SponsorCard text="Silver Sponsor" logo={learningPartner} />
+            <SponsorCard text="Title Partner" logo={titlePartner} />
+            <SponsorCard text="Event Partner" logo={eventPartner} />
+            <SponsorCard text="Learning Partner" logo={learningPartner} />
           </div>
           <div className="card_bottom-section">
             <div className="co_sponsor sponsor_bottom">
-              <p>Co sponsor</p>
+              <p>Digital Media Partner</p>
               <div className="logo"></div>
             </div>
             <div className="other_sponsors">
-              <div className=" sponsor_bottom b-none">
-                <p>Learning Partner</p>
-                <div className="logo_github">
-                  <img src={learningPartner} alt="GitHub Community - Sri Lanka " />
-                </div>
-              </div>
-              <div className=" sponsor_bottom b-none">
-                <p>Digital Media Partner</p>
-                <div className="logo"></div>
-              </div>
-              <div className=" sponsor_bottom b-none">
+              <div className="sponsor_bottom b-none">
                 <p>Official Outfit Partner</p>
                 <div className="logo_cms">
                   <img src={outfitPartner} alt="Content Management and Solutions (Pvt) Ltd" />
@@ -65,7 +57,9 @@ const SponsorCard = ({ logo, text }: CardProps) => {
     <div className="sponsor_card_container">
       <p>{text}</p>
       <div className="sponsor_card">
-        <div className="logo"></div>
+        <div className="logo">
+          <img src={logo} alt="Content Management and Solutions (Pvt) Ltd" />
+        </div>
       </div>
     </div>
   );
