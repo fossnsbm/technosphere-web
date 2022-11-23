@@ -102,7 +102,7 @@ export default function Agenda() {
                     <Typography variant="h2" className="heading">
                       in-person event
                     </Typography>
-                    <Typography className="time">9.00PM - 4.30PM</Typography>
+                    <Typography className="time">9.00AM - 4.30PM</Typography>
                   </Grid>
                   <Divider
                     orientation="vertical"
