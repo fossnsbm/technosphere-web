@@ -5,7 +5,7 @@ import { Typography, Container, Box, Grid, Button } from "@mui/material";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import HeaderMenus from "../headerMenus/headerMenus";
 
-import hero_logo from "../../assets/logo.svg";
+import hero_logo from "../../assets/Technosphere - White.svg";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC<{}> = () => {

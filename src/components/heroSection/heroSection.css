@@ -1,6 +1,6 @@
 .Hero {
   height: calc(100vh - 100px);
-  padding-top: 12%;
+  padding-top: 7%;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -10,7 +10,7 @@
 
 .Hero_logo {
   padding-top: 15px;
-  width: 70%;
+  width: 60%;
 }
 
 .Event_date {
