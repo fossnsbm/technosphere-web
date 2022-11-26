@@ -12,6 +12,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  LinearProgress,
 } from "@mui/material";
 import Chart from "react-apexcharts";
 import { GetLeaderBoard } from "../services/react-query/leaderboard/useLeaderBoard";
@@ -56,6 +57,12 @@ export const LeaderBoardPage = () => {
         </Box>
 
         <TableContainer component={Box} sx={{ pb: 20 }}>
+          {data.isLoading && (
+            <>
+              <LinearProgress />
+            </>
+          )}
+
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -74,41 +81,46 @@ export const LeaderBoardPage = () => {
                 </TableCell>
               </TableRow>
             </TableHead>
+
             <TableBody>
-              {data.data.values.map(
-                (details: {
-                  _id: string;
-                  user: {
-                    _id: string;
-                    email: string;
-                    fullName: string;
-                    profileImgUrl: string;
-                  };
-                  points: number;
-                  history: string[];
-                }) => {
-                  return (
-                    <>
-                      <TableRow
-                        key={details._id}
-                        sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                        }}
-                      >
-                        <TableCell component="th" scope="row">
-                          <Typography variant="h6" fontWeight={400}>
-                            {details.user.fullName}
-                          </Typography>
-                        </TableCell>
-                        <TableCell align="right">
-                          <Typography variant="h6" fontWeight={900}>
-                            {details.points}
-                          </Typography>
-                        </TableCell>
-                      </TableRow>
-                    </>
-                  );
-                }
+              {data.isSuccess && (
+                <>
+                  {data.data.values.map(
+                    (details: {
+                      _id: string;
+                      user: {
+                        _id: string;
+                        email: string;
+                        fullName: string;
+                        profileImgUrl: string;
+                      };
+                      points: number;
+                      history: string[];
+                    }) => {
+                      return (
+                        <>
+                          <TableRow
+                            key={details._id}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              <Typography variant="h6" fontWeight={400}>
+                                {details.user.fullName}
+                              </Typography>
+                            </TableCell>
+                            <TableCell align="right">
+                              <Typography variant="h6" fontWeight={900}>
+                                {details.points}
+                              </Typography>
+                            </TableCell>
+                          </TableRow>
+                        </>
+                      );
+                    }
+                  )}
+                </>
               )}
             </TableBody>
           </Table>
