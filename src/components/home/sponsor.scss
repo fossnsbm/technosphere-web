@@ -38,7 +38,7 @@
   align-items: center;
 
   .logo {
-    width:350px;
+    width: 350px;
   }
 }
 
@@ -83,7 +83,7 @@
       rgba(0, 0, 0, 0) 97.58%);
   border: 1px solid rgba(133, 102, 255, 0.108);
   border-radius: 10px;
-  width: 50%;
+  width: 80%;
   overflow-x: auto;
   height: 180px;
   font-weight: 500;
@@ -116,18 +116,37 @@
   }
 
   .logo {
-    width: 180px;
-    height: 80px;
+    height: 100px;
+
+    img {
+      height: 80px;
+    }
   }
 
-  .logo_cms{
+  .logo-mobile {
+    display: none;
+  }
+
+  .logo_cms {
     width: 200px;
     height: 80px;
     text-align: center;
 
-    img{
+    img {
       width: 80px;
       margin-right: 20px;
+    }
+  }
+
+  .logo-technews {
+    width: 180px;
+    height: 80px;
+    text-align: center;
+
+    img {
+      width: 180px;
+      margin-left: 20px;
+      object-fit: contain;
     }
   }
 
@@ -169,6 +188,19 @@
     .sponsor_bottom {
       padding: 0px;
       border: none;
+    }
+
+    .logo-mobile {
+      display: block;
+      margin-top: 10px;
+
+      img {
+        height: 120px;
+      }
+    }
+
+    .logo {
+      display: none;
     }
   }
 
