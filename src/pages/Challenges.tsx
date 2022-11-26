@@ -1,7 +1,14 @@
 import "../styles/challenges.scss";
 import logo from "../assets/Technosphere - Purple.svg";
 import HeaderMenus from "../components/headerMenus/headerMenus";
-import { Typography, Container, Box, Grid, Button } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Box,
+  Grid,
+  Button,
+  CircularProgress,
+} from "@mui/material";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
 import ChallengeCard from "../components/global/ChallengeCard";
@@ -49,6 +56,11 @@ const Challenges = () => {
           <Typography className="challenges-title">
             eiusmod tempor incididunt ut labore et dolore ma
           </Typography>
+          {data.isLoading && (
+            <>
+              <CircularProgress />
+            </>
+          )}
           <Grid
             className="ctf-challenges"
             container

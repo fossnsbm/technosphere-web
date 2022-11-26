@@ -4,7 +4,7 @@ import { getAuthStorage } from "../utils/jwt-token";
 const id_token = getAuthStorage();
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: import.meta.env.VITE_BACKEND_API_URL,
   responseType: "json",
   headers: {
     "Content-type": "application/json",
