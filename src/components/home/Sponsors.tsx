@@ -3,7 +3,8 @@ import learningPartner from "../../assets/sponsors/learning_partner.png";
 import outfitPartner from "../../assets/sponsors/outifit_partner.png";
 import eventPartner from "../../assets/sponsors/event_partner.png";
 import titlePartner from "../../assets/sponsors/title_partner.png";
-import mediaPartner from "../../assets/sponsors/media_partner.svg";
+import mediaPartner from "../../assets/sponsors/media-partner.png";
+import mediaPartnerMobile from "../../assets/sponsors/media-partner-mobile.png";
 import { Typography, Container } from "@mui/material";
 
 import ball from "../../assets/ball.svg";
@@ -28,7 +29,7 @@ const Sponsors = () => {
           </div>
           <div className="card_bottom-section">
             <div className="co_sponsor sponsor_bottom">
-              <p>Media Partner</p>
+              <p>Media Partners</p>
               <div className="logo">
                 <img
                   src={mediaPartner}

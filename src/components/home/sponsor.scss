@@ -87,7 +87,7 @@
     );
   border: 1px solid rgba(133, 102, 255, 0.108);
   border-radius: 10px;
-  width: 50%;
+  width: 80%;
   overflow-x: auto;
   height: 180px;
   font-weight: 500;
@@ -120,8 +120,10 @@
   }
 
   .logo {
-    width: 180px;
-    height: 80px;
+  }
+
+  .logo-mobile {
+    display: none;
   }
 
   .logo_cms {
@@ -134,6 +136,19 @@
       margin-right: 20px;
     }
   }
+
+  .logo-technews {
+    width: 180px;
+    height: 80px;
+    text-align: center;
+
+    img {
+      width: 180px;
+      margin-left: 20px;
+      object-fit: contain;
+    }
+  }
+
 }
 
 .b-none {
@@ -171,6 +186,19 @@
     .sponsor_bottom {
       padding: 0px;
       border: none;
+    }
+
+    .logo-mobile {
+      display: block;
+      margin-top: 10px;
+
+      img {
+        height: 120px;
+      }
+    }
+
+    .logo {
+      display: none;
     }
   }
 
