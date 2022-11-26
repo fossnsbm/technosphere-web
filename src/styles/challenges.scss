@@ -62,6 +62,16 @@ $main-font: Montserrat;
   font-weight: 600 !important;
 }
 
+.challenge-submit-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-submit-box-title {
+  text-align: center !important;
+  font-size: 36px !important;
+}
+
 .ctf-challenges {
   display: block;
   margin: 0 auto;

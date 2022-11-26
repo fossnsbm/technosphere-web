@@ -5,47 +5,48 @@ $secondary-text-size: 0.9em;
 $main-font: Montserrat;
 
 .challenge-card {
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    max-width: 288px;
-    background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%);
-    border-radius: 15px;
-  
-    .challenge-card-title {
-      margin-bottom: 12px;
-      font-weight: 700 !important;
-      color: $secondary-color;
-    }
-  
-    .challenge-card-description {
-      font-size: 12px !important;
-      color: $secondary-text-color;
-      text-align: center;
-    }
-  
-    .challenge-number {
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      color: $secondary-color;
-    }
-  
-    .challenge-submission-count {
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      margin-top: 6px;
-      padding: 18px 0px;
-    }
-    .challenge_button {
-      background-color: transparent !important;
-      border: 2px solid #ffffff;
-      color: #ffffff !important;
-      padding: 12px 32px !important;
-      margin-top: 40px !important;
-      font-weight: 600 !important;
-    }
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  max-width: 288px;
+  background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%);
+  border-radius: 15px;
+
+  .challenge-card-title {
+    margin-bottom: 12px;
+    font-weight: 700 !important;
+    color: $secondary-color;
   }
+
+  .challenge-card-description {
+    font-size: 12px !important;
+    color: $secondary-text-color;
+    text-align: center;
+  }
+
+  .challenge-number {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: $secondary-color;
+  }
+
+  .challenge-submission-count {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-top: 6px;
+    padding: 18px 0px;
+  }
+
+  .challenge_button {
+    background-color: transparent !important;
+    border: 2px solid #ffffff;
+    color: #ffffff !important;
+    padding: 12px 32px !important;
+    margin-top: 40px !important;
+    font-weight: 600 !important;
+  }
+}
