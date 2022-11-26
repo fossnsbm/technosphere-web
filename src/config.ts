@@ -1,3 +1,3 @@
 export const AppConfig = {
-  BACKEND_API: "https://api.api.technosphere.fossnsbm.org",
+  BACKEND_API: "http://localhost:4000",
 };

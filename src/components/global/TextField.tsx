@@ -35,13 +35,13 @@ const TextField = ({
   error,
   errorText,
   value,
-  name, 
+  name,
   isUniEmail,
   onChange,
 }: AppState) => {
   const [visible, setVisible] = useState(false);
 
-  console.log(title + " " + type)
+  console.log(title + " " + type);
   return (
     <div className="textf_bg">
       <div className="label-row">
@@ -49,9 +49,7 @@ const TextField = ({
         {error && <h6>{errorText}</h6>}
       </div>
       <span>
-        {isUniEmail && (
-          <div className="postfix">@students.nsbm.ac.lk</div>
-        )}
+        {isUniEmail && <div className="postfix">@students.nsbm.ac.lk</div>}
         <input
           type={obscured ? (visible ? "text" : "password") : type}
           placeholder={placeholder}

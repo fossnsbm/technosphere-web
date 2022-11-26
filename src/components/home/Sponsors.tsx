@@ -30,14 +30,20 @@ const Sponsors = () => {
             <div className="co_sponsor sponsor_bottom">
               <p>Media Partner</p>
               <div className="logo">
-                <img src={mediaPartner} alt="Content Management and Solutions (Pvt) Ltd" />
+                <img
+                  src={mediaPartner}
+                  alt="Content Management and Solutions (Pvt) Ltd"
+                />
               </div>
             </div>
             <div className="other_sponsors">
               <div className="sponsor_bottom b-none">
                 <p>Official Outfit Partner</p>
                 <div className="logo_cms">
-                  <img src={outfitPartner} alt="Content Management and Solutions (Pvt) Ltd" />
+                  <img
+                    src={outfitPartner}
+                    alt="Content Management and Solutions (Pvt) Ltd"
+                  />
                 </div>
               </div>
             </div>

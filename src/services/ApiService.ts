@@ -12,4 +12,8 @@ export class ApiService {
   getCharacters = () => {
     return apiClient.get("/users/me");
   };
+
+  getChallengers = () => {
+    return apiClient.get("/meta/challengers/public");
+  };
 }

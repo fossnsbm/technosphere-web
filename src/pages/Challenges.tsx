@@ -5,8 +5,10 @@ import { Typography, Container, Box, Grid, Button } from "@mui/material";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
 import ChallengeCard from "../components/global/ChallengeCard";
+import { GetChallengers } from "../services/react-query/challenges/useChallenges";
 
 const Challenges = () => {
+  const data = GetChallengers();
   return (
     <Box className="challenges">
       <Container>
@@ -53,206 +55,37 @@ const Challenges = () => {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 6, md: 12 }}
           >
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="25.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="25.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="25.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="25.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3} md={3}>
-              <ChallengeCard
-                title="CHALLANGE NO.01"
-                description="Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod "
-                number="26.12"
-                submissionCount="35 + Submissions"
-              />
-            </Grid>
+            {data.isSuccess && (
+              <>
+                {data.data.map(
+                  (challenge: {
+                    id: string;
+                    name: string;
+                    description: string;
+                    isDownlodAvalible: boolean;
+                    downloadUrl: string;
+                    isActive: boolean;
+                    challengeUrl: string;
+                    solves: number;
+                    isCompleted: boolean;
+                  }) => {
+                    return (
+                      <>
+                        <Grid item xs={12} sm={3} md={3}>
+                          <ChallengeCard
+                            title={challenge.name}
+                            description={challenge.description}
+                            id={challenge.id}
+                            isCompleted={challenge?.isCompleted}
+                            submissionCount={`${challenge.solves} Submissions`}
+                          />
+                        </Grid>
+                      </>
+                    );
+                  }
+                )}
+              </>
+            )}
           </Grid>
           <Typography className="ctf-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

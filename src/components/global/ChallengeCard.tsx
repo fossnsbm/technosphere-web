@@ -26,10 +26,17 @@ const ChallengeCard = (props: any) => {
 
   return (
     <>
-      <Box className="challenge-card">
-        <Typography className="challenge-card-title">{props.title}</Typography>
+      <Box
+        className="challenge-card"
+        style={{
+          border: `2px solid ${props.isCompleted ? "green" : "#0e0c33"}`,
+        }}
+      >
+        <Typography className="challenge-card-title" variant="h5">
+          {props.title}
+        </Typography>
         <Typography className="challenge-card-description">
-          {props.description}
+          {props.description} {props.isCompleted}
         </Typography>
         <Typography className="challenge-number">{props.number}</Typography>
         <Typography className="challenge-submission-count">
@@ -79,7 +86,7 @@ const ChallengeCard = (props: any) => {
                 }}
                 onClick={handleClose}
               >
-                Submit
+                {props.isCompleted ? "Submitted" : "Submit"}
               </Button>
             </DialogActions>
           </Box>
@@ -87,7 +94,7 @@ const ChallengeCard = (props: any) => {
         <Button
           variant="outlined"
           color="inherit"
-          endIcon={<ArrowForward />}
+          endIcon={props.isCompleted ? null : <ArrowForward />}
           sx={{
             padding: "8px 18px",
             fontWeight: 600,
@@ -95,7 +102,7 @@ const ChallengeCard = (props: any) => {
           }}
           onClick={handleSubmitChallenge}
         >
-          Submit
+          {props.isCompleted ? "Submitted" : "Submit"}
         </Button>
       </Box>
     </>

@@ -6,7 +6,7 @@ import arrow from "../../assets/speaker_arrow.svg";
 import athuraliya from "../../assets/speakers/athuraliya.jpg";
 import speaker from "../../assets/speakers/speaker_placeholder.png";
 import "./speakersSection.css";
-import SpeakerCard from "../global/SpeakerCard"
+import SpeakerCard from "../global/SpeakerCard";
 
 function SpeakersSection() {
   return (
@@ -49,14 +49,12 @@ function SpeakersSection() {
             company=""
             link=""
           />
-
         </Grid>
 
         <Typography className="inperson_heading">
           In-person Event Speakers
         </Typography>
         <Grid container spacing={5}>
-
           <SpeakerCard
             photo={speaker}
             speaker="Forthcoming"
@@ -96,7 +94,6 @@ function SpeakersSection() {
             company=""
             link=""
           />
-
         </Grid>
       </Container>
     </div>

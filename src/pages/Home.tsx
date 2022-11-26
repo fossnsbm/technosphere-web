@@ -7,18 +7,18 @@ import HeroSection from "../components/heroSection/heroSection";
 import AgendaSection from "../components/agenda/agenda";
 
 export const HomePage = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   useEffect(() => {
     if (location.hash) {
-      let elem = document.getElementById(location.hash.slice(1))
+      let elem = document.getElementById(location.hash.slice(1));
       if (elem) {
-        elem.scrollIntoView({ behavior: "smooth" })
+        elem.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
-  }, [location,])
+  }, [location]);
 
   return (
     <>
