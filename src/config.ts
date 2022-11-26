@@ -1,3 +1,3 @@
 export const AppConfig = {
-  BACKEND_API: "http://localhost:4000",
+  BACKEND_API: import.meta.env.VITE_BACKEND_API_URL, 
 };
