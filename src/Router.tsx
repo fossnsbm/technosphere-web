@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Profile from "./pages/Profile";
 import { LoginPage } from "./pages/Login";
 import Challenges from "./pages/Challenges";
+import { LeaderBoardPage } from "./pages/LeaderBoard";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,15 @@ export const router = createBrowserRouter([
     element: (
       <MainLayout>
         <Challenges />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/leaderboard",
+    element: (
+      <MainLayout>
+        <LeaderBoardPage />
       </MainLayout>
     ),
   },

@@ -16,4 +16,8 @@ export class ApiService {
   getChallengers = () => {
     return apiClient.get("/meta/challengers/public");
   };
+
+  getLeaderBoard = () => {
+    return apiClient.get("/leaderboard");
+  };
 }
