@@ -20,4 +20,8 @@ export class ApiService {
   getLeaderBoard = () => {
     return apiClient.get("/leaderboard");
   };
+
+  getWebinars = () => {
+    return apiClient.get("/meta/webinar");
+  };
 }

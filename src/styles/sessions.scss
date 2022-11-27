@@ -1,0 +1,155 @@
+$bg-color: #060527;
+$secondary-color: #8566ff;
+$secondary-text-color: #938fbe;
+$secondary-text-size: 0.9em;
+
+.sessions {
+  background-color: $bg-color;
+}
+
+.main_session_wrapper {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  max-width: 75rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.session_wrapper_left {
+  flex: 8;
+  margin-right: 18px;
+}
+
+.live_session {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 64vh;
+  border-radius: 15px;
+  margin-bottom: 32px;
+}
+
+.session_wrapper_right {
+  flex: 2;
+}
+
+.event_card {
+  box-sizing: border-box;
+  width: 288px;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
+    linear-gradient(
+      270deg,
+      rgba(42, 16, 158, 0.53) 0%,
+      rgba(133, 102, 255, 0.75) 97.58%
+    );
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    270deg,
+    rgba(42, 16, 158, 0.53) 0%,
+    rgba(133, 102, 255, 0.75) 97.58%
+  );
+  border-radius: 15px;
+}
+
+.session_title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.schedule {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #9d9d9d;
+}
+
+.speaker_section {
+  display: flex;
+  margin-top: 8px;
+}
+
+.speaker_img {
+  width: 37px;
+  height: 37px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.speakers_name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 23px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.speaker_description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px !important;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.live_card {
+  border: 2px solid #8566ff;
+}
+
+.live_status {
+  position: relative;
+  float: right;
+  font-family: Montserrat;
+  font-size: 10px !important;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 0 5px;
+  letter-spacing: 0em;
+
+  background: #f30909;
+  border-radius: 5px;
+}
+
+.comments_area {
+  position: relative;
+  width: 887px;
+  height: 106px;
+}
+
+@media only screen and (max-width: 900px) {
+  .live_session {
+    width: 82vw;
+    left: 8px;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .live_session {
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .live_session {
+    width: 80vw;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+  .event_card {
+    width: 100%;
+  }
+}

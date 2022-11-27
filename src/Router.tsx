@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import { LoginPage } from "./pages/Login";
 import Challenges from "./pages/Challenges";
 import { LeaderBoardPage } from "./pages/LeaderBoard";
+import { WebinarPage } from "./pages/Webinar";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,15 @@ export const router = createBrowserRouter([
     element: (
       <MainLayout>
         <LeaderBoardPage />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/webinar",
+    element: (
+      <MainLayout>
+        <WebinarPage />
       </MainLayout>
     ),
   },
