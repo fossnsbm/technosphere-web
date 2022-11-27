@@ -21,7 +21,7 @@ const Challenges = () => {
       <Container>
         <HeaderMenus />
         <Box className="main-wrapper">
-          <Typography className="road-to">Road To</Typography>
+          <Typography className="road-to">ROAD TO</Typography>
           <Box
             className="technosphere-logo"
             component="img"
