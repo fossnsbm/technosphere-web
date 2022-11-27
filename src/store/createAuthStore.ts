@@ -11,16 +11,16 @@ interface TokenStore {
 
 export const useTokenStore = create<TokenStore>()(
   devtools(
-    persist((set) => ({
-      accessToken: null,
-      setAccessToken: (accessToken: string) =>
-        set(() => ({ accessToken: accessToken })),
-      clear: () => set(() => ({ accessToken: null })),
-    }),
-    ),
-     {
-      name: "auth-storage",
-      // getStorage: () => sessionStorage, // (optional) by default the 'localStorage' is used
-    }
+    persist(
+      (set) => ({
+        accessToken: null,
+        setAccessToken: (accessToken: string) =>
+          set(() => ({ accessToken: accessToken })),
+        clear: () => set(() => ({ accessToken: null })),
+      }),
+      {
+        name: "auth-storage",
+      }
+    )
   )
 );

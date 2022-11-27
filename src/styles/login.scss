@@ -1,23 +1,25 @@
 .login_textfield {
-    color: white;
-    padding: 7px 15px !important;
-    font-size: 1em;
-    width: 100% !important;
-    height: 45px;
-    transition-duration: 0.2s;
+  color: white;
+  padding: 7px 15px !important;
+  font-size: 1em;
+  width: 100% !important;
+  height: 45px;
+  transition-duration: 0.2s;
 
-    background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
-        linear-gradient(89.81deg,
-            rgba(81, 61, 160, 0.75) -9.52%,
-            rgba(81, 61, 160, 0) -2.77%,
-            #513da0 97.39%);
+  background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%),
+    linear-gradient(
+      89.81deg,
+      rgba(81, 61, 160, 0.75) -9.52%,
+      rgba(81, 61, 160, 0) -2.77%,
+      #513da0 97.39%
+    );
 
-    border-radius: 7px;
-    border: 1px solid #8566ff32 !important;
-    margin-top: 6px !important;
-    margin-bottom: 16px !important;
+  border-radius: 7px;
+  border: 1px solid #8566ff32 !important;
+  margin-top: 6px !important;
+  margin-bottom: 16px !important;
 }
 
-.login_button{
-    width: 180px;
+.login_button {
+  width: 180px;
 }

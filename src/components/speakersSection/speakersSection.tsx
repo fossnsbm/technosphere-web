@@ -11,7 +11,7 @@ import ravindu from "../../assets/speakers/ravindu.jpg";
 import asanga from "../../assets/speakers/asanga.jpg";
 import speaker from "../../assets/speakers/speaker_placeholder.png";
 import "./speakersSection.css";
-import SpeakerCard from "../global/SpeakerCard"
+import SpeakerCard from "../global/SpeakerCard";
 
 function SpeakersSection() {
   return (
@@ -54,14 +54,12 @@ function SpeakersSection() {
             company=""
             link=""
           />
-
         </Grid>
 
         <Typography className="inperson_heading">
           In-person Event Speakers
         </Typography>
         <Grid container spacing={5}>
-
           <SpeakerCard
             photo={athuraliya}
             speaker="Mr. C.D. Athuraliya"
@@ -93,7 +91,6 @@ function SpeakersSection() {
             company=""
             link=""
           />
-
         </Grid>
       </Container>
     </div>

@@ -1,9 +1,8 @@
 import create from "zustand";
-import {devtools, persist } from "zustand/middleware";
-import {  IUser } from "../interface/user";
+import { devtools, persist } from "zustand/middleware";
+import { IUser } from "../interface/user";
 
 type Nullable<T> = T | null;
-
 
 export interface UserStore {
   user: Nullable<IUser>;
@@ -13,14 +12,16 @@ export interface UserStore {
 
 export const useUserStore = create<UserStore>()(
   devtools(
-    persist((set) => ({
-      user: null,
-      setUser: (user: IUser) => set(() => ({ user: user })),
-      clear: () => set(() => ({ user: null })),
-    }),
-    ),
-     {
-      name: "user-storage",
-    }
+    persist(
+      (set) => ({
+        user: null,
+        setUser: (user: IUser) => set(() => ({ user: user })),
+        clear: () => set(() => ({ user: null })),
+      }),
+
+      {
+        name: "user-storage",
+      }
+    )
   )
 );

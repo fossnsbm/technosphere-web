@@ -22,6 +22,8 @@ const pages = [
   { text: "AGENDA", href: "/#agenda" },
   { text: "SPEAKERS", href: "/#speakers" },
   { text: "SPONSORS", href: "/#sponsors" },
+  { text: "CHALLENGERS", href: "/challenges" },
+  { text: "SESSIONS", href: "/webinar" },
 ];
 
 function HeaderMenus() {

@@ -1,0 +1,91 @@
+$bg-color: #060527;
+$secondary-color: #8566ff;
+$secondary-text-color: #938fbe;
+$secondary-text-size: 0.9em;
+$main-font: Montserrat;
+
+* {
+  font-family: $main-font !important;
+}
+
+.challenges {
+  background-color: $bg-color;
+  position: relative;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  padding: 24px;
+}
+
+.road-to {
+  color: $secondary-color;
+  font-size: 20px !important;
+  font-weight: 400;
+}
+
+.technosphere-logo {
+  color: #8566ff !important;
+}
+
+.ctf-title-main {
+  font-size: 81px !important;
+  text-transform: uppercase;
+  font-weight: 800 !important;
+}
+
+.ctf-description {
+  color: $secondary-text-color;
+  font-size: 18px !important;
+  max-width: 656px;
+}
+.rules-button {
+  background-color: #8566ff !important;
+  color: #ffffff !important;
+  padding: 12px 32px !important;
+  margin-top: 40px !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
+.ctf-title-intro {
+  margin-top: 71px !important;
+  margin-bottom: 24px !important;
+  font-size: 36px !important;
+  font-weight: 600 !important;
+}
+
+.challenges-title {
+  margin-top: 19px !important;
+  margin-bottom: 48px !important;
+  font-size: 23px !important;
+  color: $secondary-text-color;
+  font-weight: 600 !important;
+}
+
+.challenge-submit-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-submit-box-title {
+  text-align: center !important;
+  font-size: 36px !important;
+}
+
+.ctf-challenges {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+@media only screen and (max-width: 650px) {
+  .ctf-title-main {
+    font-size: 35px !important;
+  }
+}
+
+@media only screen and (max-width: 955px) {
+  .ctf-title-main {
+    font-size: 60px !important;
+  }
+}

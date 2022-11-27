@@ -12,4 +12,20 @@ export class ApiService {
   getCharacters = () => {
     return apiClient.get("/users/me");
   };
+
+  getChallengers = () => {
+    return apiClient.get("/meta/challengers/public");
+  };
+
+  getLeaderBoard = () => {
+    return apiClient.get("/leaderboard");
+  };
+
+  getWebinars = () => {
+    return apiClient.get("/meta/webinar");
+  };
+
+  getComments = (id: string) => {
+    return apiClient.get(`/meta/comment/${id}`);
+  };
 }

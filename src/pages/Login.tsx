@@ -1,4 +1,4 @@
-import "../styles/login.scss"
+import "../styles/login.scss";
 import {
   Container,
   TextField,
@@ -104,7 +104,7 @@ export const LoginPage = () => {
           });
         }
       },
-      onMutate: () => { },
+      onMutate: () => {},
     }
   );
 
@@ -132,19 +132,17 @@ export const LoginPage = () => {
                 }}
               >
                 <Avatar sx={{ m: 1, bgcolor: "#8566FF" }}>
-                  <LockOutlinedIcon/>
+                  <LockOutlinedIcon />
                 </Avatar>
                 <Typography
                   component="h1"
                   variant="h5"
-                  style={{ marginBottom: 30}}
+                  style={{ marginBottom: 30 }}
                 >
                   SIGN IN
                 </Typography>
                 <Box>
-                  <Typography>
-                    Email Address
-                  </Typography>
+                  <Typography>Email Address</Typography>
                   <TextField
                     variant="standard"
                     required
@@ -156,15 +154,12 @@ export const LoginPage = () => {
                     name="email"
                     autoComplete="email"
                     autoFocus
-
                     InputProps={{
                       disableUnderline: true,
                     }}
                     className="login_textfield"
                   />
-                  <Typography>
-                    Password
-                  </Typography>
+                  <Typography>Password</Typography>
                   <TextField
                     variant="standard"
                     required
@@ -176,7 +171,6 @@ export const LoginPage = () => {
                     type="password"
                     id="password"
                     autoComplete="current-password"
-
                     InputProps={{
                       disableUnderline: true,
                     }}
@@ -185,7 +179,8 @@ export const LoginPage = () => {
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
                     label="Remember me"
-                  /><br />
+                  />
+                  <br />
                   <ColorLoginButton
                     type="submit"
                     fullWidth
@@ -193,7 +188,7 @@ export const LoginPage = () => {
                     onClick={() => userLogin()}
                     sx={{ mt: 3, mb: 2 }}
 
-                  // className="login_button"
+                    // className="login_button"
                   >
                     Sign In
                   </ColorLoginButton>
@@ -204,7 +199,12 @@ export const LoginPage = () => {
                       </MuiLink> */}
                     </Grid>
                     <Grid item>
-                      <MuiLink component={Link} to="/register" variant="body2" className="login_link">
+                      <MuiLink
+                        component={Link}
+                        to="/register"
+                        variant="body2"
+                        className="login_link"
+                      >
                         {"Don't have an account? Sign Up"}
                       </MuiLink>
                     </Grid>
