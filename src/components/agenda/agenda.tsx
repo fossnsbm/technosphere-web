@@ -73,8 +73,6 @@ export default function Agenda() {
           alignType={AlignType.Right}
         />
 
-
-
         <Grid container>
           <Grid item xs={12} sm={12} md={11} lg={10}>
             <Card className="inperson_agenda_card">
@@ -178,7 +176,9 @@ export default function Agenda() {
                       Big Data
                     </Typography>
                     <Typography className="content">
-                      Big data is a term that describes large, hard-to-manage, structured and unstructured data, but it's not merely about the amount of data.
+                      Big data is a term that describes large, hard-to-manage,
+                      structured and unstructured data, but it's not merely
+                      about the amount of data.
                     </Typography>
                   </Grid>
                   <Divider
@@ -244,7 +244,9 @@ export default function Agenda() {
                       Mr. Migara Amithodhana
                     </Typography>
                     <Typography className="job">Co-founder & CEO</Typography>
-                    <Typography className="company">Magicbits (Pvt) Ltd</Typography>
+                    <Typography className="company">
+                      Magicbits (Pvt) Ltd
+                    </Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -287,8 +289,12 @@ export default function Agenda() {
                     <Typography variant="h5" className="name">
                       Mr. Ravindu Omantha
                     </Typography>
-                    <Typography className="job">Co-Founder & Head of Studio</Typography>
-                    <Typography className="company">RAM Studios (Pvt) Ltd</Typography>
+                    <Typography className="job">
+                      Co-Founder & Head of Studio
+                    </Typography>
+                    <Typography className="company">
+                      RAM Studios (Pvt) Ltd
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
