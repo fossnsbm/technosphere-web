@@ -169,7 +169,7 @@ export const WebinarPage = () => {
                 </Grid>
 
                 <Grid item xs={4} sm={8} md={3}>
-                  <Stack spacing={2}>
+                  <Stack spacing={0}>
                     {webinarDetails.isSuccess && (
                       <>
                         {webinarDetails.data.map((webinar: IWebinar) => {
@@ -201,7 +201,7 @@ export const WebinarPage = () => {
                                   {new Date(webinar.date).toDateString()}
                                 </Typography>
                                 <Grid className="speaker_section">
-                                  <img src={speaker} className="speaker_img" />
+                                  <img src={webinar.speackerImgUrl} className="speaker_img" />
                                   <Grid>
                                     <Typography className="speakers_name">
                                       {webinar.speacker}
