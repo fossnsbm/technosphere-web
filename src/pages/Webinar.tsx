@@ -8,18 +8,21 @@ import {
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import HeaderMenus from "../components/headerMenus/headerMenus";
-import HeroSection from "../components/heroSection/heroSection";
 import VideoJS from "../components/VideoJS";
-import "../styles/challenges.scss";
-import "../styles/sessions.scss";
 import speaker from "../assets/speakers/speaker_placeholder.png";
 import { GetWebinars } from "../services/react-query/webinar/useWebinar";
-import { useScreen } from "usehooks-ts";
+import { IWebinar } from "../interface/webinar";
+import "../styles/challenges.scss";
+import "../styles/sessions.scss";
 
 export const WebinarPage = () => {
   const playerRef = useRef(null);
-  const [selectedWebinar, setSelectedWebinar] = useState(null);
-  const [userSelected, setUserSelected] = useState<null | string>(null);
+
+  const [userSelected, setUserSelected] = useState<null | IWebinar>(null);
+  const [currentlyLiveWebinar, setCurrentlyLiveWebinar] = useState<
+    null | string
+  >(null);
+
   const webinarDetails = GetWebinars();
 
   useEffect(() => {
@@ -30,7 +33,23 @@ export const WebinarPage = () => {
     if (!userSelected) {
       if (webinarDetails.isSuccess) {
         for (const webinar of webinarDetails.data) {
-          console.log(webinar);
+          const happeningOn = new Date(webinar.date);
+          const currentDate = new Date();
+
+          const hourspassed = Math.floor(
+            (happeningOn.getTime() - currentDate.getTime()) / 1000 / (60 * 60)
+          );
+
+          // hours passed should be -1 or -2
+          // means its been hour or 2 hours since the video
+          // started to stream
+          if (hourspassed == -1 || hourspassed == -2) {
+            setCurrentlyLiveWebinar(webinar._id);
+            setUserSelected({
+              ...webinar,
+              isLive: true,
+            });
+          }
         }
       }
     }
@@ -43,10 +62,14 @@ export const WebinarPage = () => {
     fluid: true,
     sources: [
       {
-        src: "https://d3qy2z3f9c8bfd.cloudfront.net/recordings/videoplayback.webm",
-        type: "video/webm",
+        src: userSelected?.s3Url,
+        type: "video/mp4",
       },
     ],
+  };
+
+  const handleSwitchWeinar = (webinar: IWebinar) => {
+    setUserSelected(webinar);
   };
 
   const handlePlayerReady = (player: any) => {
@@ -62,9 +85,23 @@ export const WebinarPage = () => {
     });
   };
 
+  const isSelected = (webinarId: string): boolean => {
+    if (userSelected) {
+      return userSelected?._id === webinarId;
+    }
+    return false;
+  };
+
+  const checkLiveNow = (webinarId: string): boolean => {
+    if (currentlyLiveWebinar) {
+      return currentlyLiveWebinar === webinarId;
+    }
+    return false;
+  };
+
   return (
     <>
-      <Box className="challenges">
+      <Box className="challenges" sx={{ pb: 20 }}>
         <Container maxWidth="lg">
           <HeaderMenus />
         </Container>
@@ -92,7 +129,7 @@ export const WebinarPage = () => {
 
                   <Box sx={{ mt: 5 }}>
                     <Typography variant="h4" style={{ fontWeight: 900 }}>
-                      Edge Computing
+                      {userSelected ? userSelected.name : ""}
                     </Typography>
                   </Box>
                 </Grid>
@@ -101,58 +138,49 @@ export const WebinarPage = () => {
                   <Stack spacing={2}>
                     {webinarDetails.isSuccess && (
                       <>
-                        {webinarDetails.data.map(
-                          (webinar: {
-                            _id: string;
-                            name: string;
-                            description: string;
-                            speacker: string;
-                            speackerImgUrl: string;
-                            date: string;
-                            speackerDescription: string;
-                            createdAt: Date;
-                            updatedAt: Date;
-                            __v: number;
-                          }) => {
-                            return (
-                              <>
-                                <div
-                                  className={`event_card live_card`}
-                                  style={{ width: "100%" }}
+                        {webinarDetails.data.map((webinar: IWebinar) => {
+                          return (
+                            <>
+                              <div
+                                className={`event_card ${
+                                  isSelected(webinar._id) ? "live_card" : null
+                                }`}
+                                style={{ width: "100%" }}
+                                onClick={() => handleSwitchWeinar(webinar)}
+                              >
+                                {checkLiveNow(webinar._id) ? (
+                                  <>
+                                    <Typography className="live_status">
+                                      ⦿ Live
+                                    </Typography>
+                                  </>
+                                ) : null}
+                                <Typography
+                                  className="session_title"
+                                  variant="h5"
+                                  fontWeight={800}
+                                  sx={{ mb: 1 }}
                                 >
-                                  <Typography className="live_status">
-                                    Status
-                                  </Typography>
-                                  <Typography
-                                    className="session_title"
-                                    variant="h5"
-                                    fontWeight={800}
-                                    sx={{ mb: 1 }}
-                                  >
-                                    {webinar.name}
-                                  </Typography>
-                                  <Typography className="schedule">
-                                    {new Date(webinar.date).toDateString()}
-                                  </Typography>
-                                  <Grid className="speaker_section">
-                                    <img
-                                      src={speaker}
-                                      className="speaker_img"
-                                    />
-                                    <Grid>
-                                      <Typography className="speakers_name">
-                                        {webinar.speacker}
-                                      </Typography>
-                                      <Typography className="speaker_description">
-                                        {webinar.speackerDescription}
-                                      </Typography>
-                                    </Grid>
+                                  {webinar.name}
+                                </Typography>
+                                <Typography className="schedule">
+                                  {new Date(webinar.date).toDateString()}
+                                </Typography>
+                                <Grid className="speaker_section">
+                                  <img src={speaker} className="speaker_img" />
+                                  <Grid>
+                                    <Typography className="speakers_name">
+                                      {webinar.speacker}
+                                    </Typography>
+                                    <Typography className="speaker_description">
+                                      {webinar.speackerDescription}
+                                    </Typography>
                                   </Grid>
-                                </div>
-                              </>
-                            );
-                          }
-                        )}
+                                </Grid>
+                              </div>
+                            </>
+                          );
+                        })}
                       </>
                     )}
                   </Stack>
