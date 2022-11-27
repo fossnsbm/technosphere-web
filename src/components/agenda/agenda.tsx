@@ -3,6 +3,12 @@ import "./agenda.scss";
 import { Container, Grid, Card, Divider, Typography, Box } from "@mui/material";
 import AgendaCard, { AlignType } from "../global/AgendaCard";
 import speaker from "../../assets/speakers/speaker_placeholder.png";
+import athuraliya from "../../assets/speakers/athuraliya.jpg";
+import migara from "../../assets/speakers/migara.jpg";
+import sithila from "../../assets/speakers/sithila.jpg";
+import rishan from "../../assets/speakers/rishan.jpg";
+import ravindu from "../../assets/speakers/ravindu.jpg";
+import asanga from "../../assets/speakers/asanga.jpg";
 
 export default function Agenda() {
   return (
@@ -16,12 +22,41 @@ export default function Agenda() {
           date="28"
           month="Nov"
           title="Cloud Computing"
-          time="7.00PM - 8.00PM | WEBINAR"
+          time="7.00PM ONWARDS | WEBINAR"
           description="Cloud computing is the delivery of different services through the Internet, and it can be considered a treasure trove of the tech world."
-          photo={speaker}
-          speaker="Forthcoming"
-          jobTitle=""
-          company=""
+          photo={sithila}
+          speaker="Mr. Sithila Konara"
+          jobTitle="Associate Tech Specialist"
+          company="Pearson"
+          alignType={AlignType.Left}
+        />
+
+        <AgendaCard
+          date="30"
+          month="Nov"
+          title="Edge Computing"
+          time="7.00PM ONWARDS | WEBINAR"
+          description="Edge computing and deployment bring applications closer to where the data is created, and the actual actions are happening."
+          photo={rishan}
+          speaker="Mr. Rishan Riyal"
+          jobTitle="Software Engineer"
+          company="Surge Global"
+          alignType={AlignType.Right}
+        />
+
+        <AgendaCard
+          date="01"
+          month="Dec"
+          title="Cyber Security"
+          time="7.00PM ONWARDS | WEBINAR"
+          description="
+          A beneficial technology to be aware of, cyber security
+          seeks to protect against the unauthorised use of systems,
+          networks, and technology, by lowering cyberattack risks."
+          photo={asanga}
+          speaker="Mr. Asanga Wanniarachchi"
+          jobTitle="Senior Tech Lead"
+          company="LSEG Technology"
           alignType={AlignType.Left}
         />
 
@@ -29,7 +64,7 @@ export default function Agenda() {
           date="29"
           month="Nov"
           title="Blockchain and Cryptocurrency"
-          time="7.00PM - 8.00PM | WEBINAR"
+          time="7.00PM ONWARDS | WEBINAR"
           description="Blockchain and Cryptocurrency are turning the world upside down as they technicise monetary transactions."
           photo={speaker}
           speaker="Forthcoming"
@@ -38,31 +73,7 @@ export default function Agenda() {
           alignType={AlignType.Right}
         />
 
-        <AgendaCard
-          date="30"
-          month="Nov"
-          title="Edge Computing"
-          time="7.00PM - 8.00PM | WEBINAR"
-          description="Edge computing and deployment bring applications closer to where the data is created, and the actual actions are happening."
-          photo={speaker}
-          speaker="Forthcoming"
-          jobTitle=""
-          company=""
-          alignType={AlignType.Left}
-        />
 
-        <AgendaCard
-          date="01"
-          month="Dec"
-          title="Big Data"
-          time="7.00PM - 8.00PM | WEBINAR"
-          description="Big data is a term that describes large, hard-to-manage, structured and unstructured data, but it's not merely about the amount of data."
-          photo={speaker}
-          speaker="Forthcoming"
-          jobTitle=""
-          company=""
-          alignType={AlignType.Right}
-        />
 
         <Grid container>
           <Grid item xs={12} sm={12} md={11} lg={10}>
@@ -141,13 +152,13 @@ export default function Agenda() {
                       },
                     }}
                   />
-                  <Grid item xs={12} sm="auto" md="auto" lg="auto">
-                    <Box component="img" className="speaker" src={speaker} />
+                  <Grid item xs={12} sm="auto" md={3} lg={4}>
+                    <Box component="img" className="speaker" src={athuraliya} />
                     <Typography variant="h5" className="name">
-                      Forthcoming
+                      Mr. CD Athuraliya
                     </Typography>
-                    <Typography className="job"></Typography>
-                    <Typography className="company"></Typography>
+                    <Typography className="job">Co-Founder</Typography>
+                    <Typography className="company">ConscientAI</Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -164,12 +175,10 @@ export default function Agenda() {
 
                   <Grid item xs={12} sm={6} md={6} lg={7}>
                     <Typography variant="h2" className="title">
-                      Cyber Security
+                      Big Data
                     </Typography>
                     <Typography className="content">
-                      A beneficial technology to be aware of, cyber security
-                      seeks to protect against the unauthorised use of systems,
-                      networks, and technology, by lowering cyberattack risks.
+                      Big data is a term that describes large, hard-to-manage, structured and unstructured data, but it's not merely about the amount of data.
                     </Typography>
                   </Grid>
                   <Divider
@@ -185,7 +194,7 @@ export default function Agenda() {
                       },
                     }}
                   />
-                  <Grid item xs={12} sm="auto" md="auto" lg="auto">
+                  <Grid item xs={12} sm="auto" md={3} lg={4}>
                     <Box component="img" className="speaker" src={speaker} />
                     <Typography variant="h5" className="name">
                       Forthcoming
@@ -229,13 +238,13 @@ export default function Agenda() {
                       },
                     }}
                   />
-                  <Grid item xs={12} sm="auto" md="auto" lg="auto">
-                    <Box component="img" className="speaker" src={speaker} />
+                  <Grid item xs={12} sm="auto" md={3} lg={4}>
+                    <Box component="img" className="speaker" src={migara} />
                     <Typography variant="h5" className="name">
-                      Forthcoming
+                      Mr. Migara Amithodhana
                     </Typography>
-                    <Typography className="job"></Typography>
-                    <Typography className="company"></Typography>
+                    <Typography className="job">Co-founder & CEO</Typography>
+                    <Typography className="company">Magicbits (Pvt) Ltd</Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
@@ -273,13 +282,13 @@ export default function Agenda() {
                       },
                     }}
                   />
-                  <Grid item xs={12} sm="auto" md="auto" lg="auto">
-                    <Box component="img" className="speaker" src={speaker} />
+                  <Grid item xs={12} sm="auto" md={3} lg={4}>
+                    <Box component="img" className="speaker" src={ravindu} />
                     <Typography variant="h5" className="name">
-                      Forthcoming
+                      Mr. Ravindu Omantha
                     </Typography>
-                    <Typography className="job"></Typography>
-                    <Typography className="company"></Typography>
+                    <Typography className="job">Co-Founder & Head of Studio</Typography>
+                    <Typography className="company">RAM Studios (Pvt) Ltd</Typography>
                   </Grid>
                 </Grid>
               </Grid>

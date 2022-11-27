@@ -87,7 +87,7 @@
     );
   border: 1px solid rgba(133, 102, 255, 0.108);
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   overflow-x: auto;
   height: 180px;
   font-weight: 500;
@@ -128,7 +128,7 @@
 
   .logo_cms {
     width: 200px;
-    height: 80px;
+    height: 100px;
     text-align: center;
 
     img {
@@ -148,6 +148,7 @@
       object-fit: contain;
     }
   }
+
 }
 
 .b-none {
