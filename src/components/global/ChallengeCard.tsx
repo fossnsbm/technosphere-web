@@ -7,11 +7,11 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   TextField,
   DialogActions,
 } from "@mui/material";
 import ArrowForward from "@mui/icons-material/ArrowForward";
+import flagIcon from "../../assets/flag.svg";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AppConfig } from "../../config";
 import toast from "react-hot-toast";
@@ -112,7 +112,18 @@ const ChallengeCard = (props: any) => {
         <Typography className="challenge-submission-count">
           {props.submissionCount}
         </Typography>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog
+          fullWidth
+          className="dialog-box"
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            style: {
+              borderRadius: "15px",
+              outline: "1px solid #8566ff",
+            },
+          }}
+        >
           <Box
             sx={{
               paddingBottom: 2,
@@ -124,13 +135,31 @@ const ChallengeCard = (props: any) => {
             <DialogTitle className="challenge-submit-box-title">
               {props.title}
             </DialogTitle>
+            <Box
+              className="ctf-flag-icon"
+              component="img"
+              src={flagIcon}
+              alt="CTF-Flag"
+            ></Box>
             <DialogContent>
-              <Typography>Enter your flag below</Typography>
+              <Typography sx={{ mb: 1, mt: 1 }}>
+                Enter your flag below
+              </Typography>
               <TextField
+                variant="standard"
+                required
                 title="Flag"
+                name="flag"
+                placeholder="Enter your flag..."
+                type="text"
+                id="flag"
+                className="flag-input"
                 fullWidth
                 value={flag}
                 onChange={(e) => setFlag(e.target.value)}
+                InputProps={{
+                  disableUnderline: true,
+                }}
               />
             </DialogContent>
             <DialogActions>
@@ -140,6 +169,7 @@ const ChallengeCard = (props: any) => {
                 sx={{
                   padding: "7px 18px",
                   marginRight: "1rem",
+                  marginLeft: "1rem",
                   fontWeight: 600,
                   textTransform: "capitalize",
                 }}
