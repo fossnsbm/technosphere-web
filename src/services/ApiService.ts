@@ -24,4 +24,8 @@ export class ApiService {
   getWebinars = () => {
     return apiClient.get("/meta/webinar");
   };
+
+  getComments = (id: string) => {
+    return apiClient.get(`/meta/comment/${id}`);
+  };
 }

@@ -2,6 +2,7 @@ import {
   Box,
   CircularProgress,
   Container,
+  Divider,
   Grid,
   Stack,
   Typography,
@@ -14,6 +15,7 @@ import { GetWebinars } from "../services/react-query/webinar/useWebinar";
 import { IWebinar } from "../interface/webinar";
 import "../styles/challenges.scss";
 import "../styles/sessions.scss";
+import { Comments } from "../components/comment";
 
 export const WebinarPage = () => {
   const playerRef = useRef(null);
@@ -149,12 +151,20 @@ export const WebinarPage = () => {
                         )}
                       </>
                     )}
+
+                    <Divider />
                   </Box>
 
                   <Box sx={{ mt: 5 }}>
                     <Typography variant="h4" style={{ fontWeight: 900 }}>
                       {userSelected ? userSelected.name : ""}
                     </Typography>
+                  </Box>
+
+                  <Box sx={{ mt: 5 }}>
+                    {userSelected ? (
+                      <Comments eventId={userSelected._id} />
+                    ) : null}
                   </Box>
                 </Grid>
 
@@ -169,7 +179,7 @@ export const WebinarPage = () => {
                                 className={`event_card ${
                                   isSelected(webinar._id) ? "live_card" : null
                                 }`}
-                                style={{ width: "100%" }}
+                                style={{ width: "100%", cursor: "pointer" }}
                                 onClick={() => handleSwitchWeinar(webinar)}
                               >
                                 {checkLiveNow(webinar._id) ? (
