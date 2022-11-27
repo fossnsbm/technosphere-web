@@ -190,7 +190,6 @@ function HeaderMenus() {
                   <MenuItem component={Link} to="/profile">
                     Profile
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
                   <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
                 </Menu>
               </>
