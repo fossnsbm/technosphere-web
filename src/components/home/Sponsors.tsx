@@ -4,6 +4,7 @@ import outfitPartner from "../../assets/sponsors/outifit_partner.png";
 import eventPartner from "../../assets/sponsors/event_partner.png";
 import titlePartner from "../../assets/sponsors/title_partner.png";
 import mediaPartner from "../../assets/sponsors/media-partner.png";
+import giftPartner from "../../assets/sponsors/gift-partner.png";
 import mediaPartnerMobile from "../../assets/sponsors/media-partner-mobile.png";
 import { Typography, Container } from "@mui/material";
 
@@ -42,6 +43,12 @@ const Sponsors = () => {
                 <p>Official Outfit Partner</p>
                 <div className="logo_cms">
                   <img src={outfitPartner} alt="Content Management and Solutions (Pvt) Ltd" />
+                </div>
+              </div>
+              <div className="sponsor_bottom b-none">
+                <p>Gift Partner</p>
+                <div className="logo_cms">
+                  <img src={giftPartner} alt="Belle Group (Pvt) Ltd" />
                 </div>
               </div>
             </div>
