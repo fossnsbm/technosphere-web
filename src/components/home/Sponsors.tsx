@@ -37,6 +37,12 @@ const Sponsors = () => {
                   alt="Content Management and Solutions (Pvt) Ltd"
                 />
               </div>
+              <div className="logo-mobile">
+                <img
+                  src={mediaPartnerMobile}
+                  alt="Content Management and Solutions (Pvt) Ltd"
+                />
+              </div>
             </div>
             <div className="other_sponsors">
               <div className="sponsor_bottom b-none">

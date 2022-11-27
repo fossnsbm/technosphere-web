@@ -18,11 +18,11 @@ import { useUserStore } from "../../store/createUserSlice";
 import { useTokenStore } from "../../store/createAuthStore";
 
 const pages = [
-  { text: "ABOUT", href: "/#about" },
+  // { text: "ABOUT", href: "/#about" },
   { text: "AGENDA", href: "/#agenda" },
   { text: "SPEAKERS", href: "/#speakers" },
-  { text: "SPONSORS", href: "/#sponsors" },
-  { text: "CHALLENGERS", href: "/challenges" },
+  // { text: "SPONSORS", href: "/#sponsors" },
+  { text: "COMPETITION", href: "/challenges" },
   { text: "SESSIONS", href: "/webinar" },
 ];
 
