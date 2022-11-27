@@ -55,19 +55,6 @@ export const WebinarPage = () => {
     }
   }, [webinarDetails.data]);
 
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [
-      {
-        src: userSelected?.s3Url,
-        type: "video/mp4",
-      },
-    ],
-  };
-
   const handleSwitchWeinar = (webinar: IWebinar) => {
     setUserSelected(webinar);
   };
@@ -121,10 +108,47 @@ export const WebinarPage = () => {
               >
                 <Grid item xs={4} sm={8} md={9}>
                   <Box style={{ width: "100%", backgroundColor: "black" }}>
-                    <VideoJS
-                      options={videoJsOptions}
-                      onReady={handlePlayerReady}
-                    />
+                    {userSelected && (
+                      <>
+                        {checkLiveNow(userSelected?._id) ? (
+                          <>
+                            <VideoJS
+                              options={{
+                                autoplay: true,
+                                controls: true,
+                                responsive: true,
+                                fluid: true,
+                                sources: [
+                                  {
+                                    src: userSelected?.liveStream,
+                                    type: "video/mp4",
+                                  },
+                                ],
+                              }}
+                              onReady={handlePlayerReady}
+                            />
+                          </>
+                        ) : (
+                          <>
+                            <VideoJS
+                              options={{
+                                autoplay: true,
+                                controls: true,
+                                responsive: true,
+                                fluid: true,
+                                sources: [
+                                  {
+                                    src: userSelected?.s3Url,
+                                    type: "video/mp4",
+                                  },
+                                ],
+                              }}
+                              onReady={handlePlayerReady}
+                            />
+                          </>
+                        )}
+                      </>
+                    )}
                   </Box>
 
                   <Box sx={{ mt: 5 }}>

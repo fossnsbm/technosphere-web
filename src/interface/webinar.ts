@@ -11,4 +11,5 @@ export interface IWebinar {
   s3Url: string;
   __v: number;
   isLive?: boolean;
+  liveStream: string;
 }
