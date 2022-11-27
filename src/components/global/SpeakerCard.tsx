@@ -24,7 +24,7 @@ const SpeakerCard = ({
             borderRadius: 6,
             display: "flex",
             alignItems: "end",
-            background: `linear-gradient(180deg, rgba(6, 5, 61, 0) 68.14%, rgba(6, 5, 61, 0.65) 83.24%, rgba(6, 5, 61, 0.85) 96.22%),url(${photo})`,
+            background: `linear-gradient(180deg, rgba(6, 5, 61, 0) 59.17%, rgba(6, 5, 61, 0.65) 78.76%, rgba(6, 5, 61, 0.85) 96.22%),url(${photo})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat"
         }
@@ -51,7 +51,10 @@ const SpeakerCard = ({
                     </Grid>
                     <Grid item>
                         <Typography className="speaker_job">
-                            {(jobTitle != "") ? jobTitle + " at " + company : ""}
+                            {jobTitle}
+                        </Typography>
+                        <Typography className="speaker_job">
+                            {company}
                         </Typography>
                     </Grid>
                 </Grid>

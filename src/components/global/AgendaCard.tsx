@@ -72,7 +72,7 @@ const AgendaCard = ({
                 display: { xs: "none", sm: "block", md: "block", lg: "block" },
               }}
             />
-            <Grid item xs={12} sm="auto" md="auto" lg="auto">
+            <Grid item xs={12} sm="auto" md={3} lg={3}>
               <Box component="img" className="speaker" src={photo} />
               <Typography variant="h5" className="name">
                 {speaker}
