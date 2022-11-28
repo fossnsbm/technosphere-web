@@ -89,10 +89,10 @@ const Challenges = () => {
                           <div className="challenge_holder">
                             <ChallengeCard
                               downloadURL={
-                                challenge.isDownlodAvalible
-                                  ? challenge.downloadUrl
-                                  : ""
+                                 challenge.downloadUrl
                               }
+                              isDownloadAvalible={challenge.isDownlodAvalible}
+                              challengeUrl={challenge.challengeUrl}
                               title={challenge.name}
                               description={challenge.description}
                               id={challenge.id}
