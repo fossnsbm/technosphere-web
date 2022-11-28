@@ -30,7 +30,7 @@ const Sponsors = () => {
           </div>
           <div className="card_bottom-section">
             <div className="co_sponsor sponsor_bottom">
-              <p>Media Partners</p>
+              <p className="media_partners_title">Media Partners</p>
               <div className="logo">
                 <img
                   src={mediaPartner}

@@ -96,9 +96,9 @@ export const WebinarPage = () => {
         </Container>
 
         {webinarDetails.isLoading ? (
-          <>
+          <div className="loading_indicator">
             <CircularProgress />
-          </>
+          </div>
         ) : (
           <>
             <Box style={{ marginLeft: "5%", marginRight: "5%" }}>
