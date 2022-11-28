@@ -97,16 +97,12 @@ const ChallengeCard = (props: any) => {
   return (
     <>
       <div className="challenge_card">
-        <h4 >
-          {props.title}
-        </h4>
-        <p>
+        <h4>{props.title}</h4>
+        <p className="challenge-card-description">
           {props.description} {props.isCompleted}
         </p>
         {/* <Typography className="challenge-number">{props.number}</Typography> */}
-        <h6>
-          {props.submissionCount}
-        </h6>
+        <h6>{props.submissionCount}</h6>
         <Dialog
           fullWidth
           className="dialog-box"
@@ -207,7 +203,7 @@ const ChallengeCard = (props: any) => {
           </Box>
         </Dialog>
         <Button
-            className="rules-button"
+          className="rules-button"
           // variant="outlined"
           color="inherit"
           endIcon={props.isCompleted ? null : <ArrowForward />}

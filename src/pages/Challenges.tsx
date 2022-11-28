@@ -47,12 +47,12 @@ const Challenges = () => {
           </Button>
           <Typography className="ctf-title-intro"></Typography>
           <Typography className="ctf-description">
-            Technosphere CTF consists of Web,Mobile ,Binary exploitation ,Misc
-            and Privilege .You can submit the challenges here: There is a
+            Technosphere CTF consists of Web, Mobile, Binary exploitation, Misc
+            and Privilege. You can submit the challenges here: There is a
             separate page for Technosphere CTF. There are separate cards for
-            each and every challenge.You can submit the relevant flags to
-            relevant challenge cards.Some challenges are visible from today & wait till tomorrow to others.
-
+            each and every challenge. You can submit the relevant flags to
+            relevant challenge cards. Some challenges are visible from today &
+            wait till tomorrow to others.
           </Typography>
           <Typography className="challenges-title">Challenges</Typography>
           {data.isLoading && (
@@ -60,14 +60,13 @@ const Challenges = () => {
               <CircularProgress />
             </>
           )}
-          <Grid
-            className="ctf-challenges"
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 4, sm: 6, md: 12 }}
-          >
-            {data.isSuccess && (
-              <>
+          {data.isSuccess && (
+            <>
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
                 {data.data.map(
                   (challenge: {
                     id: string;
@@ -85,27 +84,29 @@ const Challenges = () => {
 
                     return (
                       <>
-                        <div className="challenge_holder">
-                          <ChallengeCard
-                            downloadURL={
-                              challenge.isDownlodAvalible
-                                ? challenge.downloadUrl
-                                : ""
-                            }
-                            title={challenge.name}
-                            description={challenge.description}
-                            id={challenge.id}
-                            isCompleted={challenge?.isCompleted}
-                            submissionCount={`${challenge.solves} Submissions`}
-                          />
-                        </div>
+                        <Grid item xs={4} sm={4} md={4}>
+                          <div className="challenge_holder">
+                            <ChallengeCard
+                              downloadURL={
+                                challenge.isDownlodAvalible
+                                  ? challenge.downloadUrl
+                                  : ""
+                              }
+                              title={challenge.name}
+                              description={challenge.description}
+                              id={challenge.id}
+                              isCompleted={challenge?.isCompleted}
+                              submissionCount={`${challenge.solves} Submissions`}
+                            />
+                          </div>
+                        </Grid>
                       </>
                     );
                   }
                 )}
-              </>
-            )}
-          </Grid>
+              </Grid>
+            </>
+          )}
         </Box>
       </Container>
     </Box>

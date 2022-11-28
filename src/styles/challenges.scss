@@ -96,8 +96,14 @@ $main-font: Montserrat;
   gap: 20px;
 }
 .challenge_card {
+  min-height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
-  button{
+  button {
     margin: 0 !important;
   }
   border-radius: 6px;
@@ -109,13 +115,10 @@ $main-font: Montserrat;
     rgba(81, 61, 160, 0) -2.77%,
     #513da0 97.39%
   );
-
-  width: auto;
   background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%);
   padding: 25px;
-  width: 400px;
-x
-  h4 {
+  width: 100%;
+  x h4 {
     font-size: 1.3em;
     color: #8566ff;
   }
