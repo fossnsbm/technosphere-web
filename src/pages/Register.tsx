@@ -84,7 +84,7 @@ const Register = () => {
           <div className="attendance_toggle">
             <div className="toggle_para">
               <CheckBox onChange={() => setInPerson(!inPerson)} />
-              <h5>Will you be able to attend the in-person event?</h5>
+              <h5>Will you be able to attend the in-person event?<br/>(in-person event registration closed)</h5>
             </div>
             <p>
               The in-person event will be held on 02.12.2022 at NSBM Green

@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   padding-left: 30px;
-  cursor: pointer;
+  cursor: default;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -32,7 +32,7 @@
   height: 18px;
   width: 18px;
   background-color: transparent;
-  border: 1px solid #8566ff;
+  border: 1px solid #767981;
   margin-top: 28px;
 }
 
