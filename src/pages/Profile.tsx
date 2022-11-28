@@ -42,6 +42,7 @@ const Profile = () => {
     const objectUrl: any = URL.createObjectURL(selectedFile);
     setPreview(objectUrl);
 
+
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
@@ -52,7 +53,10 @@ const Profile = () => {
     }
 
     setSelectedFile(e.target.files[0]);
+    console.log("object---");
+    console.log(selectedFile);
   };
+
   return (
     <section className="profile">
       <HeaderMenus />
