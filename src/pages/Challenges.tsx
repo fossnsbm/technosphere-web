@@ -37,8 +37,9 @@ const Challenges = () => {
             welcome to the competition. Happy Hacking!!!
           </Typography>
           <Button
-            component={Link}
-            to="/rules"
+            component={"a"}
+            href="https://discord.gg/3qpH6ghY"
+            target="_blank"
             variant="contained"
             className="rules-button"
             endIcon={<ArrowForward />}
