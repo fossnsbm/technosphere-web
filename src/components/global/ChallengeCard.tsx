@@ -136,6 +136,14 @@ const ChallengeCard = (props: any) => {
               <Typography sx={{ mb: 1, mt: 1 }}>
                 Enter your flag below
               </Typography>
+
+              {props?.challengeUrl && (
+                <>
+              <Typography sx={{ mb: 5, mt: 1 }} component="a" href={props.challengeUrl}>
+                {props?.challengeUrl}
+              </Typography>
+                </>
+              )}
               <TextField
                 variant="standard"
                 required
@@ -168,6 +176,9 @@ const ChallengeCard = (props: any) => {
               >
                 Cancel
               </Button>
+
+              {props?.isDownloadAvalible && (
+                <>
               <Button
                 href={props.downloadURL}
                 variant="outlined"
@@ -182,6 +193,8 @@ const ChallengeCard = (props: any) => {
               >
                 Download
               </Button>
+                </>
+              )}
               <LoadingButton
                 variant="outlined"
                 color="inherit"
