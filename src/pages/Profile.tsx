@@ -6,20 +6,22 @@ import CheckBox from "../components/global/CheckBox";
 import TextField, { InputType } from "../components/global/TextField";
 import Dropdown, { PositionType } from "../components/global//Dropdown";
 import HeaderMenus from "../components/headerMenus/headerMenus";
+import { Formik } from "formik";
+import { GetUserDetails } from "../services/react-query/user/useCurrentUser";
+import axios from "axios";
+import { AppConfig } from "../config";
 
 const Profile = () => {
   const [inPerson, setInPerson] = useState(false);
   const [isProfileFeatureEnabled, setIsProfileFeatureEnabled] = useState(false);
+  const me = GetUserDetails();
   const [batch, setBatch] = useState<string>("20.1");
 
   const [formData, setFormData] = useState({
-    fullName: null,
-    email_student: null,
-    email_guest: null,
-    batch: null,
-    phone_guests: null,
-    phone_students: null,
-    food_preference: null,
+    fullName: "",
+    email: "",
+    phone: "",
+    profileImgUrl: "",
   });
 
   const handleInPersonToggleChange = (_event: React.FormEvent) => {
@@ -42,7 +44,6 @@ const Profile = () => {
     const objectUrl: any = URL.createObjectURL(selectedFile);
     setPreview(objectUrl);
 
-
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
@@ -56,6 +57,14 @@ const Profile = () => {
     console.log("object---");
     console.log(selectedFile);
   };
+
+  async function getProfileImageURL() {
+    let res = await axios.post(`${AppConfig.BACKEND_API}/users/upload`, {});
+
+    let data = res.data;
+    console.log(data);
+    return data;
+  }
 
   return (
     <section className="profile">
@@ -107,73 +116,89 @@ const Profile = () => {
             </p>
           </div>
           <div className="form_data-default">
-            <TextField
-              title="Full Name"
-              placeholder="Full Name"
-              obscured={false}
-              type={InputType.Text}
-            />
-            {!inPerson && (
-              <TextField
-                title="Phone"
-                placeholder="07X-XXX-XXXX"
-                obscured={false}
-                type={InputType.Number}
-              />
-            )}
-            {inPerson ? (
-              <TextField
-                title="E-mail"
-                placeholder="username"
-                obscured={false}
-                type={InputType.Email}
-              />
-            ) : (
-              <TextField
-                title="E-mail"
-                placeholder="Your email address"
-                obscured={false}
-                type={InputType.GuestEmail}
-              />
-            )}
-          </div>
-          {inPerson && (
-            <div className="form_data-secondary">
-              <div className="row">
-                <Dropdown
-                  placeholder="Batch"
-                  items={[
-                    "19.2",
-                    "20.1",
-                    "20.2",
-                    "20.3",
-                    "21.1",
-                    "22.1",
-                    "22.2",
-                  ]}
-                  selectedItem={batch}
-                  setSelectedItem={setBatch}
-                  position={PositionType.Up}
-                />
-                <TextField
-                  title="Phone"
-                  placeholder=""
-                  obscured={false}
-                  type={InputType.Number}
-                />
-              </div>
-              <Dropdown
-                selectedItem={batch}
-                setSelectedItem={setBatch}
-                placeholder="Food Preferences"
-                items={["Vegetarian", "Non-vegetarian"]}
-                position={PositionType.Down}
-              />
-              {/* <TextField title="Food Preferences" placeholder=""/> */}
-            </div>
-          )}
-          <div className="btn_container">
-            <button className="btn">update profile</button>
+            <Formik
+              initialValues={formData}
+              validate={(values: any) => {
+                const errors: any = {};
+                if (!values.email) {
+                  errors.email = "This filed is Required";
+                } else if (
+                  !inPerson &&
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                ) {
+                  errors.email = "Invalid email address";
+                }
+                if (!values.fullName) {
+                  errors.fullName = "This filed is required";
+                }
+                if (!inPerson && !values.phone) {
+                  errors.phone = "This filed is required";
+                }
+
+                return errors;
+              }}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log(values);
+                setTimeout(() => {
+                  console.log("submitted");
+                  setSubmitting(false);
+                }, 400);
+              }}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleSubmit,
+                isSubmitting,
+              }) => (
+                <form className="form_data-default" onSubmit={handleSubmit}>
+                  <TextField
+                    title="Full Name"
+                    name="fullName"
+                    value={values.fullName}
+                    onChange={handleChange}
+                    errorText={errors.fullName}
+                    error={touched.fullName && Boolean(errors.fullName)}
+                    helperText={touched.fullName && errors.fullName}
+                    placeholder={"Full Name"}
+                  />
+
+                  <TextField
+                    title="Email"
+                    name="email"
+                    errorText={errors.email}
+                    onChange={handleChange}
+                    error={touched.email && Boolean(errors.email)}
+                    helperText={touched.email && errors.email}
+                    placeholder={"Your Email Address"}
+                    value={values.email}
+                    isUniEmail={inPerson}
+                  />
+
+                  {!inPerson && (
+                    <TextField
+                      errorText={errors.phone}
+                      title="Phone"
+                      placeholder="07X XXX XXXX"
+                      name="phone"
+                      obscured={false}
+                      type={InputType.Number}
+                      onChange={handleChange}
+                      error={touched.phone && Boolean(errors.phone)}
+                      helperText={touched.phone && errors.phone}
+                      value={values.phone}
+                    />
+                  )}
+                  <div className="btn_container">
+                    <button className="btn" type="submit">
+                      update profile
+                    </button>
+                  </div>
+                </form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>

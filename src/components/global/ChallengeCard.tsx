@@ -96,22 +96,17 @@ const ChallengeCard = (props: any) => {
 
   return (
     <>
-      <Box
-        className="challenge-card"
-        style={{
-          border: `2px solid ${props.isCompleted ? "green" : "#0e0c33"}`,
-        }}
-      >
-        <Typography className="challenge-card-title" variant="h5">
+      <div className="challenge_card">
+        <h4 >
           {props.title}
-        </Typography>
-        <Typography className="challenge-card-description">
+        </h4>
+        <p>
           {props.description} {props.isCompleted}
-        </Typography>
-        <Typography className="challenge-number">{props.number}</Typography>
-        <Typography className="challenge-submission-count">
+        </p>
+        {/* <Typography className="challenge-number">{props.number}</Typography> */}
+        <h6>
           {props.submissionCount}
-        </Typography>
+        </h6>
         <Dialog
           fullWidth
           className="dialog-box"
@@ -177,6 +172,20 @@ const ChallengeCard = (props: any) => {
               >
                 Cancel
               </Button>
+              <Button
+                href={props.downloadURL}
+                variant="outlined"
+                color="inherit"
+                sx={{
+                  padding: "7px 18px",
+                  marginRight: "1rem",
+                  marginLeft: "1rem",
+                  fontWeight: 600,
+                  textTransform: "capitalize",
+                }}
+              >
+                Download
+              </Button>
               <LoadingButton
                 variant="outlined"
                 color="inherit"
@@ -198,7 +207,8 @@ const ChallengeCard = (props: any) => {
           </Box>
         </Dialog>
         <Button
-          variant="outlined"
+            className="rules-button"
+          // variant="outlined"
           color="inherit"
           endIcon={props.isCompleted ? null : <ArrowForward />}
           sx={{
@@ -210,7 +220,7 @@ const ChallengeCard = (props: any) => {
         >
           {props.isCompleted ? "Submitted" : "Submit"}
         </Button>
-      </Box>
+      </div>
     </>
   );
 };

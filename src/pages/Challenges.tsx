@@ -16,6 +16,7 @@ import { GetChallengers } from "../services/react-query/challenges/useChallenges
 
 const Challenges = () => {
   const data = GetChallengers();
+
   return (
     <Box className="challenges">
       <Container>
@@ -30,9 +31,10 @@ const Challenges = () => {
           ></Box>
           <Typography className="ctf-title-main">Capture The Flag</Typography>
           <Typography className="ctf-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            The Technosphere, a capture the flag competition is organized by
+            Women in FOSS NSBM. The treasure hunt commences on 28th of November
+            at 4.00pm. You will get 48 hours to complete the challenges. All are
+            welcome to the competition. Happy Hacking!!!
           </Typography>
           <Button
             component={Link}
@@ -41,21 +43,18 @@ const Challenges = () => {
             className="rules-button"
             endIcon={<ArrowForward />}
           >
-            Rules & Regulations
+            Join Discord Server
           </Button>
-          <Typography className="ctf-title-intro">
-            Lorem ipsum dolor sit amet
-          </Typography>
+          <Typography className="ctf-title-intro"></Typography>
           <Typography className="ctf-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam.
+            Technosphere CTF consists of Web,Mobile ,Binary exploitation ,Misc
+            and Privilege .You can submit the challenges here: There is a
+            separate page for Technosphere CTF. There are separate cards for
+            each and every challenge.You can submit the relevant flags to
+            relevant challenge cards.Some challenges are visible from today & wait till tomorrow to others.
+
           </Typography>
-          <Typography className="challenges-title">
-            eiusmod tempor incididunt ut labore et dolore ma
-          </Typography>
+          <Typography className="challenges-title">Challenges</Typography>
           {data.isLoading && (
             <>
               <CircularProgress />
@@ -81,17 +80,25 @@ const Challenges = () => {
                     solves: number;
                     isCompleted: boolean;
                   }) => {
+                    console.log(challenge.isDownlodAvalible);
+                    console.log(challenge.description);
+
                     return (
                       <>
-                        <Grid item xs={12} sm={3} md={3}>
+                        <div className="challenge_holder">
                           <ChallengeCard
+                            downloadURL={
+                              challenge.isDownlodAvalible
+                                ? challenge.downloadUrl
+                                : ""
+                            }
                             title={challenge.name}
                             description={challenge.description}
                             id={challenge.id}
                             isCompleted={challenge?.isCompleted}
                             submissionCount={`${challenge.solves} Submissions`}
                           />
-                        </Grid>
+                        </div>
                       </>
                     );
                   }
@@ -99,13 +106,6 @@ const Challenges = () => {
               </>
             )}
           </Grid>
-          <Typography className="ctf-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam.
-          </Typography>
         </Box>
       </Container>
     </Box>
