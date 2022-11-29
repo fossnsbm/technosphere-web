@@ -43,17 +43,25 @@ const Challenges = () => {
             variant="contained"
             className="rules-button"
             endIcon={<ArrowForward />}
+            sx={{marginRight: '30px'}}
           >
             Join Discord Server
           </Button>
-          <Typography className="ctf-title-intro"></Typography>
-          <Typography className="ctf-description">
-            Technosphere CTF consists of Web,Mobile ,Binary exploitation ,Misc
-            and Privilege .You can submit the challenges here: There is a
+          <Button
+            component={Link}
+            to="/leaderboard"
+            variant="contained"
+            className="rules-button"
+            endIcon={<ArrowForward />}
+          >
+            Leaderboard
+          </Button>
+          <Typography className="ctf-description" sx={{marginTop: '40px'}}>
+            Technosphere CTF consists of Web, Mobile, Binary exploitation, Misc
+            and Privilege. You can submit the challenges here: There is a
             separate page for Technosphere CTF. There are separate cards for
-            each and every challenge.You can submit the relevant flags to
-            relevant challenge cards.Some challenges are visible from today & wait till tomorrow to others.
-
+            each and every challenge. You can submit the relevant flags to
+            relevant challenge cards. Some challenges are visible from today & wait till tomorrow to others.
           </Typography>
           <Typography className="challenges-title">Challenges</Typography>
           {data.isLoading && (

@@ -122,7 +122,7 @@ export const WebinarPage = () => {
                                 fluid: true,
                                 sources: [
                                   {
-                                    src: userSelected?.liveStream,
+                                    src: 'https://d3qy2z3f9c8bfd.cloudfront.net/recordings/CloudFinal.mp4',
                                     type: "video/mp4",
                                   },
                                 ],
