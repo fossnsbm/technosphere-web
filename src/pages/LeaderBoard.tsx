@@ -27,7 +27,7 @@ export const LeaderBoardPage = () => {
           <Typography className="ctf-title-main">Scoreboard</Typography>
 
           <Typography variant="h4" fontWeight={900} sx={{ mt: 3, mb: 3 }}>
-            Top 10 Teams
+            Top 10 Players
           </Typography>
           {data.isSuccess && (
             <>
