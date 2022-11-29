@@ -24,8 +24,21 @@ export const WebinarPage = () => {
   const [currentlyLiveWebinar, setCurrentlyLiveWebinar] = useState<
     null | string
   >(null);
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
   const webinarDetails = GetWebinars();
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
 
   useEffect(() => {
     // if user havent selected a webinar loop and automatically
@@ -118,8 +131,8 @@ export const WebinarPage = () => {
                               <>
                                 <iframe
                                   width="100%"
-                                  height="600"
-                                  style={{border:"none"}}
+                                  height={isMobile ? "200": "700"}
+                                  style={{ border: "none" }}
                                   src={userSelected?.liveStream}
                                   title="YouTube video player"
                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
