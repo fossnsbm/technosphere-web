@@ -7,6 +7,7 @@ import { LoginPage } from "./pages/Login";
 import Challenges from "./pages/Challenges";
 import { LeaderBoardPage } from "./pages/LeaderBoard";
 import { WebinarPage } from "./pages/Webinar";
+import { CtfPage } from "./pages/flag";
 
 export const router = createBrowserRouter([
   {
@@ -70,4 +71,13 @@ export const router = createBrowserRouter([
       </MainLayout>
     ),
   },
+
+  {
+    path: "/ctf",
+    element: (
+      <CtfPage />
+    ),
+  },
+
+
 ]);
