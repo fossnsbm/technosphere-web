@@ -34,7 +34,7 @@ const Challenges = () => {
             The Technosphere, a capture the flag competition is organized by
             Women in FOSS NSBM. The treasure hunt commences on 28th of November
             at 4.00pm. You will get 48 hours to complete the challenges. All are
-            welcome to the competition. Happy Hacking!!!
+             <a className="welcome_tag" href="/src/assets/test.txt"> welcome </a> to the competition. Happy Hacking!!!
           </Typography>
           <Button
             component={"a"}
