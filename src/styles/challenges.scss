@@ -78,6 +78,11 @@ $main-font: Montserrat;
   margin: 0 auto;
   margin-bottom: 48px;
 }
+.welcome_tag
+{
+   text-decoration: none;
+   color: #938FBE;
+}
 
 @media only screen and (max-width: 650px) {
   .ctf-title-main {
