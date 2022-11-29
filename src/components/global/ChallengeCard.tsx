@@ -83,7 +83,7 @@ const ChallengeCard = (props: any) => {
           },
         });
       },
-      onMutate: () => {},
+      onMutate: () => { },
     }
   );
 
@@ -96,7 +96,7 @@ const ChallengeCard = (props: any) => {
 
   return (
     <>
-      <div className="challenge_card">
+      <Box className="challenge_card" sx={{ border: (props?.isCompleted) ? "4px solid #513da0" : "0px solid #513da0", boxSizing: "border-box" }}>
         <h4>{props.title}</h4>
         <p className="challenge-card-description">
           {props.description} {props.isCompleted}
@@ -233,7 +233,7 @@ const ChallengeCard = (props: any) => {
         >
           {props.isCompleted ? "Submitted" : "Submit"}
         </Button>
-      </div>
+      </Box>
     </>
   );
 };
