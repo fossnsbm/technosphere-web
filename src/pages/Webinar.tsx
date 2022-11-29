@@ -24,8 +24,21 @@ export const WebinarPage = () => {
   const [currentlyLiveWebinar, setCurrentlyLiveWebinar] = useState<
     null | string
   >(null);
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
   const webinarDetails = GetWebinars();
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
 
   useEffect(() => {
     // if user havent selected a webinar loop and automatically
@@ -114,21 +127,36 @@ export const WebinarPage = () => {
                       <>
                         {checkLiveNow(userSelected?._id) ? (
                           <>
-                            <VideoJS
-                              options={{
-                                autoplay: true,
-                                controls: true,
-                                responsive: true,
-                                fluid: true,
-                                sources: [
-                                  {
-                                    src: 'https://d3qy2z3f9c8bfd.cloudfront.net/recordings/CloudFinal.mp4',
-                                    type: "video/mp4",
-                                  },
-                                ],
-                              }}
-                              onReady={handlePlayerReady}
-                            />
+                            {userSelected.isStreamOnYoutube ? (
+                              <>
+                                <iframe
+                                  width="100%"
+                                  height={isMobile ? "200": "700"}
+                                  style={{ border: "none" }}
+                                  src={userSelected?.liveStream}
+                                  title="YouTube video player"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                ></iframe>
+                              </>
+                            ) : (
+                              <>
+                                <VideoJS
+                                  options={{
+                                    autoplay: true,
+                                    controls: true,
+                                    responsive: true,
+                                    fluid: true,
+                                    sources: [
+                                      {
+                                        src: userSelected?.liveStream,
+                                        type: "video/mp4",
+                                      },
+                                    ],
+                                  }}
+                                  onReady={handlePlayerReady}
+                                />
+                              </>
+                            )}
                           </>
                         ) : (
                           <>
@@ -201,7 +229,10 @@ export const WebinarPage = () => {
                                   {new Date(webinar.date).toDateString()}
                                 </Typography>
                                 <Grid className="speaker_section">
-                                  <img src={webinar.speackerImgUrl} className="speaker_img" />
+                                  <img
+                                    src={webinar.speackerImgUrl}
+                                    className="speaker_img"
+                                  />
                                   <Grid>
                                     <Typography className="speakers_name">
                                       {webinar.speacker}

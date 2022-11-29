@@ -74,10 +74,6 @@ export const router = createBrowserRouter([
 
   {
     path: "/ctf",
-    element: (
-      <CtfPage />
-    ),
+    element: <CtfPage />,
   },
-
-
 ]);

@@ -7,7 +7,7 @@ const CheckBox = ({ onChange }: AppState) => {
   return (
     <>
       <label className="container">
-        <input type="checkbox" onChange={onChange} disabled/>
+        <input type="checkbox" onChange={onChange} disabled />
         <span className="checkmark"></span>
       </label>
     </>

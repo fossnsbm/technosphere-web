@@ -76,8 +76,6 @@ const Register = () => {
     }
   );
 
-
-
   return (
     <section className="register">
       <HeaderMenus />

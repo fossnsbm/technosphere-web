@@ -139,7 +139,11 @@ const ChallengeCard = (props: any) => {
 
               {props?.challengeUrl && (
                 <>
-                  <Typography sx={{ mb: 5, mt: 1 }} component="a" href={props.challengeUrl}>
+                  <Typography
+                    sx={{ mb: 5, mt: 1 }}
+                    component="a"
+                    href={props.challengeUrl}
+                  >
                     {props?.challengeUrl}
                   </Typography>
                 </>
