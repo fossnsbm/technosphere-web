@@ -14,7 +14,7 @@ import {
   TableBody,
   LinearProgress,
 } from "@mui/material";
-import Chart from "react-apexcharts";
+// import Chart from "react-apexcharts";
 import { GetLeaderBoard } from "../services/react-query/leaderboard/useLeaderBoard";
 
 export const LeaderBoardPage = () => {
@@ -23,47 +23,16 @@ export const LeaderBoardPage = () => {
     <Box className="challenges">
       <Container>
         <HeaderMenus />
-        <Box className="main-wrapper">
           <Typography className="ctf-title-main">Scoreboard</Typography>
 
-          <Typography variant="h4" fontWeight={900} sx={{ mt: 3, mb: 3 }}>
-            Top 10 Players
-          </Typography>
-          {data.isSuccess && (
-            <>
-              <Chart
-                options={{
-                  chart: {
-                    id: "chart",
-                    stacked: true,
-                  },
-                  xaxis: {
-                    categories: data.data?.chart?.options,
-                  },
-                }}
-                series={[
-                  {
-                    name: "points",
-                    data: data.data?.chart?.series,
-                  },
-                ]}
-                type="area"
-                width="100%"
-                height={400}
-                style={{ color: "black" }}
-              />
-            </>
-          )}
-        </Box>
-
-        <TableContainer component={Box} sx={{ pb: 20 }}>
+        <TableContainer component={Box} sx={{ pb: '120px' }}>
           {data.isLoading && (
             <>
               <LinearProgress />
             </>
           )}
 
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table sx={{ minWidth: '100%' }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>
