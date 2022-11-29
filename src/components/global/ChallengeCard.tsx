@@ -102,7 +102,7 @@ const ChallengeCard = (props: any) => {
           {props.description} {props.isCompleted}
         </p>
         {/* <Typography className="challenge-number">{props.number}</Typography> */}
-        <h6>{props.submissionCount}</h6>
+        {/* <h6>{props.submissionCount}</h6> */}
         <Dialog
           fullWidth
           className="dialog-box"

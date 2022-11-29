@@ -16,6 +16,7 @@ $main-font: Montserrat;
 
 .main-wrapper {
   padding: 24px;
+  padding-bottom: 120px;
 }
 
 .road-to {
@@ -55,8 +56,8 @@ $main-font: Montserrat;
 }
 
 .challenges-title {
-  margin-top: 19px !important;
-  margin-bottom: 48px !important;
+  margin-top: 30px !important;
+  margin-bottom: 18px !important;
   font-size: 23px !important;
   color: $secondary-text-color;
   font-weight: 600 !important;
@@ -84,24 +85,26 @@ $main-font: Montserrat;
    color: #938FBE;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 955px) {
   .ctf-title-main {
-    font-size: 35px !important;
+    font-size: 50px !important;
   }
 }
 
-@media only screen and (max-width: 955px) {
+@media only screen and (max-width: 450px) {
   .ctf-title-main {
-    font-size: 60px !important;
+    font-size: 25px !important;
+    margin-bottom: 18px !important;
   }
 }
+
 .challenge_holder {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 .challenge_card {
-  min-height: 350px;
+  min-height: 200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -123,14 +126,16 @@ $main-font: Montserrat;
   background: linear-gradient(118.92deg, #0e0c33 0%, #1b0e40 100%);
   padding: 25px;
   width: 100%;
-  x h4 {
-    font-size: 1.3em;
+  h4 {
+    font-size: 1.2em;
     color: #8566ff;
+    margin: 0px !important;
   }
 
   p {
     font-size: 0.9em;
     margin: 10px 0px;
+    margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.631);
   }
   h6 {
