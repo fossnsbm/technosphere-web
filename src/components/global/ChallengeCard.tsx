@@ -139,9 +139,13 @@ const ChallengeCard = (props: any) => {
 
               {props?.challengeUrl && (
                 <>
-              <Typography sx={{ mb: 5, mt: 1 }} component="a" href={props.challengeUrl}>
-                {props?.challengeUrl}
-              </Typography>
+                  <Typography
+                    sx={{ mb: 5, mt: 1 }}
+                    component="a"
+                    href={props.challengeUrl}
+                  >
+                    {props?.challengeUrl}
+                  </Typography>
                 </>
               )}
               <TextField
@@ -179,20 +183,20 @@ const ChallengeCard = (props: any) => {
 
               {props?.isDownloadAvalible && (
                 <>
-              <Button
-                href={props.downloadURL}
-                variant="outlined"
-                color="inherit"
-                sx={{
-                  padding: "7px 18px",
-                  marginRight: "1rem",
-                  marginLeft: "1rem",
-                  fontWeight: 600,
-                  textTransform: "capitalize",
-                }}
-              >
-                Download
-              </Button>
+                  <Button
+                    href={props.downloadURL}
+                    variant="outlined"
+                    color="inherit"
+                    sx={{
+                      padding: "7px 18px",
+                      marginRight: "1rem",
+                      marginLeft: "1rem",
+                      fontWeight: 600,
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    Download
+                  </Button>
                 </>
               )}
               <LoadingButton

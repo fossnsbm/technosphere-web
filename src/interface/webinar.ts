@@ -12,4 +12,5 @@ export interface IWebinar {
   __v: number;
   isLive?: boolean;
   liveStream: string;
+  isStreamOnYoutube: boolean;
 }

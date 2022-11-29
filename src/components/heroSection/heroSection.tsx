@@ -32,7 +32,9 @@ const HeroSection: React.FC<{}> = () => {
               <br />
               This would pioneer a new generation of technophiles!
             </Typography>
-            <Typography sx={{color: '#938fbe', fontWeight: 'bold', marginTop: '20px'}}>
+            <Typography
+              sx={{ color: "#938fbe", fontWeight: "bold", marginTop: "20px" }}
+            >
               Hit the challenges & win the flags. Here you can go forward.
             </Typography>
           </Grid>

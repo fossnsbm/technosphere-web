@@ -12,7 +12,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  LinearProgress
+  LinearProgress,
 } from "@mui/material";
 import Chart from "react-apexcharts";
 import { GetLeaderBoard } from "../services/react-query/leaderboard/useLeaderBoard";
