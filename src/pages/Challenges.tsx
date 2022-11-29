@@ -8,6 +8,7 @@ import {
   Grid,
   Button,
   CircularProgress,
+  Link as MuiLink
 } from "@mui/material";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
@@ -34,7 +35,7 @@ const Challenges = () => {
             The Technosphere, a capture the flag competition is organized by
             Women in FOSS NSBM. The treasure hunt commences on 28th of November
             at 4.00pm. You will get 48 hours to complete the challenges. All are
-             <a className="welcome_tag" href="/src/assets/test.txt"> welcome </a> to the competition. Happy Hacking!!!
+            <MuiLink component={Link} className="welcome_tag" to="/ctf" sx={{color: "#938fbe", textDecoration: "none"}}> welcome </MuiLink> to the competition. Happy Hacking!!!
           </Typography>
           <Button
             component={"a"}
@@ -43,20 +44,20 @@ const Challenges = () => {
             variant="contained"
             className="rules-button"
             endIcon={<ArrowForward />}
-            sx={{marginRight: '30px'}}
+            sx={{ marginRight: '30px' }}
           >
             Join Discord Server
           </Button>
           <Button
-            component={Link}
-            to="/leaderboard"
+            component="a"
+            href="/leaderboard"
             variant="contained"
             className="rules-button"
             endIcon={<ArrowForward />}
           >
             Leaderboard
           </Button>
-          <Typography className="ctf-description" sx={{marginTop: '40px'}}>
+          <Typography className="ctf-description" sx={{ marginTop: '40px' }}>
             Technosphere CTF consists of Web, Mobile, Binary exploitation, Misc
             and Privilege. You can submit the challenges here: There is a
             separate page for Technosphere CTF. There are separate cards for
@@ -98,7 +99,7 @@ const Challenges = () => {
                           <div className="challenge_holder">
                             <ChallengeCard
                               downloadURL={
-                                 challenge.downloadUrl
+                                challenge.downloadUrl
                               }
                               isDownloadAvalible={challenge.isDownlodAvalible}
                               challengeUrl={challenge.challengeUrl}
