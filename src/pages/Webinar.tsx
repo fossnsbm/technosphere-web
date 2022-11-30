@@ -101,6 +101,8 @@ export const WebinarPage = () => {
     return false;
   };
 
+  console.log(userSelected?.liveStream);
+
   return (
     <>
       <Box className="challenges" sx={{ pb: 20 }}>
@@ -127,18 +129,7 @@ export const WebinarPage = () => {
                       <>
                         {checkLiveNow(userSelected?._id) ? (
                           <>
-                            {userSelected.isStreamOnYoutube ? (
-                              <>
-                                <iframe
-                                  width="100%"
-                                  height={isMobile ? "200": "700"}
-                                  style={{ border: "none" }}
-                                  src={userSelected?.liveStream}
-                                  title="YouTube video player"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                ></iframe>
-                              </>
-                            ) : (
+                            (
                               <>
                                 <VideoJS
                                   options={{
@@ -149,14 +140,14 @@ export const WebinarPage = () => {
                                     sources: [
                                       {
                                         src: userSelected?.liveStream,
-                                        type: "video/mp4",
+                                        type: "application/x-mpegURL",
                                       },
                                     ],
                                   }}
                                   onReady={handlePlayerReady}
                                 />
                               </>
-                            )}
+                            )
                           </>
                         ) : (
                           <>
