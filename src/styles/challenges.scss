@@ -103,7 +103,7 @@ $main-font: Montserrat;
   gap: 20px;
 }
 .challenge_card {
-  min-height: 200px;
+  min-height: 240px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -134,10 +134,12 @@ $main-font: Montserrat;
   p {
     font-size: 0.9em;
     margin: 10px 0px;
-    margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.631);
   }
+
   h6 {
     font-size: 0.8em;
+    margin-top: 0px !important;
+    margin-bottom: 20px;
   }
 }
