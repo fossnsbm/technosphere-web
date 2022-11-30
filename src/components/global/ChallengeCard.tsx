@@ -103,7 +103,7 @@ const ChallengeCard = (props: any) => {
         </p>
         {/* <Typography className="challenge-number">{props.number}</Typography> */}
         <h6>{props.submissionCount}</h6>
-        <Dialog
+        {/* <Dialog
           fullWidth
           className="dialog-box"
           open={open}
@@ -218,8 +218,8 @@ const ChallengeCard = (props: any) => {
               </LoadingButton>
             </DialogActions>
           </Box>
-        </Dialog>
-        <Button
+        </Dialog> */}
+        {/* <Button
           className="rules-button"
           // variant="outlined"
           color="inherit"
@@ -228,11 +228,13 @@ const ChallengeCard = (props: any) => {
             padding: "8px 18px",
             fontWeight: 600,
             textTransform: "capitalize",
+            cursor: "default",
           }}
-          onClick={handleSubmitChallenge}
+          disabled
+          // onClick={handleSubmitChallenge}
         >
           {props.isCompleted ? "Submitted" : "Submit"}
-        </Button>
+        </Button> */}
       </Box>
     </>
   );
