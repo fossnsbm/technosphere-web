@@ -8,6 +8,7 @@ import Challenges from "./pages/Challenges";
 import { LeaderBoardPage } from "./pages/LeaderBoard";
 import { WebinarPage } from "./pages/Webinar";
 import { CtfPage } from "./pages/flag";
+import ApiKey from "./pages/ApiKey";
 
 export const router = createBrowserRouter([
   {
@@ -75,5 +76,9 @@ export const router = createBrowserRouter([
   {
     path: "/ctf",
     element: <CtfPage />,
+  },
+  {
+    path: "/apikey",
+    element: <ApiKey />,
   },
 ]);
