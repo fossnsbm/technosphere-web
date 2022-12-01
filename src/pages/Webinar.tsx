@@ -129,25 +129,21 @@ export const WebinarPage = () => {
                       <>
                         {checkLiveNow(userSelected?._id) ? (
                           <>
-                            (
-                              <>
-                                <VideoJS
-                                  options={{
-                                    autoplay: true,
-                                    controls: true,
-                                    responsive: true,
-                                    fluid: true,
-                                    sources: [
-                                      {
-                                        src: userSelected?.liveStream,
-                                        type: "application/x-mpegURL",
-                                      },
-                                    ],
-                                  }}
-                                  onReady={handlePlayerReady}
-                                />
-                              </>
-                            )
+                            <VideoJS
+                              options={{
+                                autoplay: true,
+                                controls: true,
+                                responsive: true,
+                                fluid: true,
+                                sources: [
+                                  {
+                                    src: userSelected?.liveStream,
+                                    type: "application/x-mpegURL",
+                                  },
+                                ],
+                              }}
+                              onReady={handlePlayerReady}
+                            />
                           </>
                         ) : (
                           <>

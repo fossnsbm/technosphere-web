@@ -23,16 +23,16 @@ export const LeaderBoardPage = () => {
     <Box className="challenges">
       <Container>
         <HeaderMenus />
-          <Typography className="ctf-title-main">Scoreboard</Typography>
+        <Typography className="ctf-title-main">Scoreboard</Typography>
 
-        <TableContainer component={Box} sx={{ pb: '120px' }}>
+        <TableContainer component={Box} sx={{ pb: "120px" }}>
           {data.isLoading && (
             <>
               <LinearProgress />
             </>
           )}
 
-          <Table sx={{ minWidth: '100%' }} aria-label="simple table">
+          <Table sx={{ minWidth: "100%" }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useApiKeyStorage } from "../hooks/user/useApiKey";
 import "../styles/apikey.scss";
-import image from '../assets/key.png'
+import image from "../assets/key.png";
 interface ApiKeyProps {}
 
 const ApiKey: React.FC<ApiKeyProps> = () => {
@@ -14,15 +14,13 @@ const ApiKey: React.FC<ApiKeyProps> = () => {
         <img src={image} alt="" />
         <h1>Save your API Key</h1>
         <div>
-
-
-        <input
-          type="text"
-          placeholder="API Key"
-          onChange={(e) => setInput(e.target.value)}
+          <input
+            type="text"
+            placeholder="API Key"
+            onChange={(e) => setInput(e.target.value)}
           />
-        <button onClick={() => setApiKey(input)}>Save</button>
-          </div>
+          <button onClick={() => setApiKey(input)}>Save</button>
+        </div>
       </div>
     </section>
   );

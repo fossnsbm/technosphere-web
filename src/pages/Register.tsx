@@ -15,15 +15,10 @@ import axios, { AxiosError } from "axios";
 import { IUserRegistration } from "../interface/user";
 import { apiClient } from "../services/client";
 
-
-
 const Register = () => {
   const [inPerson, setInPerson] = useState(false);
   const [batch, setBatch] = useState<string>("20.1");
   const [foodPreference, setFoodPreference] = useState<string>("Vegetarian");
-
-
-  
 
   const navigate = useNavigate();
   let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");

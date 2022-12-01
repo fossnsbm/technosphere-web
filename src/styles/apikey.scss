@@ -4,15 +4,15 @@
   border: none !important;
 }
 .api_key {
-    color: white;
-    h1{
-        margin-bottom: 30px;
-    }
-    img{
-        width: 200px;
-        object-fit: cover;
-    }
-    width: 100%;
+  color: white;
+  h1 {
+    margin-bottom: 30px;
+  }
+  img {
+    width: 200px;
+    object-fit: cover;
+  }
+  width: 100%;
   background-color: #060527;
   height: 100vh;
   display: flex;
@@ -22,9 +22,8 @@
   .center {
     flex-direction: column;
 
-    div{
-        height: 50px !important;
-
+    div {
+      height: 50px !important;
     }
     display: flex;
     justify-content: center;

@@ -201,7 +201,9 @@ export default function Agenda() {
                     <Typography variant="h5" className="name">
                       Mr. Kasun Magedaragama
                     </Typography>
-                    <Typography className="job">Principal Technology Solution Architect</Typography>
+                    <Typography className="job">
+                      Principal Technology Solution Architect
+                    </Typography>
                     <Typography className="company">Oracle</Typography>
                     <Divider
                       flexItem
