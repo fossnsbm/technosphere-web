@@ -9,6 +9,7 @@ import { LeaderBoardPage } from "./pages/LeaderBoard";
 import { WebinarPage } from "./pages/Webinar";
 import { CtfPage } from "./pages/flag";
 import ApiKey from "./pages/ApiKey";
+import { AcceptInvitation } from "./pages/AcceptInvitation";
 
 export const router = createBrowserRouter([
   {
@@ -80,5 +81,14 @@ export const router = createBrowserRouter([
   {
     path: "/apikey",
     element: <ApiKey />,
+  },
+
+  {
+    path: "/invitation/:id",
+    element: (
+      <MainLayout>
+        <AcceptInvitation />
+      </MainLayout>
+    ),
   },
 ]);

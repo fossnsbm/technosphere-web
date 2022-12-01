@@ -1,10 +1,16 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { router } from "./Router";
-import { RouterProvider } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +26,14 @@ const theme = createTheme({
 });
 
 function App() {
+  useEffect(() => {
+    // fix for having `//` in invitation url
+    if (window.location.pathname.includes("//invitation")) {
+      const actualPath = window.location.pathname.substring(1);
+      window.location.pathname = actualPath;
+    }
+  }, []);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
