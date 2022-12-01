@@ -9,6 +9,7 @@ import sithila from "../../assets/speakers/sithila.jpg";
 import rishan from "../../assets/speakers/rishan.jpg";
 import ravindu from "../../assets/speakers/ravindu.jpg";
 import asanga from "../../assets/speakers/asanga.jpg";
+import kasun from "../../assets/speakers/kasun.jpg";
 import speaker from "../../assets/speakers/speaker_placeholder.png";
 import "./speakersSection.css";
 import SpeakerCard from "../global/SpeakerCard";
@@ -69,6 +70,14 @@ function SpeakersSection() {
           />
 
           <SpeakerCard
+            photo={kasun}
+            speaker="Mr. Kasun Magedaragama"
+            jobTitle="Principal Technology Solution Architect"
+            company="Oracle"
+            link="https://www.linkedin.com/in/kasunmagedaragama"
+          />
+
+          <SpeakerCard
             photo={migara}
             speaker="Mr. Migara Amithodhana"
             jobTitle="Co-founder & CEO"
@@ -82,14 +91,6 @@ function SpeakersSection() {
             jobTitle="Co-Founder & Head of Studio"
             company="RAM Studios (Pvt) Ltd"
             link="https://www.linkedin.com/in/ravinducooray"
-          />
-
-          <SpeakerCard
-            photo={speaker}
-            speaker="Forthcoming"
-            jobTitle=""
-            company=""
-            link=""
           />
         </Grid>
       </Container>

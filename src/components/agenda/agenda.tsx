@@ -9,6 +9,7 @@ import sithila from "../../assets/speakers/sithila.jpg";
 import rishan from "../../assets/speakers/rishan.jpg";
 import ravindu from "../../assets/speakers/ravindu.jpg";
 import asanga from "../../assets/speakers/asanga.jpg";
+import kasun from "../../assets/speakers/kasun.jpg";
 
 export default function Agenda() {
   return (
@@ -63,9 +64,9 @@ export default function Agenda() {
         <AgendaCard
           date="29"
           month="Nov"
-          title="Blockchain and Cryptocurrency"
+          title="Career Awareness"
           time="7.00PM ONWARDS | WEBINAR"
-          description="Blockchain and Cryptocurrency are turning the world upside down as they technicise monetary transactions."
+          description="Career awareness and exploration helps students build an understanding of the full landscape of careers by providing experiences that allow them to interact with industry professionals."
           photo={speaker}
           speaker="Forthcoming"
           jobTitle=""
@@ -195,12 +196,12 @@ export default function Agenda() {
                     }}
                   />
                   <Grid item xs={12} sm="auto" md={3} lg={4}>
-                    <Box component="img" className="speaker" src={speaker} />
+                    <Box component="img" className="speaker" src={kasun} />
                     <Typography variant="h5" className="name">
-                      Forthcoming
+                      Mr. Kasun Magedaragama
                     </Typography>
-                    <Typography className="job"></Typography>
-                    <Typography className="company"></Typography>
+                    <Typography className="job">Principal Technology Solution Architect</Typography>
+                    <Typography className="company">Oracle</Typography>
                     <Divider
                       flexItem
                       className="horz_divider"
