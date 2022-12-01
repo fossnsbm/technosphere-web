@@ -10,6 +10,7 @@ import rishan from "../../assets/speakers/rishan.jpg";
 import ravindu from "../../assets/speakers/ravindu.jpg";
 import asanga from "../../assets/speakers/asanga.jpg";
 import kasun from "../../assets/speakers/kasun.jpg";
+import kanishka from "../../assets/speakers/kanishka.jpg";
 
 export default function Agenda() {
   return (
@@ -67,10 +68,10 @@ export default function Agenda() {
           title="Career Awareness"
           time="7.00PM ONWARDS | WEBINAR"
           description="Career awareness and exploration helps students build an understanding of the full landscape of careers by providing experiences that allow them to interact with industry professionals."
-          photo={speaker}
-          speaker="Forthcoming"
-          jobTitle=""
-          company=""
+          photo={kanishka}
+          speaker="Mr. Kanishka Weeramunda"
+          jobTitle="Founder & CEO"
+          company="PayMedia (Pvt) Ltd."
           alignType={AlignType.Right}
         />
 
