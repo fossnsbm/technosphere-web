@@ -18,4 +18,5 @@ export interface IUser {
   food: string;
   profileImgUrl: string;
   isComing: boolean;
+  attendaceMarked?: boolean;
 }
