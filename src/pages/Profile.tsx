@@ -10,18 +10,29 @@ import { Formik } from "formik";
 import { GetUserDetails } from "../services/react-query/user/useCurrentUser";
 import axios from "axios";
 import { AppConfig } from "../config";
+import { apiClient } from "../services/client";
+import { toast } from "react-hot-toast";
+import { CircularProgress } from "@mui/material";
+import { useTokenStore } from "../store/createAuthStore";
+import { useUserStore } from "../store/createUserSlice";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const tokenStore = useTokenStore();
   const [inPerson, setInPerson] = useState(false);
   const [isProfileFeatureEnabled, setIsProfileFeatureEnabled] = useState(false);
-  const me = GetUserDetails();
   const [batch, setBatch] = useState<string>("20.1");
+  const { user, clear } = useUserStore();
+  const handleLogout = () => {
+    tokenStore.clear();
+    clear();
+  };
 
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
-    profileImgUrl: "",
+    profileImagUrl: "",
   });
 
   const handleInPersonToggleChange = (_event: React.FormEvent) => {
@@ -34,6 +45,7 @@ const Profile = () => {
 
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!selectedFile) {
@@ -54,16 +66,62 @@ const Profile = () => {
     }
 
     setSelectedFile(e.target.files[0]);
-    console.log("object---");
-    console.log(selectedFile);
   };
 
   async function getProfileImageURL() {
-    let res = await axios.post(`${AppConfig.BACKEND_API}/users/upload`, {});
+    if (selectedFile) {
+      var formData = new FormData();
+      formData.append("file", selectedFile!);
+      let data = await apiClient.post(
+        `https://api.technosphere.fossnsbm.org/users/upload/`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
-    let data = res.data;
-    console.log(data);
-    return data;
+      return data.data;
+    }
+    return "";
+  }
+
+  const [submitting, setSubmitting] = useState(false);
+  async function submitData(json: any) {
+    setSubmitting(true);
+
+    let url = await getProfileImageURL();
+    json["profileImagUrl"] = url["url"] ?? null;
+    console.log(json);
+
+    let res = await apiClient.post(
+      "https://api.technosphere.fossnsbm.org/users/update-profile",
+      json
+    );
+
+    if (res.status == 201) {
+      toast.success("Profile updated", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      setSubmitting(false);
+      handleLogout();
+      navigate(`/login`);
+      return;
+    }
+
+    setSubmitting(false);
+    toast.error("Something went wrong", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
   }
 
   return (
@@ -138,9 +196,8 @@ const Profile = () => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
-                console.log(values);
+                submitData(values);
                 setTimeout(() => {
-                  console.log("submitted");
                   setSubmitting(false);
                 }, 400);
               }}
@@ -192,9 +249,15 @@ const Profile = () => {
                     />
                   )}
                   <div className="btn_container">
-                    <button className="btn" type="submit">
-                      update profile
-                    </button>
+                    {submitting ? (
+                      <span>
+                        <CircularProgress />
+                      </span>
+                    ) : (
+                      <button className="btn" type="submit">
+                        update profile
+                      </button>
+                    )}
                   </div>
                 </form>
               )}

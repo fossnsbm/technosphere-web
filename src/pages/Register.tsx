@@ -1,5 +1,5 @@
 import "../styles/register.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CheckBox from "../components/global/CheckBox";
 import TextField, { InputType } from "../components/global/TextField";
 import Dropdown, { PositionType } from "../components/global//Dropdown";
@@ -13,11 +13,17 @@ import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 import { IUserRegistration } from "../interface/user";
+import { apiClient } from "../services/client";
+
+
 
 const Register = () => {
   const [inPerson, setInPerson] = useState(false);
   const [batch, setBatch] = useState<string>("20.1");
   const [foodPreference, setFoodPreference] = useState<string>("Vegetarian");
+
+
+  
 
   const navigate = useNavigate();
   let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
