@@ -10,7 +10,7 @@ import rishan from "../../assets/speakers/rishan.jpg";
 import ravindu from "../../assets/speakers/ravindu.jpg";
 import asanga from "../../assets/speakers/asanga.jpg";
 import kasun from "../../assets/speakers/kasun.jpg";
-import speaker from "../../assets/speakers/speaker_placeholder.png";
+import kanishka from "../../assets/speakers/kanishka.jpg";
 import "./speakersSection.css";
 import SpeakerCard from "../global/SpeakerCard";
 
@@ -49,11 +49,11 @@ function SpeakersSection() {
           />
 
           <SpeakerCard
-            photo={speaker}
-            speaker="Forthcoming"
-            jobTitle=""
-            company=""
-            link=""
+            photo={kanishka}
+            speaker="Mr. Kanishka Weeramunda"
+            jobTitle="Founder & CEO"
+            company="PayMedia (Pvt) Ltd."
+            link="https://www.linkedin.com/in/kanishka-weeramunda-781b4a14"
           />
         </Grid>
 
