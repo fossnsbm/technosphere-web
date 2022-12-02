@@ -5,5 +5,13 @@ export const getAuthStorage = () => {
 };
 
 export const getApiKey = () => {
+  if(localStorage.getItem("key-storage"))
+  {
+
   return JSON.parse(localStorage.getItem("key-storage")!).state.key;
+
+  }else
+  {
+    return null
+  }
 };
