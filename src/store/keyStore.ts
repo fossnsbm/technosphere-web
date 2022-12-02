@@ -14,8 +14,7 @@ export const useApiKeyStore = create<KeyStore>()(
     persist(
       (set) => ({
         key: null,
-        setApiKey: (ApiKey: string) =>
-          set(() => ({ key: ApiKey })),
+        setApiKey: (ApiKey: string) => set(() => ({ key: ApiKey })),
         clear: () => set(() => ({ key: null })),
       }),
       {

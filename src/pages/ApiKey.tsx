@@ -6,7 +6,12 @@ import { useApiKeyStore } from "../store/keyStore";
 
 const ApiKey: React.FC<ApiKeyProps> = () => {
   const [input, setInput] = useState<string>("");
-  const {setApiKey ,key} = useApiKeyStore()
+  const { setApiKey, key } = useApiKeyStore();
+
+  const saveKey = (key: string) => {
+    setApiKey(key);
+    alert("Saved");
+  };
 
   return (
     <section className="api_key">
@@ -19,7 +24,7 @@ const ApiKey: React.FC<ApiKeyProps> = () => {
             placeholder="API Key"
             onChange={(e) => setInput(e.target.value)}
           />
-          <button onClick={() => setApiKey(input)}>Save</button>
+          <button onClick={() => saveKey(input)}>Save</button>
         </div>
       </div>
     </section>
