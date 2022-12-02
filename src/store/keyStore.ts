@@ -5,17 +5,17 @@ type Nullable<T> = T | null;
 
 interface KeyStore {
   key: Nullable<string>;
-  setAccessToken: (token: string) => void;
+  setApiKey: (token: string) => void;
   clear: () => void;
 }
 
-export const useTokenStore = create<KeyStore>()(
+export const useApiKeyStore = create<KeyStore>()(
   devtools(
     persist(
       (set) => ({
         key: null,
-        setAccessToken: (accessToken: string) =>
-          set(() => ({ key: accessToken })),
+        setApiKey: (ApiKey: string) =>
+          set(() => ({ key: ApiKey })),
         clear: () => set(() => ({ key: null })),
       }),
       {

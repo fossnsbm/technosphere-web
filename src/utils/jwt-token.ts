@@ -5,5 +5,5 @@ export const getAuthStorage = () => {
 };
 
 export const getApiKey = () => {
-  return JSON.parse(localStorage.getItem("apiKey")!);
+  return JSON.parse(localStorage.getItem("key-storage")!).state.key;
 };
