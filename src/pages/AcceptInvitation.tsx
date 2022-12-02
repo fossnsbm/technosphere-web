@@ -15,6 +15,7 @@ import { IUser } from "../interface/user";
 import axios from "axios";
 import httpCommon from "../http-common";
 import { LoadingButton } from "@mui/lab";
+import toast from "react-hot-toast";
 
 export const AcceptInvitation = () => {
   const [email, setEmail] = useState("");
@@ -42,7 +43,46 @@ export const AcceptInvitation = () => {
         setUser(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        const errorMessages: any = error?.response?.data;
+
+        if (!errorMessages) {
+          toast.error(error.message, {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+          return;
+        }
+
+        if (!Array.isArray(errorMessages.message)) {
+          console.log(errorMessages.message);
+          toast.error(
+            errorMessages.message === "User is not confirmed."
+              ? "Please verify your account through the email you received."
+              : errorMessages.message,
+            {
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            }
+          );
+          return;
+        }
+
+        for (const message of errorMessages?.message) {
+          toast.error(message, {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+        }
+
       });
 
     setIsLoading(false);
