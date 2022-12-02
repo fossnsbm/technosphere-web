@@ -82,7 +82,6 @@ export const AcceptInvitation = () => {
             },
           });
         }
-
       });
 
     setIsLoading(false);
