@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useApiKeyStorage } from "../hooks/user/useApiKey";
 import "../styles/apikey.scss";
 import image from "../assets/key.png";
 interface ApiKeyProps {}
+import { useApiKeyStore } from "../store/keyStore";
 
 const ApiKey: React.FC<ApiKeyProps> = () => {
   const [input, setInput] = useState<string>("");
-  const { setApiKey, getApiKey } = useApiKeyStorage();
+  const {setApiKey ,key} = useApiKeyStore()
 
   return (
     <section className="api_key">
