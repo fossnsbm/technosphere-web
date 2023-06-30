@@ -14,6 +14,7 @@ import {
   LinkedIn,
   YouTube,
 } from "@mui/icons-material";
+import LanguageIcon from '@mui/icons-material/Language';
 
 function Footer() {
   return (
@@ -133,6 +134,13 @@ function Footer() {
                   target={"_blank"}
                 >
                   <LinkedIn style={{ color: "white" }} className="SocialLogo" />
+                </a>
+
+                <a
+                  href="https://www.nsbm.ac.lk/"
+                  target={"_blank"}
+                >
+                  <LanguageIcon style={{ color: "white" }} className="SocialLogo" />
                 </a>
               </div>
             </div>
